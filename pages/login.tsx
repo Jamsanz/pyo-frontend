@@ -14,16 +14,16 @@ const Login= () => {
     email: "",
     password: ""
   });
-
-  const handleInput = (e: any) => {
-    const { name, value } = e.target
-    setLogin((): any => {
-      return {
-        ...login,
-        [name]: value,
-      };
-    });
-    console.log(login.email)
+  
+  const [error, setError] = useState<string>()
+  const handleInput = (e:any) => {
+    const {name, value} = e.target
+      setLogin((): any => {
+        return {
+          ...login,
+          [name]: value,
+        };
+      });
   }
 
   const submithandler = async (e: any) => {
@@ -43,7 +43,8 @@ const Login= () => {
 
     } catch (error: any) {
       console.log(error.response.data);
-      toastr.error("Invalid login details")
+      setError(error.response.data);
+      toastr.error(error?.response?.data!)
     }
   }
   return (
