@@ -8,7 +8,19 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+@layer components {
+  .checkbok {
+    @apply form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
+  }
+}
+
 
 a {
   color: inherit;
@@ -19,9 +31,6 @@ a {
   box-sizing: border-box;
 }
 
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
 .fa-2x {
   font-size: 2em;
@@ -255,6 +264,7 @@ label {
   padding: 0.66em 1.33em;
   font-family: "Brandon Grotesque";
   background: white;
+  color: black;
   border: none;
   -webkit-appearance: none;
   box-shadow: inset 1px 1px 0 #d8d8d8, inset -1px -1px 0 #d8d8d8;
@@ -275,22 +285,17 @@ label[for="country"] {
 
 }
 
-fieldset {
-  border-width: 0;
-  border-style: none;
-  border-color: none;
-  border-image: none;
-}
 
-select {
+
+.PYO-select select {
   text-indent: 0;
   margin-bottom: 0;
   border-radius: 0;
-  width: 60%;
+  width: 100%;
   height: 52px;
   padding: 0.66em 1.33em;
+  color: black;
   font-family: "Brandon Grotesque";
-  background: white;
   border: none;
   -webkit-appearance: none;
   box-shadow: inset 1px 1px 0 #d8d8d8, inset -1px -1px 0 #d8d8d8;
@@ -335,7 +340,7 @@ label[for="privacy-label"] {
   font-size: 0.875rem;
 }
 
-input[type="checkbox"] {
+.pyo-privacy-policy input[type="checkbox"] {
   height: 52px;
   margin-bottom: 1em;
   padding: 0.66em 1.33em;

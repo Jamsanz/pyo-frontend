@@ -1,363 +1,414 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Script from 'next/script';
+import BottomForm from '../components/bottomForm';
+import Footer from '../components/footer';
+import Form from '../components/form';
+import Header from '../components/header';
+import ImageText from '../components/imageText';
+import TextImage from '../components/textImage';
+
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      
-
-<div className="container">
-      <div className="row">
-        <div className="col">
-          <h6>Don't Miss Anything.</h6>
-          <h2>
-            Be the first to know what we're doing <br />
-            - and how you can get more involved.
-          </h2>
-          <p>Sign up to hear more and get involved.</p>
-        </div>
-        <div className="form-wrap">
-          <form action="/signup" method="POST" className="">
-            <div className="fields-wrapper">
-              <div className="fields-set">
-                  <input
-                    type="text"
-                    data-error="Please enter your first name."
-                    name="firstname"
-                    required
-                    placeholder="First name*"
-                    className="default-input"
-                />
-              </div>
-              <div className="fields-set">
-                  <input
-                    type="text"
-                    data-error="Please enter your last name."
-                    name="surname"
-                    required
-                    placeholder="Last name*"
-                    className="default-input"
-                />
-              </div>
-              <div className="fields-set">
-                  <input
-                    type="email"
-                    data-error="Please enter your email address."
-                    name="email"
-                    required
-                    placeholder="Your email address*"
-                    className="default-input"
-                />
-              </div>
-              <div className="fields-set">
-                <div className="PYO-select">
-                  <fieldset className="filled">
-                    <label
-                      >Country *</label>
-                      <select id="dropdown"
-                        name="country"
-                        data-error="Please select your country."
-                        required >
-                                <option
-                                disabled selected value="">
-                                </option>
-                                <option value="AF">Afghanistan</option>
-                                <option value="AL">Albania</option>
-                                <option value="DZ">Algeria</option>
-                                <option value="AS">American Samoa</option>
-                                <option value="AD">Andorra</option>
-                                <option value="AO">Angola</option>
-                                <option value="AI">Anguilla</option>
-                                <option value="AQ">Antarctica</option>
-                                <option value="AG">Antigua &amp; Barbuda</option>
-                                <option value="AR">Argentina</option>
-                                <option value="AM">Armenia</option>
-                                <option value="AW">Aruba</option>
-                                <option value="AC">Ascension Island</option>
-                                <option value="AU">Australia</option>
-                                <option value="AT">Austria</option>
-                                <option value="AZ">Azerbaijan</option>
-                                <option value="BS">Bahamas</option>
-                                <option value="BH">Bahrain</option>
-                                <option value="BD">Bangladesh</option>
-                                <option value="BB">Barbados</option>
-                                <option value="BY">Belarus</option>
-                                <option value="BE">Belgium</option>
-                                <option value="BZ">Belize</option>
-                                <option value="BJ">Benin</option>
-                                <option value="BM">Bermuda</option>
-                                <option value="BT">Bhutan</option>
-                                <option value="BO">Bolivia</option>
-                                <option value="BA">Bosnia &amp; Herzegovina</option>
-                                <option value="BW">Botswana</option>
-                                <option value="BV">Bouvet Island</option>
-                                <option value="BR">Brazil</option>
-                                <option value="IO">
-                                British Indian Ocean Territory
-                                </option>
-                                <option value="VG">British Virgin Islands</option>
-                                <option value="BN">Brunei</option>
-                                <option value="BG">Bulgaria</option>
-                                <option value="BF">Burkina Faso</option>
-                                <option value="BI">Burundi</option>
-                                <option value="KH">Cambodia</option>
-                                <option value="CM">Cameroon</option>
-                                <option value="CA">Canada</option>
-                                <option value="IC">Canary Islands</option>
-                                <option value="CV">Cape Verde</option>
-                                <option value="BQ">Caribbean Netherlands</option>
-                                <option value="KY">Cayman Islands</option>
-                                <option value="CF">Central African Republic</option>
-                                <option value="EA">Ceuta &amp; Melilla</option>
-                                <option value="TD">Chad</option>
-                                <option value="CL">Chile</option>
-                                <option value="CN">China</option>
-                                <option value="CX">Christmas Island</option>
-                                <option value="CP">Clipperton Island</option>
-                                <option value="CC">Cocos (Keeling) Islands</option>
-                                <option value="CO">Colombia</option>
-                                <option value="KM">Comoros</option>
-                                <option value="CG">Congo - Brazzaville</option>
-                                <option value="CD">Congo - Kinshasa</option>
-                                <option value="CK">Cook Islands</option>
-                                <option value="CR">Costa Rica</option>
-                                <option value="HR">Croatia</option>
-                                <option value="CU">Cuba</option>
-                                <option value="CW">Curaçao</option>
-                                <option value="CY">Cyprus</option>
-                                <option value="CZ">Czechia</option>
-                                <option value="CI">Côte d’Ivoire</option>
-                                <option value="DK">Denmark</option>
-                                <option value="DG">Diego Garcia</option>
-                                <option value="DJ">Djibouti</option>
-                                <option value="DM">Dominica</option>
-                                <option value="DO">Dominican Republic</option>
-                                <option value="EC">Ecuador</option>
-                                <option value="EG">Egypt</option>
-                                <option value="SV">El Salvador</option>
-                                <option value="GQ">Equatorial Guinea</option>
-                                <option value="ER">Eritrea</option>
-                                <option value="EE">Estonia</option>
-                                <option value="SZ">Eswatini</option>
-                                <option value="ET">Ethiopia</option>
-                                <option value="FK">Falkland Islands</option>
-                                <option value="FO">Faroe Islands</option>
-                                <option value="FJ">Fiji</option>
-                                <option value="FI">Finland</option>
-                                <option value="FR">France</option>
-                                <option value="GF">French Guiana</option>
-                                <option value="PF">French Polynesia</option>
-                                <option value="TF">French Southern Territories</option>
-                                <option value="GA">Gabon</option>
-                                <option value="GM">Gambia</option>
-                                <option value="GE">Georgia</option>
-                                <option value="DE">Germany</option>
-                                <option value="GH">Ghana</option>
-                                <option value="GI">Gibraltar</option>
-                                <option value="GR">Greece</option>
-                                <option value="GL">Greenland</option>
-                                <option value="GD">Grenada</option>
-                                <option value="GP">Guadeloupe</option>
-                                <option value="GU">Guam</option>
-                                <option value="GT">Guatemala</option>
-                                <option value="GG">Guernsey</option>
-                                <option value="GN">Guinea</option>
-                                <option value="GW">Guinea-Bissau</option>
-                                <option value="GY">Guyana</option>
-                                <option value="HT">Haiti</option>
-                                <option value="HM">Heard &amp; McDonald Islands</option>
-                                <option value="HN">Honduras</option>
-                                <option value="HK">Hong Kong SAR China</option>
-                                <option value="HU">Hungary</option>
-                                <option value="IS">Iceland</option>
-                                <option value="IN">India</option>
-                                <option value="ID">Indonesia</option>
-                                <option value="IR">Iran</option>
-                                <option value="IQ">Iraq</option>
-                                <option value="IE">Ireland</option>
-                                <option value="IM">Isle of Man</option>
-                                <option value="IL">Israel</option>
-                                <option value="IT">Italy</option>
-                                <option value="JM">Jamaica</option>
-                                <option value="JP">Japan</option>
-                                <option value="JE">Jersey</option>
-                                <option value="JO">Jordan</option>
-                                <option value="KZ">Kazakhstan</option>
-                                <option value="KE">Kenya</option>
-                                <option value="KI">Kiribati</option>
-                                <option value="XK">Kosovo</option>
-                                <option value="KW">Kuwait</option>
-                                <option value="KG">Kyrgyzstan</option>
-                                <option value="LA">Laos</option>
-                                <option value="LV">Latvia</option>
-                                <option value="LB">Lebanon</option>
-                                <option value="LS">Lesotho</option>
-                                <option value="LR">Liberia</option>
-                                <option value="LY">Libya</option>
-                                <option value="LI">Liechtenstein</option>
-                                <option value="LT">Lithuania</option>
-                                <option value="LU">Luxembourg</option>
-                                <option value="MO">Macao SAR China</option>
-                                <option value="MG">Madagascar</option>
-                                <option value="MW">Malawi</option>
-                                <option value="MY">Malaysia</option>
-                                <option value="MV">Maldives</option>
-                                <option value="ML">Mali</option>
-                                <option value="MT">Malta</option>
-                                <option value="MH">Marshall Islands</option>
-                                <option value="MQ">Martinique</option>
-                                <option value="MR">Mauritania</option>
-                                <option value="MU">Mauritius</option>
-                                <option value="YT">Mayotte</option>
-                                <option value="MX">Mexico</option>
-                                <option value="FM">Micronesia</option>
-                                <option value="MD">Moldova</option>
-                                <option value="MC">Monaco</option>
-                                <option value="MN">Mongolia</option>
-                                <option value="ME">Montenegro</option>
-                                <option value="MS">Montserrat</option>
-                                <option value="MA">Morocco</option>
-                                <option value="MZ">Mozambique</option>
-                                <option value="MM">Myanmar (Burma)</option>
-                                <option value="NA">Namibia</option>
-                                <option value="NR">Nauru</option>
-                                <option value="NP">Nepal</option>
-                                <option value="NL">Netherlands</option>
-                                <option value="AN">Netherlands Antilles</option>
-                                <option value="NC">New Caledonia</option>
-                                <option value="NZ">New Zealand</option>
-                                <option value="NI">Nicaragua</option>
-                                <option value="NE">Niger</option>
-                                <option value="NG">Nigeria</option>
-                                <option value="NU">Niue</option>
-                                <option value="NF">Norfolk Island</option>
-                                <option value="MP">Northern Mariana Islands</option>
-                                <option value="KP">North Korea</option>
-                                <option value="MK">North Macedonia</option>
-                                <option value="NO">Norway</option>
-                                <option value="OM">Oman</option>
-                                <option value="QO">Outlying Oceania</option>
-                                <option value="PK">Pakistan</option>
-                                <option value="PW">Palau</option>
-                                <option value="PS">Palestinian Territories</option>
-                                <option value="PA">Panama</option>
-                                <option value="PG">Papua New Guinea</option>
-                                <option value="PY">Paraguay</option>
-                                <option value="PE">Peru</option>
-                                <option value="PH">Philippines</option>
-                                <option value="PN">Pitcairn Islands</option>
-                                <option value="PL">Poland</option>
-                                <option value="PT">Portugal</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="QA">Qatar</option>
-                                <option value="RO">Romania</option>
-                                <option value="RU">Russia</option>
-                                <option value="RW">Rwanda</option>
-                                <option value="RE">Réunion</option>
-                                <option value="WS">Samoa</option>
-                                <option value="SM">San Marino</option>
-                                <option value="SA">Saudi Arabia</option>
-                                <option value="SN">Senegal</option>
-                                <option value="RS">Serbia</option>
-                                <option value="SC">Seychelles</option>
-                                <option value="SL">Sierra Leone</option>
-                                <option value="SG">Singapore</option>
-                                <option value="SX">Sint Maarten</option>
-                                <option value="SK">Slovakia</option>
-                                <option value="SI">Slovenia</option>
-                                <option value="SB">Solomon Islands</option>
-                                <option value="SO">Somalia</option>
-                                <option value="ZA">South Africa</option>
-                                <option value="GS">
-                                South Georgia &amp; South Sandwich Islands
-                                </option>
-                                <option value="KR">South Korea</option>
-                                <option value="SS">South Sudan</option>
-                                <option value="ES">Spain</option>
-                                <option value="LK">Sri Lanka</option>
-                                <option value="BL">St. Barthélemy</option>
-                                <option value="SH">St. Helena</option>
-                                <option value="KN">St. Kitts &amp; Nevis</option>
-                                <option value="LC">St. Lucia</option>
-                                <option value="MF">St. Martin</option>
-                                <option value="PM">St. Pierre &amp; Miquelon</option>
-                                <option value="VC">St. Vincent &amp; Grenadines</option>
-                                <option value="SD">Sudan</option>
-                                <option value="SR">Suriname</option>
-                                <option value="SJ">Svalbard &amp; Jan Mayen</option>
-                                <option value="SE">Sweden</option>
-                                <option value="CH">Switzerland</option>
-                                <option value="SY">Syria</option>
-                                <option value="ST">São Tomé &amp; Príncipe</option>
-                                <option value="TW">Taiwan</option>
-                                <option value="TJ">Tajikistan</option>
-                                <option value="TZ">Tanzania</option>
-                                <option value="TH">Thailand</option>
-                                <option value="TL">Timor-Leste</option>
-                                <option value="TG">Togo</option>
-                                <option value="TK">Tokelau</option>
-                                <option value="TO">Tonga</option>
-                                <option value="TT">Trinidad &amp; Tobago</option>
-                                <option value="TA">Tristan da Cunha</option>
-                                <option value="TN">Tunisia</option>
-                                <option value="TR">Turkey</option>
-                                <option value="TM">Turkmenistan</option>
-                                <option value="TC">Turks &amp; Caicos Islands</option>
-                                <option value="TV">Tuvalu</option>
-                                <option value="UM">U.S. Outlying Islands</option>
-                                <option value="VI">U.S. Virgin Islands</option>
-                                <option value="UG">Uganda</option>
-                                <option value="UA">Ukraine</option>
-                                <option value="AE">United Arab Emirates</option>
-                                <option value="GB">United Kingdom</option>
-                                <option value="US">United States</option>
-                                <option value="UY">Uruguay</option>
-                                <option value="UZ">Uzbekistan</option>
-                                <option value="VU">Vanuatu</option>
-                                <option value="VA">Vatican City</option>
-                                <option value="VE">Venezuela</option>
-                                <option value="VN">Vietnam</option>
-                                <option value="WF">Wallis &amp; Futuna</option>
-                                <option value="EH">Western Sahara</option>
-                                <option value="YE">Yemen</option>
-                                <option value="ZM">Zambia</option>
-                                <option value="ZW">Zimbabwe</option>
-                                <option value="AX">Åland Islands</option>
-                      </select>
-                    
-                 </fieldset>
-                </div>
-              </div>
-
-              <div className="Submit">
-                <input type="submit" name="submit" value="Sign up" />
-              </div>
-            </div>
-            <div className="pyo-privacy-policy">
-              <input
-                type="checkbox"
-                name="privacy-policy"
-                required
-                data-error="Please acknowledge that you want to receive emails from us by checking the box."
-                id="privacy-label"
-              />
-              <label
-                >Yes, I agree to receive emails about the work of Professor Yemi Osinbanjo and
-                the Professor Yemi Osinbanjo Institute.<br />
-                For full information on the use of your data please see our
-                <a href="/privacy-policy">privacy policy</a>.</label
+    <div
+      className="leading-normal tracking-normal text-white gradient"
+      style={{ fontFamily: "Source Sans Pro, sans - serif" }}
+    >
+      {/* <!-- Header --> */}
+      <nav id="header" className="fixed w-full z-30 top-0 text-white">
+        <div
+          className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2"
+        >
+          <div className="pl-4 flex items-center">
+            <a
+              className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+              href="#"
+            >
+              {/* <!--Icon from: http://www.potlabicons.com/ --> */}
+              <svg
+                className="h-8 fill-current inline"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512.005 512.005"
               >
-            </div>
-        </form>
+                <rect
+                  fill="#2a2a31"
+                  x="16.539"
+                  y="425.626"
+                  width="479.767"
+                  height="50.502"
+                  transform="matrix(1,0,0,1,0,0)"
+                />
+                <path
+                  className="plane-take-off"
+                  d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "
+                />
+              </svg>
+              LANDING
+            </a>
+          </div>
+          <div className="block lg:hidden pr-4">
+            <button
+              id="nav-toggle"
+              className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            >
+              <svg
+                className="fill-current h-6 w-6"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white md:bg-transparent lg:bg-transparent text-black p-4 lg:p-0 z-20"
+            id="nav-content"
+          >
+            <ul className="list-reset lg:flex justify-end flex-1 items-center">
+              <li className="mr-3">
+                <a
+                  className="inline-block py-2 px-4 text-black font-bold no-underline"
+                  href="#"
+                >Active</a
+                >
+              </li>
+              <li className="mr-3">
+                <a
+                  className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                  href="#"
+                >link</a
+                >
+              </li>
+              <li className="mr-3">
+                <a
+                  className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                  href="#"
+                >link</a
+                >
+              </li>
+            </ul>
+            <button
+              id="navAction"
+              className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            >
+              Action
+            </button>
+          </div>
+        </div>
+        <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
+      </nav>
+      {/* <!--Hero--> */}
+      <div className="pt-36 pb-24 object-cover w-full bg-cover bg-center" style={{ background: "url('/images/PYO-13 11.jpg')" }}>
+        <div
+          className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-36 pb-36">
+
+          <div
+            className="flex flex-col w-full md:w-2/3 justify-center items-start text-center md:text-left"
+          >
+            <p className="uppercase tracking-loose w-full">Prof. Yemi Osinbajo Fellowship Programme</p>
+            <h1 className="my-4 text-5xl font-bold leading-tight">
+              Proposed Initiatives for the Continuous Engagement of PYO supporters,
+              cohorts and partners
+              Private and Confidential
+            </h1>
+            <p className="leading-normal text-2xl mb-8">
+              Sub-hero message, not too long and not too short. Make it just
+              right!
+            </p>
+            <a
+              href="#form"
+              className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-md my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            >
+              Subscribe
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
+      <div className="pt-24 bg-gray-150">
+        <div
+          className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-black">
 
-    </div>
-  )
+          <div
+            className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"
+          >
+
+            <h1 className="my-4 text-2xl font-bold leading-tight">
+              Proposed Programs and Initiatives - Keeping the Coal Hot for The New Tribe
+            </h1>
+
+          </div>
+        
+          <div className="w-full md:w-3/5 py-8 align-middle">
+            <h1 className="my-4 text-3l font-light">
+              The campaign period for the recently concluded primaries elections of political parties in Nigeria
+              affirmed the popularity of His Excellency, Vice President Yemi Osinbajo. The widespread enthusiasm
+              from every demographic in the country towards a potential PYO Presidency created an electrical
+              atmosphere everywhere he went. In the aftermath of the primary election, it is important to design
+              programs and projects to:
+            </h1>
+            <ol className="my-4 text-3l font-light">
+
+              <li>Cluster supporters of PYO in a manner that is coordinated and targeted</li>
+              <li>Engage these supporters across various demographics with programs and initiatives that help to <br />
+                keep the fire burning towards the activation of The New Tribe</li>
+              <li>Disseminate information on PYO’s values, and other initiatives to supporters</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      
+      <div className="p-24 bg-gray-100 mx-auto px-2 pb-12">
+        <div
+          className="flex-wrap flex justify-center md:space-x-10 text-center md:text-left text-2xl text-black p-24 mx-auto px-2 pt-4 pb-12 "
+        >
+
+          <div className="rounded-md w-full px-3 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
+            <img className="w-full" src="/images/PYO-118.jpg" alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">PYO Fellows - An annual elite className Fellowship Program</div>
+              <p className="text-gray-700 text-base">
+                one-year fellowship which will be offered on a yearly basis, is aimed at building a network of
+                high-potential young Nigerians who are already making a difference in their communities; creating a
+                sustainable opportunity to take their work to the next level through an immersive curriculum that
+              </p>
+              <p className="text-gray-700 text-base">
+                combines academic, skills-based, and hands-on learning, and providing opportunities for them to rise to
+                top leadership positions in the public sector.
+              </p>
+            </div>
+
+          </div>
+          <div className="rounded-md w-full px-3 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
+            <img className="w-full" src="/images/PYO-124 6.jpg" alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">PYO New Tribe (white-collar) - “Keeping the coal hot” towards a 2023 or 2027 campaign</div>
+              <p className="text-gray-700 text-base">
+                The program will establish cells and clubs in primary and secondary schools with the aim to sell
+                the ideals of PYO to young Nigerians at a young age. Catching them young and instilling the importance
+                of values-based leadership, good governance, and hard work in children and young adults. The program
+                will also establish clubs and social groups on university campuses, and among young adult professionals
+                in the public and private sector.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="rounded-md w-full px-3 md:mt-5g lg:mt-0 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
+            <img className="w-full" src="/images/PYO-114.jpg" alt="Sunset in the mountains" />
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">PYO New Tribe (blue-collar) - “Keeping the coal hot” towards a 2023 or 2027 campaign.</div>
+              <p className="text-gray-700 text-base">
+                The PYO New Tribe blue collar project runs programmes, projects and activities across various blue collar
+                demographics such as market women, taxi drivers, okada riders, artisans etc. The project will coordinate
+                and support these groups with tools and advisory for business development. The project will also seek to
+                support these groups with loans (market moni, tradermoni style), grants (survival fund style), and
+                equipment for work.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      
+      <div className="pt-60 pb-60 text-white text-center object-cover w-full  bg-fixed bg-center" style={{ background: "url('/images/PYO-13 11.jpg')" }}>
+        <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-black">
+
+          <div
+            className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"
+          >
+
+            <h1 className="my-6 text-5xl font-bold leading-tight text-white">
+              Be the first to know what we're doing.
+            </h1>
+
+          </div>
+
+          {/* <!-- Right Col --> */}
+          <div className="w-full md:w-3/5 py-8 align-middle">
+            <input
+              className=" lg:mx-0 hover:underline bg-gray-100 text-black font-light shadow rounded-4 my-6 py-4 px-8  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1"
+              type="button"
+              value="Subscribe"
+            >
+            </input>
+          </div>
+        </div>
+      </div>
+      
+      <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
+        <div
+          className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
+
+          <div
+            className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"
+          >
+            <p className="uppercase tracking-loose w-full">What business are you?</p>
+            <h1 className="my-2 text-5xl font-bold leading-tight">
+              Prof. Yemi Osinbajo Global Institute for Governance!
+            </h1>
+            <p className="leading-normal text-2sm mb-8 font-light">
+              PYO Global Institute for Governance aims to develop exceptionally passionate, principled, and
+              innovative governmental, corporate, and civil society leaders while also establishing itself as a global
+              governance and leadership institute of repute with a long-term impact on national and corporate
+              governance, ultimately accelerating the sustainable development of communities in Nigeria and around
+              the world.
+            </p>
+            <input
+              className="mx-auto lg:mx-0 hover:underline bg-gray-100 text-gray-800 font-bold rounded-5 my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+              type="button" value="Find Out More"
+            />
+          </div>
+        
+          <div className=" flex w-full md:w-3/5 py-6 justify-end ">
+            <img className="w-full md:w-4/5 z-10" src="/images/PYO-118.jpg" />
+          </div>
+        </div>
+      </div>
+      
+      <ImageText />
+
+      <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
+        <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
+          <div
+            className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"
+          >
+            <p className="capitalize tracking-loose w-full font-thin">Government Advisory</p>
+            <h1 className="my-4 text-3xl font-semibold leading-tight">
+              Supporting governments on the ground.
+            </h1>
+            <p className="leading-normal text-2sm mb-8 font-thin">
+              We have staff in more than 20 countries across four continents and are helping leaders build strong crisis response systems. We are also providing bespoke support on disease suppression measures, testing, equipment procurement, tech solutions and economic response.
+            </p>
+          </div>
+        
+          <div className=" flex w-full md:w-3/5 py-6 justify-end ">
+            <img className="w-full md:w-4/5 z-10" src="/images/PYO-17.jpg" />
+          </div>
+        </div>
+      </div>
+      
+      <div className="w-full bg-gray-100 text-black mt-1 p- md:h-190">
+        <div className='object-cover h-230 w-full bg-cover bg-center p-12 text-white pt-24 pb-24' style={{ background: "url(/images/PYO-1.jpg)" }}>
+          <h2 className="text-2xl font-bold">PRESIDENT YEMI OSINBANJO</h2>
+          <p className="mb-8 ">As societies transition to low-carbon and resilient economies, this initiative will develop a framework for
+            promoting equitable access to the benefits and sharing of the costs of sustainable development,
+            ensuring that the livelihoods of all people, including the most vulnerable, are supported and enhanced.
+            A just energy transition can help Nigeria, and by extension, African countries achieve greater income
+            redistribution while also ensuring that climate action takes place in tandem with development.</p>
+        </div>
+      </div>
+
+      <BottomForm />
+      
+      <footer className="bg-grey-700 h-auto pt-36">
+        <div className="container mx-auto px-8">
+          <div className="w-full flex flex-col md:flex-row py-6">
+            <div className="flex-1 mb-6 text-black">
+              <a
+                className="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                href="#"
+              >
+                {/* <!--Icon from: http://www.potlabicons.com/ --> */}
+
+                LANDING
+              </a>
+            </div>
+            <div className="flex-1">
+              <p className="uppercase text-gray-500 md:mb-6">Links</p>
+              <ul className="list-reset mb-6">
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >FAQ</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Help</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Support</a>
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1">
+              <p className="uppercase text-gray-500 md:mb-6">Legal</p>
+              <ul className="list-reset mb-6">
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Terms</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Privacy</a>
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1">
+              <p className="uppercase text-gray-500 md:mb-6">Social</p>
+              <ul className="list-reset mb-6">
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Facebook</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Linkedin</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1">
+              <p className="uppercase text-gray-500 md:mb-6">Company</p>
+              <ul className="list-reset mb-6">
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Official Blog</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >About Us</a>
+                </li>
+                <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <a
+                    href="#"
+                    className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  >Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+  );
 }
 
-export default Home
+export default Home;
