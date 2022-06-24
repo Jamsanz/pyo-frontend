@@ -26,7 +26,6 @@ const BottomForm = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
-    console.log(data)
   }
 
   const handleSubmit = (e: FormEvent) => {
@@ -60,18 +59,18 @@ const BottomForm = () => {
   }, [success])
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="form">
       <div className="container mt-10">
-        <div className="row items-center">
-          <div className="col">
-            <h6 className='text-black'>Don't Miss Anything.</h6>
+        <div className="flex flex-col md:flex-row w-full">
+          <div className="col w-full">
+            <h6 className='text-black'>Don&apos;t Miss Anything.</h6>
             <h2 className='text-black'>
-              Be the first to know what we're doing <br />
+              Be the first to know what we&apos;re doing
               - and how you can get more involved.
             </h2>
             <p className='text-black'>Sign up to hear more and get involved.</p>
           </div>
-          <div className="form-wrap">
+          <div className="w-full">
             <form onSubmit={handleSubmit}>
               <div className="fields-wrapper">
                 <div className="fields-set">
@@ -386,11 +385,11 @@ const BottomForm = () => {
                   </div>
                 </div>
 
-                <div className="Submit hover:bg-black">
-                  <input className='' type="submit" name="submit" value={loading ? "Loading...":"Sign up"} disabled={loading} />
+                <div className="Submit">
+                  <input className='hover:bg-white' type="submit" name="submit" value={loading ? "Loading...":"Sign up"} disabled={loading} />
                 </div>
               </div>
-              <div className="pyo-privacy-policy">
+              {/* <div className="pyo-privacy-policy">
                 <input
                   type="checkbox"
                   name="privacy-policy"
@@ -402,7 +401,7 @@ const BottomForm = () => {
                   the Professor Yemi Osinbanjo Institute.
                   For full information on the use of your data please see our
                   <a href="/privacy-policy">privacy policy</a>.</label>
-              </div>
+              </div> */}
             </form>
           </div>
         </div>

@@ -200,9 +200,9 @@ body {
     flex-direction: column
   }
 
-  .form-wrap {
+  /* .form-wrap {
     min-width: 100%;
-  }
+  } */
 }
 
 .col {
@@ -224,15 +224,13 @@ p {
   font-size: 1em;
 }
 
-.form-wrap {
+/* .form-wrap {
   width: 50%;
   padding-right: 10px;
   padding-left: 10px;
   display: flex;
   flex-direction: row;
-
-
-}
+} */
 
 .fields-wrapper {
   position: relative;
