@@ -16,6 +16,7 @@ const Login = () => {
     password: ""
   });
   
+  const [error, setError] = useState<string>()
   const handleInput = (e:any) => {
     const {name, value} = e.target
       setLogin((): any => {
@@ -24,7 +25,6 @@ const Login = () => {
           [name]: value,
         };
       });
-    console.log(login.email)
   }
 
   const submithandler = async (e: any) => {
@@ -44,6 +44,7 @@ const Login = () => {
 
     } catch (error: any) {
       console.log(error.response.data);
+      setError(error.response.data);
       toastr.error(error?.response?.data!)
     }
   }
