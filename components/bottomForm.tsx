@@ -1,7 +1,9 @@
 import axios from 'axios';
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import { http } from '../utils/utils';
+import toastr from "../utils/toastr";
+
 
 interface IData {
   firstName?: string;
@@ -11,29 +13,56 @@ interface IData {
 }
 
 const BottomForm = () => {
-  const [data, setData] = useState<IData>({});
+  const [data, setData] = useState<IData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    country: ""
+  });
   const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
+    console.log(data)
   }
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
     http.post('/register', data).then((res) => {
-      setData({});
+      toastr.success("Succesfully registered")
+      if (data) setSuccess(true)
+    
     })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        if (err) {
+          toastr.error("Registration fail, try again")
+        }
+      })
       .finally(() => {
         setLoading(false);
+        setSuccess(true)
+
       })
   }
+
+  useEffect(():any => {
+    if (success) setData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      country: ""
+    })
+  }, [success])
+
   return (
     <div className={styles.container}>
-      <div className="container">
-        <div className="row">
+      <div className="container mt-10">
+        <div className="row items-center">
           <div className="col">
             <h6 className='text-black'>Don't Miss Anything.</h6>
             <h2 className='text-black'>

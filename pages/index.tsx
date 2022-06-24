@@ -292,7 +292,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       
-      <div className="w-full bg-gray-100 text-black mt-1 p- md:h-190">
+      <div className="w-full bg-gray-100 text-black mt-1 p- md:h-190" >
         <div className='object-cover h-230 w-full bg-cover bg-center p-12 text-white pt-24 pb-24' style={{ background: "url(/images/PYO-1.jpg)" }}>
           <h2 className="text-2xl font-bold">PRESIDENT YEMI OSINBANJO</h2>
           <p className="mb-8 ">As societies transition to low-carbon and resilient economies, this initiative will develop a framework for
@@ -305,7 +305,7 @@ const Home: NextPage = () => {
 
       <BottomForm />
       
-      <footer className="bg-grey-700 h-auto pt-36">
+      <footer className="bg-grey-700 h-auto pt-10 mt-20" style={{ borderTop: "1px solid black" }}>
         <div className="container mx-auto px-8">
           <div className="w-full flex flex-col md:flex-row py-6">
             <div className="flex-1 mb-6 text-black">
