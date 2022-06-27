@@ -92,9 +92,9 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="p-24 bg-gray-100 mx-auto px-2 pb-12">
+      <div className="pt-12 lg:pt-24 p-24 bg-gray-100 mx-auto px-2 pb-12">
         <div className="flex-wrap flex justify-center md:space-x-10 text-center md:text-left text-2xl text-black p-24 mx-auto px-2 pt-4 pb-12 ">
-          <div className="rounded-md w-full px-3 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
+          <div className="my-5 lg:my-0 rounded-md w-full px-3 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
             <img
               className="w-full"
               src="/images/PYO-118.jpg"
@@ -116,7 +116,7 @@ const Home: NextPage = () => {
               </p>
             </div>
           </div>
-          <div className="rounded-md w-full px-3 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
+          <div className="my-5 lg:my-0  rounded-md w-full px-3 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
             <img
               className="w-full"
               src="/images/PYO-124 6.jpg"
@@ -140,7 +140,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="rounded-md w-full px-3 md:mt-5g lg:mt-0 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
+          <div className="my-5 lg:my-0  rounded-md w-full px-3 md:mt-5g lg:mt-0 md:px-0 overflow-hidden shadow-lg md:w-1/3 lg:w-1/4">
             <img
               className="w-full"
               src="/images/PYO-114.jpg"
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="pt-34 bg-gray-100 flex justify-center" id="about">
-        <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
+        <div className="container px-3 mx-4 md:mx-12 my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
             <h1 className="my-2 text-[30px] lg:text-5xl font-bold leading-tight mb-10 text-[#0a2d6b]">
               Prof. Yemi Osinbajo Global Institute for Governance!
@@ -233,8 +233,8 @@ const Home: NextPage = () => {
 
       <ImageText />
 
-      <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
-        <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
+      <div className="pt-34 bg-gray-100 flex justify-center">
+        <div className="container px-3 mx-4 lg:mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start">
             <h1 className="my-4 text-[20px] md:text-3xl font-semibold leading-tight text-justify text-[#0a2d6b]">
               The below will be achieved through the PYO Fellowship Program.

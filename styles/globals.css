@@ -213,7 +213,6 @@ body {
 
 .col {
   text-align: left;
-  padding: 2em;
 }
 
 h6 {
@@ -240,7 +239,6 @@ p {
 
 .fields-wrapper {
   position: relative;
-  padding: 30px;
   transition: all 0.3s ease-in-out;
   height: 397px;
   max-height: 397px;

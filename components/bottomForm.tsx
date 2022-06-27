@@ -62,7 +62,7 @@ const BottomForm = () => {
     <div className={styles.container}>
       <div className="container mt-10" id="member">
         <div className="flex flex-col md:flex-row w-full">
-          <div className="col w-full">
+          <div className="col w-full px-0 lg:p-[2em]">
             <h6 className='text-black'>Don&apos;t Miss Anything.</h6>
             <h2 className='text-black'>
               Be the first to know what we&apos;re doing
@@ -72,7 +72,7 @@ const BottomForm = () => {
           </div>
           <div className="w-full">
             <form onSubmit={handleSubmit}>
-              <div className="fields-wrapper">
+              <div className="fields-wrapper py-[30px] lg:p-30px">
                 <div className="fields-set">
                   <input
                     type="text"

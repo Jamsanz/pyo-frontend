@@ -2,8 +2,8 @@ import React from 'react'
 
 const ImageText = () => {
   return (
-    <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
-      <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
+    <div className="pt-34 bg-gray-100 flex justify-center">
+      <div className="container px-3 mx-4 lg:mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
         <div className=" flex w-full md:w-3/5 py-6 justify-start ">
           <img className="w-full md:w-4/5 z-10" src="/images/PYO-127.jpg" />
         </div>
