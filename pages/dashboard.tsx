@@ -8,7 +8,14 @@ const Dashboard = () => {
 
 	const [email, setEmail] = useState<string>("")
 	const [firstName, setFirstName] = useState<string>("")
-	useEffect(() => {
+
+	const logout = () => {
+	localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    window.location.reload();
+	}
+ 	useEffect(() => {
 
 		const id = localStorage.getItem("token")
 		setEmail(localStorage.getItem("useremail")!);
@@ -135,12 +142,26 @@ const Dashboard = () => {
                     <span className="mx-4 font-medium text-[15px]">Link 2</span>
                   </a>
                 </li>
+                <li>
+                  <button
+                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    onClick={logout}
+                  >
+                      <span className="mx-4 font-medium text-[15px] text-gray-600  hover:bg-gray-200">
+                        Log out
+                      </span>
+                  </button>
+                </li>
               </ul>
             </aside>
           </div>
         </div>
         <div className="w-[100%] h-full p-4 m-8 overflow-y-auto text-center mx-auto">
-          <h2 className="text-[#000]"> Welcome {firstName && firstName}</h2>
+          <h2 className="text-[#000]">
+            {" "}
+            Welcome{" "}
+            <span className="capitalize"> {firstName && firstName} </span>
+          </h2>
 
           {/* <div className="flex items-center text-center justify-center p-16 mr-8 border-4 lg:p-40 mx-auto"></div> */}
         </div>
