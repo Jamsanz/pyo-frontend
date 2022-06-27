@@ -39,7 +39,7 @@ const Login = () => {
       toastr.success("Login successful");
     } catch (error: any) {
       setError(error.response.data);
-      toastr.error("Invalid username and password");
+      toastr.error("Email does not exist");
     }
   };
   return (
