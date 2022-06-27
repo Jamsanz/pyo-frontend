@@ -52,7 +52,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-24 bg-gray-150">
+      <div className="pt-8 bg-gray-150">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
             <h1 className="my-4 text-2xl font-bold leading-tight text-[#0a2d6b]">
@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             </h1>
           </div>
 
-          <div className="w-full md:w-3/5 py-8 align-middle ">
+          <div className="w-full md:w-3/5  pt-4 pb-8 align-middle ">
             <h1 className="my-4 text-3l font-light text-justify">
               The campaign period for the recently concluded primaries elections
               of political parties in Nigeria affirmed the popularity of His
@@ -127,7 +127,7 @@ const Home: NextPage = () => {
                 PYO New Tribe (white-collar) - “Keeping the coal hot” towards a
                 2023 or 2027 campaign
               </div>
-              <p className="text-[#0a2d6b] text-base text-justify">
+              <p className="text-base text-justify">
                 The program will establish cells and clubs in primary and
                 secondary schools with the aim to sell the ideals of PYO to
                 young Nigerians at a young age. Catching them young and
