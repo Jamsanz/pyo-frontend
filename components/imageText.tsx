@@ -11,10 +11,10 @@ const ImageText = () => {
           <p className="tracking-loose w-full capitalize font-thin">
             It is time for a new tribe!
           </p>
-          <h1 className="my-4 text-5xl font-bold leading-tight">
+          <h1 className="my-4 text-[30px] lg:text-5xl font-bold leading-tight text-[#0a2d6b]">
             PROFESSOR YEMI OSINBAJO Institute
           </h1>
-          <p className="leading-normal text-2xl mb-8 text-justify">
+          <p className="text-[20px] md:text-2xl mb-8 text-justify">
             will bring together supporters of PYO as one unit, establishing
             engagements for every demographic and age group.
           </p>

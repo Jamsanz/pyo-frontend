@@ -22,7 +22,6 @@ const Home: NextPage = () => {
     <Layout>
       <div
         className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
-        // className="pt-36 pb-24 bg-no-repeat object-cover w-[100%]"
         style={{
           background: "url('/images/PYO-13 11.jpg');",
           backgroundRepeat: "no-repeat",
@@ -35,7 +34,7 @@ const Home: NextPage = () => {
             <p className="uppercase tracking-loose w-full">
               Prof. Yemi Osinbajo Fellowship Programme
             </p>
-            <h1 className="my-4 text-[30px] lg:text-5xl font-bold leading-tight">
+            <h1 className="my-4 text-[30px] lg:text-5xl font-bold leading-tight ">
               Proposed Initiatives for the Continuous Engagement of PYO
               supporters, cohorts and partners Private and Confidential
             </h1>
@@ -56,7 +55,7 @@ const Home: NextPage = () => {
       <div className="pt-24 bg-gray-150">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <h1 className="my-4 text-2xl font-bold leading-tight">
+            <h1 className="my-4 text-2xl font-bold leading-tight text-[#0a2d6b]">
               Proposed Programs and Initiatives - Keeping the Coal Hot for The
               New Tribe
             </h1>
@@ -102,7 +101,7 @@ const Home: NextPage = () => {
               alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2 text-center pb-5">
+              <div className="font-bold text-xl mb-2 text-center pb-5 text-[#0a2d6b]">
                 PYO Fellows - An annual elite className Fellowship Program
               </div>
               <p className="text-gray-700 text-base text-justify">
@@ -124,11 +123,11 @@ const Home: NextPage = () => {
               alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2 text-center pb-5">
+              <div className="font-bold text-xl mb-2 text-center pb-5 text-[#0a2d6b]">
                 PYO New Tribe (white-collar) - “Keeping the coal hot” towards a
                 2023 or 2027 campaign
               </div>
-              <p className="text-gray-700 text-base text-justify">
+              <p className="text-[#0a2d6b] text-base text-justify">
                 The program will establish cells and clubs in primary and
                 secondary schools with the aim to sell the ideals of PYO to
                 young Nigerians at a young age. Catching them young and
@@ -148,7 +147,7 @@ const Home: NextPage = () => {
               alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2 text-center pb-5">
+              <div className="font-bold text-xl mb-2 text-center pb-5 text-[#0a2d6b]">
                 PYO New Tribe (blue-collar) - “Keeping the coal hot” towards a
                 2023 or 2027 campaign.
               </div>
@@ -167,12 +166,17 @@ const Home: NextPage = () => {
       </div>
 
       <div
-        className="pt-60 pb-60 text-white text-center object-cover w-full  bg-fixed bg-center"
-        style={{ background: "url('/images/PYO-13 11.jpg')" }}
+        className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
+        style={{
+          background: "url('/images/PYO-13 11.jpg');",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <h1 className="my-6 text-5xl font-bold leading-tight text-white">
+            <h1 className="my-6 text-[30px] lg:text-5xl font-bold leading-tight text-white">
               Be the first to know what we&apos;re doing.
             </h1>
           </div>
@@ -199,10 +203,10 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-34 pl-6 bg-gray-100 flex justify-center" id="about">
+      <div className="pt-34 bg-gray-100 flex justify-center" id="about">
         <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <h1 className="my-2 text-5xl font-bold leading-tight mb-10">
+            <h1 className="my-2 text-[30px] lg:text-5xl font-bold leading-tight mb-10 text-[#0a2d6b]">
               Prof. Yemi Osinbajo Global Institute for Governance!
             </h1>
             <p className="leading-normal text-2sm mb-8 font-light text-justify">
@@ -232,7 +236,7 @@ const Home: NextPage = () => {
       <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
         <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start">
-            <h1 className="my-4 text-3xl font-semibold leading-tight text-left">
+            <h1 className="my-4 text-[20px] md:text-3xl font-semibold leading-tight text-justify text-[#0a2d6b]">
               The below will be achieved through the PYO Fellowship Program.
             </h1>
             <p className="leading-normal text-2sm mb-8 font-thin text-justify">
@@ -258,8 +262,14 @@ const Home: NextPage = () => {
 
       <div className="w-full bg-gray-100 text-black mt-1 p- md:h-190">
         <div
-          className="object-cover h-230 w-full bg-cover bg-center p-12 text-white pt-24 pb-24"
-          style={{ background: "url(/images/PYO-1.jpg)" }}
+          // className="object-cover h-230 w-full bg-cover  p-12  pt-24 pb-24"
+          className="object-cover w-[100%] bg-contain bg-no-repeat  p-12  pt-24 pb-24 merriFont lg:bg-cover bg-center text-white"
+          style={{
+            background: "url(/images/PYO-1.jpg)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
         >
           <h2 className="text-2xl font-bold">PRESIDENT YEMI OSINBANJO</h2>
           <p className="mb-8 text-justify">
@@ -277,5 +287,7 @@ const Home: NextPage = () => {
     </Layout>
   );
 };
+
+
 
 export default Home;
