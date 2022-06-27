@@ -131,7 +131,7 @@ const Dashboard = () => {
                     className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
-                    <span className="mx-4 font-medium text-[15px]">Link</span>
+                    <span className="mx-4 font-medium text-[15px]">Category</span>
                   </a>
                 </li>
                 <li>
@@ -139,7 +139,7 @@ const Dashboard = () => {
                     className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
-                    <span className="mx-4 font-medium text-[15px]">Link 2</span>
+                    <span className="mx-4 font-medium text-[15px]">Schedule Meeting</span>
                   </a>
                 </li>
                 <li>
