@@ -384,24 +384,18 @@ const BottomForm = () => {
                     </select>
                   </div>
                 </div>
-
+                <div className="ml-2 my-2 flex items-center space-x-3">
+                  <input
+                    type="checkbox"
+                    name="membership_interest"
+                    id=""
+                  />
+                  <label htmlFor='memeber'>Would like to become a member of the PYO institute?</label>
+                </div>
                 <div className="Submit">
                   <input className='hover:bg-white' type="submit" name="submit" value={loading ? "Loading...":"Sign up"} disabled={loading} />
                 </div>
               </div>
-              {/* <div className="pyo-privacy-policy">
-                <input
-                  type="checkbox"
-                  name="privacy-policy"
-                  data-error="Please acknowledge that you want to receive emails from us by checking the box."
-                  id="privacy-label"
-                />
-                <label
-                >Yes, I agree to receive emails about the work of Professor Yemi Osinbanjo and
-                  the Professor Yemi Osinbanjo Institute.
-                  For full information on the use of your data please see our
-                  <a href="/privacy-policy">privacy policy</a>.</label>
-              </div> */}
             </form>
           </div>
         </div>
