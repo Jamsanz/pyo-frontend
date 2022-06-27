@@ -131,7 +131,9 @@ const Dashboard = () => {
                     className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
-                    <span className="mx-4 font-medium text-[15px]">Category</span>
+                    <span className="mx-4 font-medium text-[15px]">
+                      Category
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -139,7 +141,19 @@ const Dashboard = () => {
                     className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
-                    <span className="mx-4 font-medium text-[15px]">Schedule Meeting</span>
+                    <span className="mx-4 font-medium text-[15px]">
+                      Schedule Meetings
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    href="#"
+                  >
+                    <span className="mx-4 font-medium text-[15px]">
+                      New feed
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -147,9 +161,9 @@ const Dashboard = () => {
                     className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     onClick={logout}
                   >
-                      <span className="mx-4 font-medium text-[15px] text-gray-600  hover:bg-gray-200">
-                        Log out
-                      </span>
+                    <span className="mx-4 font-medium text-[15px] text-gray-600  hover:bg-gray-200">
+                      Log out
+                    </span>
                   </button>
                 </li>
               </ul>
