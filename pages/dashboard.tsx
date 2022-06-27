@@ -118,7 +118,7 @@ const Dashboard = () => {
 
                 <li>
                   <a
-                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    className="flex items-center px-[4px] py-2  mt-2 lg:mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
                     <span className="mx-4 font-medium text-[15px]">
@@ -128,7 +128,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <a
-                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    className="flex items-center px-[4px] py-2 mt-2 lg:mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
                     <span className="mx-4 font-medium text-[15px]">
@@ -138,27 +138,35 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <a
-                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    className="flex items-center px-[4px] py-2 mt-2 lg:mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    href="#"
+                  >
+                    <span className="mx-4 font-medium text-[15px]">Groups</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="flex items-center px-[4px] py-2 mt-2 lg:mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
                     <span className="mx-4 font-medium text-[15px]">
-                      Schedule Meetings
+                      Meetings
                     </span>
                   </a>
                 </li>
                 <li>
                   <a
-                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    className="flex items-center px-[4px] py-2 mt-2 lg:mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     href="#"
                   >
                     <span className="mx-4 font-medium text-[15px]">
-                      New feed
+                      News feed
                     </span>
                   </a>
                 </li>
                 <li>
                   <button
-                    className="flex items-center px-[4px] py-2 mt-5 text-gray-600 rounded-md hover:bg-gray-200"
+                    className="flex items-center px-[4px] py-2 mt-2 lg:mt-5 text-gray-600 rounded-md hover:bg-gray-200"
                     onClick={logout}
                   >
                     <span className="mx-4 font-medium text-[15px] text-gray-600  hover:bg-gray-200">
