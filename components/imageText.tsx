@@ -8,7 +8,7 @@ const ImageText = () => {
           <img className="w-full md:w-4/5 z-10" src="/images/PYO-127.jpg" />
         </div>
         <div className="flex flex-col w-full md:w-2/5 justify-end items-start text-center md:text-left">
-          <p className="tracking-loose w-full uppercase font-thin">
+          <p className="tracking-loose w-full capitalize font-thin">
             It is time for a new tribe!
           </p>
           <h1 className="my-4 text-5xl font-bold leading-tight">

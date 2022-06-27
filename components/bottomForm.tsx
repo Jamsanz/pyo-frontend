@@ -59,8 +59,8 @@ const BottomForm = () => {
   }, [success])
 
   return (
-    <div className={styles.container} id="form">
-      <div className="container mt-10">
+    <div className={styles.container}>
+      <div className="container mt-10" id="form">
         <div className="flex flex-col md:flex-row w-full">
           <div className="col w-full">
             <h6 className='text-black'>Don&apos;t Miss Anything.</h6>

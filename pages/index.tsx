@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     <Layout>
       <div
         className="pt-36 pb-24 object-cover w-full bg-cover bg-center bg-no-repeat merriFont"
-        style={{ background: "url('/images/PYO-13 11.jpg')" }}
+        style={{ background: "url('/images/PYO-13 11.jpg');"}}
       >
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-36 pb-36">
           <div className="flex flex-col w-full md:w-2/3 justify-center items-start text-center md:text-left">
@@ -181,7 +181,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
+      <div className="pt-34 pl-6 bg-gray-100 flex justify-center" id="about">
         <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
             <p className="uppercase tracking-loose w-full">
@@ -217,17 +217,18 @@ const Home: NextPage = () => {
       <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
         <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <p className="capitalize tracking-loose w-full font-thin">
-              Government Advisory
-            </p>
             <h1 className="my-4 text-3xl font-semibold leading-tight">
-              Supporting governments on the ground.
+              The below will be achieved through the PYO Fellowship Program.
             </h1>
             <p className="leading-normal text-2sm mb-8 font-thin">
-              We have staff in more than 20 countries across four continents and
-              are helping leaders build strong crisis response systems. We are
-              also providing bespoke support on disease suppression measures,
-              testing, equipment procurement, tech solutions and economic
+              1. Cluster supporters of PYO in a manner that is coordinated and targeted.
+            </p>
+            <p className="leading-normal text-2sm mb-8 font-thin">
+              2. Engage these supporters across various demographics with programs and initiatives that help to
+                keep the fire burning towards the activation of The New Tribe.
+            </p>
+            <p className="leading-normal text-2sm mb-8 font-thin">
+              3. Cluster supporters of PYO in a manner that is coordinated and targeted.
               response.
             </p>
           </div>
