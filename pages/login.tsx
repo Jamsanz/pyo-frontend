@@ -43,7 +43,7 @@ const Login= () => {
     } catch (error: any) {
       console.log(error.response.data);
       setError(error.response.data);
-      toastr.error(error?.response?.data!)
+      toastr.error("Invalid username and password")
     }
   }
   return (

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 const Dashboard = () => {
 	const router = useRouter()
 
+	const [nav, setNav] = useState<boolean>(false)
+
 	const [email, setEmail] = useState<string>("")
 	useEffect(() => {
 
@@ -14,6 +16,7 @@ const Dashboard = () => {
 		}
 		else router.push("/login");
 	}, []);
+	
 
 	return (
 		<div>
@@ -21,7 +24,8 @@ const Dashboard = () => {
 				<div className="px-6 py-3">
 					<div className="flex items-center justify-between">
 						<div className="flex items-center justify-start">
-							<button className="p-2 text-gray-600 rounded cursor-pointer lg:hidden ">
+							<button className="p-2 text-gray-600 rounded cursor-pointer lg:hidden "
+							onClick={() => setNav(!nav)}>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									className="w-6 h-6"
@@ -79,9 +83,9 @@ const Dashboard = () => {
 					</div>
 				</div>
 			</nav>
-			<div className="pt-12 lg:flex fixed">
+			<div className="lg:flex pt-12">
 				<div
-					className="flex flex-col w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[350px]"
+					className={`${nav ?"flex" : "hidden"} lg:flex flex-col w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[350px] fixed`}
 					style={{ borderRight: "2px solid #1f2937" }}
 				>
 					<div className="flex flex-col justify-between mt-6">
@@ -104,7 +108,7 @@ const Dashboard = () => {
 										href="#"
 									>
 										<span className="mx-4 font-medium text-[15px]">
-											Add Member
+											Profile
 										</span>
 									</a>
 								</li>

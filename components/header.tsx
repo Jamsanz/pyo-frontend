@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const Header = () => {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <nav id="header" className="fixed w-full z-30 top-0 text-white">
+    <nav id="header" className="fixed w-full z-30 top-0 text-white bg-white merrifont">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
           <img src="/images/pyologo.png" width="200px" />
@@ -30,7 +30,7 @@ const Header = () => {
           } mt-2 lg:mt-0 bg-white md:bg-transparent lg:bg-transparent text-black p-4 lg:p-0 z-20`}
           id="nav-content"
         >
-          <ul className="list-reset lg:flex justify-end flex-1 items-center">
+          <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3">
               <a
                 className="inline-block py-2 px-4 text-black font-bold no-underline"

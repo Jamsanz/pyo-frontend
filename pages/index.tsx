@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <div
-        className="pt-36 pb-24 object-cover w-full bg-cover bg-center"
+        className="pt-36 pb-24 object-cover w-full bg-cover bg-center bg-no-repeat merriFont"
         style={{ background: "url('/images/PYO-13 11.jpg')" }}
       >
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-36 pb-36">
@@ -32,16 +32,16 @@ const Home: NextPage = () => {
               Proposed Initiatives for the Continuous Engagement of PYO
               supporters, cohorts and partners Private and Confidential
             </h1>
-            <p className="leading-normal text-2xl mb-8">
+            {/* <p className="leading-normal text-2xl mb-8">
               Sub-hero message, not too long and not too short. Make it just
               right!
-            </p>
-            <a
+            </p> */}
+            {/* <a
               href="#form"
               className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-md my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
             >
               Subscribe
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
                 PYO Fellows - An annual elite className Fellowship Program
               </div>
               <p className="text-gray-700 text-base">
-                one-year fellowship which will be offered on a yearly basis, is
+                One-year fellowship which will be offered on a yearly basis, is
                 aimed at building a network of high-potential young Nigerians
                 who are already making a difference in their communities;
                 creating a sustainable opportunity to take their work to the

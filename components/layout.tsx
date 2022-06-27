@@ -13,8 +13,8 @@ const Layout = (props: any) => {
   }, []);
   return (
     <div
-      className="leading-normal tracking-normal text-white gradient"
-      style={{ fontFamily: "Source Sans Pro, sans - serif" }}
+      className="leading-normal tracking-normal text-white gradient merrifont"
+      style={{ fontFamily: "Merriweather, sans - serif"}}
       onScroll={handleScroll}
     >
       <Header />

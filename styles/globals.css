@@ -11,6 +11,8 @@ body {
   scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
@@ -21,6 +23,9 @@ body {
   }
 }
 
+body{
+  font-family: 'Merriweather', sans-serif !important;
+}
 
 a {
   color: inherit;
@@ -352,4 +357,7 @@ label[for="privacy-label"] {
 
 .boxShadow{
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.merriFont{
+  font-family: 'Merriweather', sans-serif !important;
 }
