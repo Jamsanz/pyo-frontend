@@ -14,7 +14,7 @@ const ImageText = () => {
           <h1 className="my-4 text-5xl font-bold leading-tight">
             PROFESSOR YEMI OSINBAJO Institute
           </h1>
-          <p className="leading-normal text-2xl mb-8">
+          <p className="leading-normal text-2xl mb-8 text-justify">
             will bring together supporters of PYO as one unit, establishing
             engagements for every demographic and age group.
           </p>

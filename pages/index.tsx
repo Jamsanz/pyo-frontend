@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import BottomForm from "../components/bottomForm";
@@ -20,15 +21,21 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <div
-        className="pt-36 pb-24 object-cover w-full bg-cover bg-center bg-no-repeat merriFont"
-        style={{ background: "url('/images/PYO-13 11.jpg');"}}
+        className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
+        // className="pt-36 pb-24 bg-no-repeat object-cover w-[100%]"
+        style={{
+          background: "url('/images/PYO-13 11.jpg');",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-36 pb-36">
           <div className="flex flex-col w-full md:w-2/3 justify-center items-start text-center md:text-left">
             <p className="uppercase tracking-loose w-full">
               Prof. Yemi Osinbajo Fellowship Programme
             </p>
-            <h1 className="my-4 text-5xl font-bold leading-tight">
+            <h1 className="my-4 text-[30px] lg:text-5xl font-bold leading-tight">
               Proposed Initiatives for the Continuous Engagement of PYO
               supporters, cohorts and partners Private and Confidential
             </h1>
@@ -55,8 +62,8 @@ const Home: NextPage = () => {
             </h1>
           </div>
 
-          <div className="w-full md:w-3/5 py-8 align-middle">
-            <h1 className="my-4 text-3l font-light">
+          <div className="w-full md:w-3/5 py-8 align-middle ">
+            <h1 className="my-4 text-3l font-light text-justify">
               The campaign period for the recently concluded primaries elections
               of political parties in Nigeria affirmed the popularity of His
               Excellency, Vice President Yemi Osinbajo. The widespread
@@ -66,16 +73,18 @@ const Home: NextPage = () => {
               is important to design programs and projects to:
             </h1>
             <ol className="my-4 text-3l font-light">
-              <li>
+              <li className="text-justify pb-3">
                 Cluster supporters of PYO in a manner that is coordinated and
-                targeted
+                targeted.
               </li>
-              <li>
+              <li className="text-justify pb-3">
                 Engage these supporters across various demographics with
-                programs and initiatives that help to <br />
+                programs and initiatives that help to.
+              </li>
+              <li className="text-justify pb-3">
                 keep the fire burning towards the activation of The New Tribe
               </li>
-              <li>
+              <li className="text-justify pb-3">
                 Disseminate information on PYO’s values, and other initiatives
                 to supporters
               </li>
@@ -93,20 +102,18 @@ const Home: NextPage = () => {
               alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">
+              <div className="font-bold text-xl mb-2 text-center pb-5">
                 PYO Fellows - An annual elite className Fellowship Program
               </div>
-              <p className="text-gray-700 text-base">
+              <p className="text-gray-700 text-base text-justify">
                 One-year fellowship which will be offered on a yearly basis, is
                 aimed at building a network of high-potential young Nigerians
                 who are already making a difference in their communities;
                 creating a sustainable opportunity to take their work to the
-                next level through an immersive curriculum that
-              </p>
-              <p className="text-gray-700 text-base">
-                combines academic, skills-based, and hands-on learning, and
-                providing opportunities for them to rise to top leadership
-                positions in the public sector.
+                next level through an immersive curriculum that combines
+                academic, skills-based, and hands-on learning, and providing
+                opportunities for them to rise to top leadership positions in
+                the public sector.
               </p>
             </div>
           </div>
@@ -117,11 +124,11 @@ const Home: NextPage = () => {
               alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">
+              <div className="font-bold text-xl mb-2 text-center pb-5">
                 PYO New Tribe (white-collar) - “Keeping the coal hot” towards a
                 2023 or 2027 campaign
               </div>
-              <p className="text-gray-700 text-base">
+              <p className="text-gray-700 text-base text-justify">
                 The program will establish cells and clubs in primary and
                 secondary schools with the aim to sell the ideals of PYO to
                 young Nigerians at a young age. Catching them young and
@@ -141,11 +148,11 @@ const Home: NextPage = () => {
               alt="Sunset in the mountains"
             />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">
+              <div className="font-bold text-xl mb-2 text-center pb-5">
                 PYO New Tribe (blue-collar) - “Keeping the coal hot” towards a
                 2023 or 2027 campaign.
               </div>
-              <p className="text-gray-700 text-base">
+              <p className="text-gray-700 text-base text-justify ">
                 The PYO New Tribe blue collar project runs programmes, projects
                 and activities across various blue collar demographics such as
                 market women, taxi drivers, okada riders, artisans etc. The
@@ -171,12 +178,23 @@ const Home: NextPage = () => {
           </div>
 
           {/* <!-- Right Col --> */}
-          <div className="w-full md:w-3/5 py-8 align-middle">
-            <input
-              className=" lg:mx-0 hover:underline bg-gray-100 text-black font-light shadow rounded-4 my-6 py-4 px-8  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1"
-              type="button"
-              value="Subscribe"
-            ></input>
+          <div
+            className="py-8 align-middle text-center"
+            style={{
+              margin: "0 auto",
+            }}
+          >
+            <div className="bg-white  px-4 py-3 rounded-md">
+              <Link
+                className=" lg:mx-0 hover:underline bg-white text-black font-light shadow rounded-4 my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1"
+                href="#member"
+                style={{
+                  backgroundColor: "white",
+                }}
+              >
+                Subscribe
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -184,13 +202,10 @@ const Home: NextPage = () => {
       <div className="pt-34 pl-6 bg-gray-100 flex justify-center" id="about">
         <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <p className="uppercase tracking-loose w-full">
-              What business are you?
-            </p>
-            <h1 className="my-2 text-5xl font-bold leading-tight">
+            <h1 className="my-2 text-5xl font-bold leading-tight mb-10">
               Prof. Yemi Osinbajo Global Institute for Governance!
             </h1>
-            <p className="leading-normal text-2sm mb-8 font-light">
+            <p className="leading-normal text-2sm mb-8 font-light text-justify">
               PYO Global Institute for Governance aims to develop exceptionally
               passionate, principled, and innovative governmental, corporate,
               and civil society leaders while also establishing itself as a
@@ -216,20 +231,22 @@ const Home: NextPage = () => {
 
       <div className="pt-34 pl-6 bg-gray-100 flex justify-center">
         <div className="container px-3 mx-12  my-12 flex flex-wrap flex-col md:flex-row text-black">
-          <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-            <h1 className="my-4 text-3xl font-semibold leading-tight">
+          <div className="flex flex-col w-full md:w-2/5 justify-center items-start">
+            <h1 className="my-4 text-3xl font-semibold leading-tight text-left">
               The below will be achieved through the PYO Fellowship Program.
             </h1>
-            <p className="leading-normal text-2sm mb-8 font-thin">
-              1. Cluster supporters of PYO in a manner that is coordinated and targeted.
+            <p className="leading-normal text-2sm mb-8 font-thin text-justify">
+              1. Cluster supporters of PYO in a manner that is coordinated and
+              targeted.
             </p>
-            <p className="leading-normal text-2sm mb-8 font-thin">
-              2. Engage these supporters across various demographics with programs and initiatives that help to
-                keep the fire burning towards the activation of The New Tribe.
+            <p className="leading-normal text-2sm mb-8 font-thin text-justify">
+              2. Engage these supporters across various demographics with
+              programs and initiatives that help to keep the fire burning
+              towards the activation of The New Tribe.
             </p>
-            <p className="leading-normal text-2sm mb-8 font-thin">
-              3. Cluster supporters of PYO in a manner that is coordinated and targeted.
-              response.
+            <p className="leading-normal text-2sm mb-8 font-thin text-justify">
+              3. Cluster supporters of PYO in a manner that is coordinated and
+              targeted. response.
             </p>
           </div>
 
@@ -245,7 +262,7 @@ const Home: NextPage = () => {
           style={{ background: "url(/images/PYO-1.jpg)" }}
         >
           <h2 className="text-2xl font-bold">PRESIDENT YEMI OSINBANJO</h2>
-          <p className="mb-8 ">
+          <p className="mb-8 text-justify">
             As societies transition to low-carbon and resilient economies, this
             initiative will develop a framework for promoting equitable access
             to the benefits and sharing of the costs of sustainable development,
