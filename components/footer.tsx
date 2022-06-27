@@ -2,7 +2,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-grey-700 h-auto pt-36">
+    <footer
+      className="bg-grey-700 h-auto pt-10 mt-20"
+      style={{ borderTop: "1px solid black" }}
+    >
       <div className="container mx-auto px-8">
         <div className="w-full flex flex-col md:flex-row py-6">
           <div className="flex-1 mb-6 text-black">
@@ -11,7 +14,6 @@ const Footer = () => {
               href="#"
             >
               {/* <!--Icon from: http://www.potlabicons.com/ --> */}
-
               LANDING
             </a>
           </div>
@@ -22,19 +24,25 @@ const Footer = () => {
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >FAQ</a>
+                >
+                  FAQ
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Help</a>
+                >
+                  Help
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Support</a>
+                >
+                  Support
+                </a>
               </li>
             </ul>
           </div>
@@ -45,13 +53,17 @@ const Footer = () => {
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Terms</a>
+                >
+                  Terms
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Privacy</a>
+                >
+                  Privacy
+                </a>
               </li>
             </ul>
           </div>
@@ -62,19 +74,25 @@ const Footer = () => {
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Facebook</a>
+                >
+                  Facebook
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Linkedin</a>
+                >
+                  Linkedin
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Twitter</a>
+                >
+                  Twitter
+                </a>
               </li>
             </ul>
           </div>
@@ -85,26 +103,32 @@ const Footer = () => {
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Official Blog</a>
+                >
+                  Official Blog
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >About Us</a>
+                >
+                  About Us
+                </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
                   className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >Contact</a>
+                >
+                  Contact
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer;
