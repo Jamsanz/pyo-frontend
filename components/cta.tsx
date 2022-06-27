@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h6>Don't Miss Anything.</h6>
+            <h6>Don&apos;t Miss Anything.</h6>
             <h2>
-              Be the first to know what we're doing <br />
+              Be the first to know what we&apos;re doing <br />
               - and how you can get more involved.
             </h2>
             <p>Sign up to hear more and get involved.</p>
