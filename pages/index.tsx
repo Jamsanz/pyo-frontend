@@ -18,14 +18,6 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <>
-      <Head>
-        <Script
-          strategy='beforeInteractive'
-          src={'../scripts/static.js'}
-        >
-        </Script>
-      </Head>
       <div
         className="leading-normal tracking-normal text-white gradient"
         style={{ fontFamily: "Source Sans Pro, sans - serif" }}
@@ -401,7 +393,6 @@ const Home: NextPage = () => {
           </div>
         </footer>
       </div>
-    </>
   );
 }
 
