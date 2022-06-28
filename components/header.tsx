@@ -7,7 +7,7 @@ const Header = () => {
     <nav id="header" className="fixed w-full z-30 top-0 text-white bg-white merrifont">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
-          <img src="/images/pyologo.png" width="200px" />
+          <img src="/images/logo2.jpeg" width="200px" />
         </div>
         <div className="block lg:hidden pr-4">
           <button
