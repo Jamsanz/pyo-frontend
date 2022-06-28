@@ -17,11 +17,11 @@ export const handleScroll = () => {
   const scrollpos = window.scrollY;
 
   if (scrollpos > 10) {
-    header.classList.add("bg-black");
-    navaction.classList.remove("bg-white");
-    navaction.classList.add("gradient");
-    navaction.classList.remove("text-gray-800");
-    navaction.classList.add("text-black");
+    header?.classList.add("bg-black");
+    navaction?.classList.remove("bg-white");
+    navaction?.classList.add("gradient");
+    navaction?.classList.remove("text-gray-800");
+    navaction?.classList.add("text-black");
     //Use to switch toggleColour colours
     for (var i = 0; i < toToggle.length; i++) {
       toToggle[i].classList.add("text-gray-800");
@@ -32,10 +32,10 @@ export const handleScroll = () => {
     navcontent.classList.add("bg-white");
   } else {
     header.classList.remove("bg-black");
-    navaction.classList.remove("gradient");
-    navaction.classList.add("bg-white");
-    navaction.classList.remove("text-white");
-    navaction.classList.add("tex-white");
+    navaction?.classList.remove("gradient");
+    navaction?.classList.add("bg-white");
+    navaction?.classList.remove("text-white");
+    navaction?.classList.add("tex-white");
     //Use to switch toggleColour colours
     for (var i = 0; i < toToggle.length; i++) {
       toToggle[i].classList.add("text-white");

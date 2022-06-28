@@ -34,15 +34,7 @@ const Header = () => {
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3">
               <a
-                className="inline-block py-2 px-4 text-black font-bold no-underline"
-                href="#"
-              >
-                Home
-              </a>
-            </li>
-            <li className="mr-3">
-              <a
-                className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block py-2 px-4 text-[#53575B] no-underline"
                 href="#about"
               >
                 About
@@ -50,22 +42,21 @@ const Header = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                href="#member"
+                className="inline-block text-[#53575B] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                href="#members"
               >
-                Membership
+                Members
+              </a>
+            </li>
+            <li className="mr-3">
+              <a
+                className="inline-block text-[#53575B] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                href="#fellow"
+              >
+                Fellowship
               </a>
             </li>
           </ul>
-          <button
-            id="navAction"
-            className={`mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out`}
-            // onClick={}
-          >
-           <Link href="/login">
-           Login
-           </Link>
-          </button>
         </div>
       </div>
       <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
