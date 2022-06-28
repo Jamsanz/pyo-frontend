@@ -73,7 +73,7 @@ const Footer = () => {
                   <img
                     src="images/facebook.svg"
                     width="30px"
-                    className="hover:scale-105"
+                    className="hover:scale-110"
                   />
                 </a>
               </li>
@@ -85,7 +85,7 @@ const Footer = () => {
                   <img
                     src="images/instagram.svg"
                     width="30px"
-                    className="hover:scale-105"
+                    className="hover:scale-110"
                   />
                 </a>
               </li>
@@ -97,7 +97,7 @@ const Footer = () => {
                   <img
                     src="images/twitter.png"
                     width="30px"
-                    className="hover:scale-105"
+                    className="hover:scale-110"
                   />
                 </a>
               </li>

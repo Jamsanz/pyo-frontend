@@ -6,8 +6,8 @@ const Button = (props:any) => {
         <button
             type="button"
           className={`${
-            props.gray && "bg-[#53575B] text-xl text-[#fff]"
-          } bg-white lg:mx-0px-6 py-3 px-8 text-black font-light shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold`}
+            props.gray && "bg-[#53575B] text-[18px] text-[#fff]"
+          } bg-white lg:mx-0px-6 py-3 px-8 font-bold text-black shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold`}
         >
           {props.text}
         </button>

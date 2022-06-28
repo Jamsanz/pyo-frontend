@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="pt-24 pb-12 bg-[#53575B]" id="about">
+      <div className="pt-12 lg:pt-24 pb-12 bg-[#53575B]" id="about">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/6 justify-start items-center md:items-start text-center md:text-left">
             <h1 className="my-4 text-3xl font-bold leading-tight text-[#fff] border-0 md:border-l-[6px] border-l-solid border-l-white pl-5">
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
-            <p className="mb-4 text-lg text-[white] font-[400] leading-loose text-center md:text-justify">
+            <p className="mb-4 text-lg text-[white] font-[400] leading-loose text-justify">
               As a unifying platform for the exchange of knowledge and mutual
               learning, the Prof. Yemi Osinhajo Institute brings together all
               the different people and partners involved in promoting
@@ -61,8 +61,8 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="py-16 bg-[#fff]" id="fellow">
-        <h1 className="px-20 my-4 pb-10 text-4xl font-bold text-center leading-tight text-[#53575B]">
+      <div className="pb-8 md:py-16 bg-[#fff]" id="fellow">
+        <h1 className="px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
           Programmes and Fellowships
         </h1>
         <div className="pb-8 border-b-[1px] border-b-solid border-b-[#53575B] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
             </h1>
           </div>
 
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-5 text-[#53575B]">
+          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#53575B]">
             <h3 className="text-3xl text-center mx-auto pb-[20px]">
               {" "}
               PYO Fellows
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
             <div className="text-center m-auto"></div>
           </div>
 
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-5 text-[#53575B]">
+          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#53575B]">
             <h3 className="text-3xl text-center mx-auto pb-[20px]">
               PYO New Tribe
             </h3>
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="lg:px-24 bg-[#fff] text-center mx-uato">
-        <h1 className=" px-20 my-4 pb-10 text-4xl font-bold text-center leading-tight text-[#53575B]">
+        <h1 className=" px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
           Latest Initiativies from the Institute
         </h1>
         <div className="pb-8 container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#53575B]">
