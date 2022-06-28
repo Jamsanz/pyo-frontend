@@ -42,7 +42,7 @@ const Home: NextPage = () => {
       <div className="pt-12 lg:pt-24 pb-12 bg-[#53575B]" id="about">
         <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black">
           <div className="flex flex-col w-full md:w-2/6 justify-start items-center md:items-start text-center md:text-left">
-            <h1 className="my-4 text-3xl font-bold leading-tight text-[#fff] border-0 md:border-l-[6px] border-l-solid border-l-white pl-5">
+            <h1 className=" pl-0 my-4 text-3xl font-bold leading-tight text-[#fff] border-0 md:border-l-[6px] border-l-solid border-l-white md:pl-5">
               Promoting Sustainable <br /> Growth
             </h1>
           </div>
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="pb-8 md:py-16 bg-[#fff]" id="fellow">
-        <h1 className="px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
+        <h1 className=" pt-10 md:pt-0 px-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
           Programmes and Fellowships
         </h1>
         <div className="pb-8 border-b-[1px] border-b-solid border-b-[#53575B] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="lg:px-24 bg-[#fff] text-center mx-uato">
-        <h1 className=" px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
+        <h1 className=" px-0 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
           Latest Initiativies from the Institute
         </h1>
         <div className="pb-8 container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#53575B]">
