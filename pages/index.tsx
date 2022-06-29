@@ -60,10 +60,10 @@ const Home: NextPage = () => {
       >
         <div className="container pl-[3%] pr-[3%]  md:pl-[15%]  lg:pl-[25%] mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-[10rem] pb-36">
           <div className="flex flex-col w-full md:w-[100%] xl:w-[80%] justify-center items-start text-center ">
-            <h1 className=" my-4 text-[40px] leading-tight lg:text-6xl m-auto font-bold text-left">
+            <h1 className=" mt-4 text-[40px] leading-tight lg:text-6xl m-auto font-bold text-left">
               Visionary leaders for Africa's economic future
             </h1>
-            <p className="tribe text-left text-[40px] leading-tight lg:text-5xl">
+            <p className="tribe text-left text-[40px] lg:text-4xl">
               It is time for a new tribe
             </p>
           </div>
@@ -177,28 +177,30 @@ const Home: NextPage = () => {
           {pyoInstitute?.map((item) => {
             return (
               <div
-                className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-justify mx-uato"
+                className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#000] text-justify"
                 key={item?.id}
               >
-                <h3 className=" text-xl text-center mx-auto pb-[20px] font-bold">
+                <h3 className=" text-xl font-bold text-center mx-auto pb-[20px]">
                   {item?.title}
                 </h3>
-                <img
-                  src={item?.images}
-                  className="boxShadow2 mx-auto rounded-lg mb-10"
-                />
+                <div className="w-full text-center mx-auto">
+                  <img
+                    src={item?.images}
+                    width="100%"
+                    height="70px"
+                    className="rounded-lg mb-[20px] boxShadow2"
+                  />
+                </div>
                 <span className=" text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
                   {item?.text1}
                 </span>
                 {showInitiative ? (
                   <>
                     <span className="text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
-                      {moreTextInitiative?.id === item?.id &&
-                        moreTextInitiative?.text2}
+                      {moreTextInitiative?.id === item?.id && moreTextInitiative?.text2}
                     </span>
                     <p className="text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
-                      {moreTextInitiative?.id === item?.id &&
-                        moreTextInitiative?.text3}
+                      {moreTextInitiative?.id === item?.id && moreTextInitiative?.text3}
                     </p>
                   </>
                 ) : (
@@ -211,7 +213,7 @@ const Home: NextPage = () => {
                     onClick={() => setShowInitiative(!showInitiative)}
                   >
                     <br />
-                    <p className="text-left font-bold text-black -mt-4 pl-2 transform transition hover:scale-105 duration-300 ease-in-out">
+                    <p className="font-bold text-black -mt-4 text-left pl-2 transform transition hover:scale-105 duration-300 ease-in-out">
                       Show less
                     </p>
                   </span>
@@ -220,16 +222,18 @@ const Home: NextPage = () => {
                     className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem]"
                     onClick={() => showMoreInitiative(item?.id!)}
                   >
-                    <br />
-                    <p className="pl-2 font-bold text-black transform transition hover:scale-105 duration-300 ease-in-out">
+                    <p className=" pl-2 font-bold text-black transform transition hover:scale-105 duration-300 ease-in-out">
                       continue reading ...
                     </p>
                   </span>
                 )}
+
+                <div className="text-center m-auto"></div>
               </div>
             );
           })}
-
+          
+          
           <div className="text-center m-auto ">
             <Button gray text="Coming Soon" />
           </div>

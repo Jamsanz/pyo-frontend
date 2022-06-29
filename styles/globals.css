@@ -391,7 +391,9 @@ label[for="privacy-label"] {
   font-style: italic;
   font-family: Karla, "sans-serif";
 }
-
+select{
+  background-color: #fff;
+}
  select:required:invalid {
    color: #9CA3AF;
  }
