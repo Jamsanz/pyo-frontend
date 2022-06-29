@@ -17,7 +17,7 @@ const Footer = () => {
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   FAQ
@@ -25,7 +25,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Help
@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Support
@@ -46,7 +46,7 @@ const Footer = () => {
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Terms
@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Privacy
@@ -67,7 +67,7 @@ const Footer = () => {
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   <img
@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   <img
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   <img

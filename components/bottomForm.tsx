@@ -21,6 +21,7 @@ const BottomForm = () => {
   const [show, setShow] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
+  const [fellow, setFellow] = useState<boolean>(false)
 
   const showForm = () => {
     setShow(true);
@@ -70,9 +71,13 @@ const BottomForm = () => {
         className="container  mt-0 md:mt-10 px-0 md:px-16 py-12"
         id="members"
       >
-        <div className="flex flex-col md:flex-row w-full">
-          <div className="col w-full px-0 ">
-            <h2 className="text-[#53575B] border-0 md:border-l-[6px] lg:w-[75%] border-l-solid border-l-[#53575B] pl-5 mb-10">
+        <div
+          className={`${
+            show ? "items-start" : "items-center"
+          }  flex flex-col md:flex-row w-full items-center`}
+        >
+          <div className="col w-full px-0 mr-5">
+            <h2 className="text-[#000] border-0 md:border-l-[6px] leading-8 lg:w-[75%] border-l-solid border-l-[#000] pl-5 mb-10">
               Be the first to know what we're doing.
             </h2>
           </div>
@@ -126,7 +131,7 @@ const BottomForm = () => {
                   <div className="PYO-select">
                     <select
                       id="dropdown"
-                      className="default"
+                      className="default select"
                       name="country"
                       onChange={handleChange}
                       data-error="Please select your country."
@@ -134,7 +139,7 @@ const BottomForm = () => {
                       value={data?.country}
                       required
                     >
-                      <option value="">Country of residence* </option>
+                      <option value="" disabled selected>Country of residence* </option>
                       <option value="AF">Afghanistan</option>
                       <option value="AL">Albania</option>
                       <option value="DZ">Algeria</option>
@@ -398,16 +403,41 @@ const BottomForm = () => {
                     </select>
                   </div>
                 </div>
+                {fellow && (
+                  <div className="fields-set">
+                    <div className="PYO-select">
+                      <select
+                        id="dropdown"
+                        className="default text-[#53575b] select"
+                        name="country"
+                        // onChange={handleChange}
+                        data-error="Please select your country."
+                        placeholder="Country of residence*"
+                        // value={data?.country}
+                        required
+                      >
+                        <option value="" disabled selected>Select Fellowship Programme* </option>
+                        <option value="PYO Fellows">PYO Fellows </option>
+                        <option value="PYO New Tribe">PYO New Tribe </option>
+                      </select>
+                    </div>
+                  </div>
+                )}
                 <div className="ml-2 my-2 flex items-center space-x-3">
-                  <input type="checkbox" name="membership_interest" id="" />
+                  <input
+                    type="checkbox"
+                    name="membership_interest"
+                    id=""
+                    onClick={() => setFellow(!fellow)}
+                  />
                   <label htmlFor="memeber">
-                    Would like to become a member of the PYO institute?
+                    Would you like to become a member of the PYO institute?
                   </label>
                 </div>
 
-                <div className="Submit">
+                <div className="Submit" >
                   <input
-                    className="hover:bg-white"
+                    className=""
                     type="submit"
                     name="submit"
                     value={loading ? "Loading..." : "Sign up"}
@@ -420,7 +450,7 @@ const BottomForm = () => {
             {!show ? (
               <div className="Submit">
                 <input
-                  className="hover:bg-white"
+                  className=""
                   type="submit"
                   value={"Sign up"}
                   onClick={showForm}

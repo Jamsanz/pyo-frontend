@@ -34,7 +34,7 @@ const Header = () => {
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3">
               <a
-                className="inline-block py-2 px-4 text-[#53575B] no-underline"
+                className="inline-block py-2 px-4 text-[#000] font-bold font-[18px] no-underline"
                 href="#about"
               >
                 About
@@ -42,7 +42,7 @@ const Header = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-[#53575B] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-[#000] font-bold font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#members"
               >
                 Members
@@ -50,7 +50,7 @@ const Header = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-[#53575B] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-[#000] font-bold font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#fellow"
               >
                 Fellowship

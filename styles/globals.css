@@ -240,8 +240,6 @@ p {
 .fields-wrapper {
   position: relative;
   transition: all 0.3s ease-in-out;
-  height: 397px;
-  max-height: 397px;
 }
 
 .fields-set {
@@ -328,10 +326,11 @@ input[type="submit"] {
   text-align: center;
   white-space: nowrap;
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(-45deg, #53565A 50%, #383a3c 51%);
+  background: black;
   background-position-x: 100%;
   background-size: 300%;
   box-shadow: inset 0 0 0 #d8d8d8, inset 0 0 0 #d8d8d8;
+  border-radius: 10px;
 }
 
 label[for="privacy-label"] {
@@ -367,3 +366,20 @@ label[for="privacy-label"] {
 .transit{
       transition: all 0.4s ease;
 }
+.tribe{
+  font-weight: 200;
+  font-style: italic;
+  font-family: Karla, "sans-serif";
+}
+
+ select:required:invalid {
+   color: #9CA3AF;
+ }
+
+ option[value=""][disabled] {
+   display: none;
+ }
+
+ option {
+   color: black;
+ }
