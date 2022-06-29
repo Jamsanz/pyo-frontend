@@ -1,23 +1,24 @@
 import React from 'react'
 
+  
 const Footer = () => {
   return (
     <footer
-      className="bg-grey-700 h-auto pt-10 mt-20"
+      className="bg-grey-700 h-auto pt-10 "
       style={{ borderTop: "1px solid black" }}
     >
       <div className="container mx-auto px-8">
         <div className="w-full flex flex-col md:flex-row py-6">
           <div className="flex-1 mb-6 text-black">
-            <img src="/images/pyologo.png" width="200px" />
+            <img src="/images/logo2.jpeg" width="200px" />
           </div>
           <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Links</p>
+            <p className="uppercase text-[#53575B] md:mb-6">Links</p>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   FAQ
                 </a>
@@ -25,7 +26,7 @@ const Footer = () => {
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Help
                 </a>
@@ -33,7 +34,7 @@ const Footer = () => {
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Support
                 </a>
@@ -41,12 +42,12 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Legal</p>
+            <p className="uppercase text-[#53575B] md:mb-6">Legal</p>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Terms
                 </a>
@@ -54,7 +55,7 @@ const Footer = () => {
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Privacy
                 </a>
@@ -62,59 +63,42 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Social</p>
+            <p className="uppercase text-[#53575B] md:mb-6">Social</p>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
-                  Facebook
+                  <img
+                    src="images/facebook.svg"
+                    width="30px"
+                    className="hover:scale-110"
+                  />
                 </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
-                  Linkedin
+                  <img
+                    src="images/instagram.svg"
+                    width="30px"
+                    className="hover:scale-110"
+                  />
                 </a>
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
-                  Twitter
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="flex-1">
-            <p className="uppercase text-gray-500 md:mb-6">Company</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Official Blog
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  About Us
-                </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a
-                  href="#"
-                  className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                >
-                  Contact
+                  <img
+                    src="images/twitter.png"
+                    width="30px"
+                    className="hover:scale-110"
+                  />
                 </a>
               </li>
             </ul>

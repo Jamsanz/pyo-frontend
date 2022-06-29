@@ -1,9 +1,8 @@
-import axios from 'axios';
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
-import { http } from '../utils/utils';
+import axios from "axios";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import styles from "../styles/Home.module.css";
+import { http } from "../utils/utils";
 import toastr from "../utils/toastr";
-
 
 interface IData {
   firstName?: string;
@@ -17,62 +16,76 @@ const BottomForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    country: ""
+    country: "",
   });
+  const [show, setShow] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
+  const showForm = () => {
+    setShow(true);
+  };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ): void => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
-  }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    http.post('/register', data).then((res) => {
-      toastr.success("Succesfully registered")
-      if (data) setSuccess(true)
-    
-    })
-      .catch(err => {
-        console.log(err)
+    http
+      .post("/register", data)
+      .then((res) => {
+        toastr.success("Succesfully registered");
+        if (data) setSuccess(true);
+      })
+      .catch((err) => {
+        console.log(err);
         if (err) {
-          toastr.error("Registration fail, try again")
+          toastr.error("Registration fail, try again");
         }
       })
       .finally(() => {
         setLoading(false);
-        setSuccess(true)
+        setSuccess(true);
+      });
+  };
 
-      })
-  }
-
-  useEffect(():any => {
-    if (success) setData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      country: ""
-    })
-  }, [success])
+  useEffect((): any => {
+    if (success)
+      setData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        country: "",
+      });
+  }, [success]);
 
   return (
     <div className={styles.container}>
-      <div className="container mt-10" id="member">
+      <div
+        className="container  mt-0 md:mt-10 px-0 md:px-16 py-12"
+        id="members"
+      >
         <div className="flex flex-col md:flex-row w-full">
-          <div className="col w-full px-0 lg:p-[2em]">
-            <h6 className='text-black'>Don&apos;t Miss Anything.</h6>
-            <h2 className='text-black'>
-              Be the first to know what we&apos;re doing
-              - and how you can get more involved.
+          <div className="col w-full px-0 ">
+            <h2 className="text-[#53575B] border-0 md:border-l-[6px] lg:w-[75%] border-l-solid border-l-[#53575B] pl-5 mb-10">
+              Be the first to know what we're doing.
             </h2>
-            <p className='text-black'>Sign up to hear more and get involved.</p>
           </div>
           <div className="w-full">
-            <form onSubmit={handleSubmit}>
-              <div className="fields-wrapper py-[30px] lg:p-30px">
+            <form
+              onSubmit={handleSubmit}
+              className={` ${
+                show
+                  ? " animate__animated animate__fadeInDown h-auto w-auto overflow-auto"
+                  : "h-0 w-0 overflow-hidden"
+              }`}
+            >
+              <div className="fields-wrapper pb-[30px] lg:p-30px">
                 <div className="fields-set">
                   <input
                     type="text"
@@ -111,14 +124,17 @@ const BottomForm = () => {
                 </div>
                 <div className="fields-set">
                   <div className="PYO-select">
-                    <select id="dropdown"
+                    <select
+                      id="dropdown"
+                      className="default"
                       name="country"
                       onChange={handleChange}
                       data-error="Please select your country."
-                      placeholder='Country*'
+                      placeholder="Country of residence*"
                       value={data?.country}
-                      required >
-                      <option value="">Country*</option>
+                      required
+                    >
+                      <option value="">Country of residence* </option>
                       <option value="AF">Afghanistan</option>
                       <option value="AL">Albania</option>
                       <option value="DZ">Algeria</option>
@@ -150,9 +166,7 @@ const BottomForm = () => {
                       <option value="BW">Botswana</option>
                       <option value="BV">Bouvet Island</option>
                       <option value="BR">Brazil</option>
-                      <option value="IO">
-                        British Indian Ocean Territory
-                      </option>
+                      <option value="IO">British Indian Ocean Territory</option>
                       <option value="VG">British Virgin Islands</option>
                       <option value="BN">Brunei</option>
                       <option value="BG">Bulgaria</option>
@@ -385,23 +399,41 @@ const BottomForm = () => {
                   </div>
                 </div>
                 <div className="ml-2 my-2 flex items-center space-x-3">
-                  <input
-                    type="checkbox"
-                    name="membership_interest"
-                    id=""
-                  />
-                  <label htmlFor='memeber'>Would like to become a member of the PYO institute?</label>
+                  <input type="checkbox" name="membership_interest" id="" />
+                  <label htmlFor="memeber">
+                    Would like to become a member of the PYO institute?
+                  </label>
                 </div>
+
                 <div className="Submit">
-                  <input className='hover:bg-white' type="submit" name="submit" value={loading ? "Loading...":"Sign up"} disabled={loading} />
+                  <input
+                    className="hover:bg-white"
+                    type="submit"
+                    name="submit"
+                    value={loading ? "Loading..." : "Sign up"}
+                    disabled={loading}
+                  />
                 </div>
               </div>
             </form>
+
+            {!show ? (
+              <div className="Submit">
+                <input
+                  className="hover:bg-white"
+                  type="submit"
+                  value={"Sign up"}
+                  onClick={showForm}
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default BottomForm;
