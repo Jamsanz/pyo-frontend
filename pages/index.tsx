@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       <div
         className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
         style={{
-          background: "url('/images/PYO-13 11.jpg');",
+          background: "url('/images/PYO-13 11.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -168,7 +168,7 @@ const Home: NextPage = () => {
       <div
         className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
         style={{
-          background: "url('/images/PYO-13 11.jpg');",
+          background: "url('/images/PYO-13 11.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
