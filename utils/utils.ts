@@ -1,7 +1,7 @@
 import axios from "axios";
 
 let baseURL =
-  process.env.NODE_ENV !== "development"
+  process.env.NODE_ENV === "development"
     ? "https://pyo-institute-backend.herokuapp.com/"
     : "http://localhost:5000";
 export const http = axios.create({
