@@ -99,7 +99,7 @@ const Home: NextPage = () => {
         <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
           {pyoFellowship?.map((data) => {
             return (
-              <div className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#000] text-justify">
+              <div className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#000] text-justify" key={data?.id}>
                 <h3 className=" text-xl font-bold text-center mx-auto pb-[20px]">
                   {data?.title}
                 </h3>
@@ -172,7 +172,7 @@ const Home: NextPage = () => {
         <div className="pb-8 container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
           {pyoInstitute?.map((item) => {
             return (
-              <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-justify mx-uato">
+              <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-justify mx-uato" key={item?.id}>
                 <h3 className=" text-xl text-center mx-auto pb-[20px] font-bold">
                   {item?.title}
                 </h3>
