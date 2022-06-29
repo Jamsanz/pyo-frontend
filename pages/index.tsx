@@ -99,7 +99,10 @@ const Home: NextPage = () => {
         <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
           {pyoFellowship?.map((data) => {
             return (
-              <div className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#000] text-justify" key={data?.id}>
+              <div
+                className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#000] text-justify"
+                key={data?.id}
+              >
                 <h3 className=" text-xl font-bold text-center mx-auto pb-[20px]">
                   {data?.title}
                 </h3>
@@ -116,15 +119,16 @@ const Home: NextPage = () => {
                 </span>
                 {show ? (
                   <>
-                    <span className=" text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
-                      {moreText?.id === data?.id && moreText?.text2 }
+                    <span className="text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
+                      {moreText?.id === data?.id && moreText?.text2}
                     </span>
                     <p className="text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
-                      {moreText?.id === data?.id && moreText?.text3 }
+                      {moreText?.id === data?.id && moreText?.text3}
                     </p>
-                  </>)
-                  : ""
-                }
+                  </>
+                ) : (
+                  ""
+                )}
 
                 {moreText?.id === data?.id && show ? (
                   <span
@@ -132,7 +136,7 @@ const Home: NextPage = () => {
                     onClick={() => setShow(!show)}
                   >
                     <br />
-                    <p className="font-bold hover:scale-105 text-black">
+                    <p className="font-bold text-black -mt-4 text-left pl-2 transform transition hover:scale-105 duration-300 ease-in-out">
                       Show less
                     </p>
                   </span>
@@ -141,7 +145,7 @@ const Home: NextPage = () => {
                     className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem]"
                     onClick={() => showMore(data?.id!)}
                   >
-                    <p className=" pl-2 font-bold hover:scale-105 text-black">
+                    <p className=" pl-2 font-bold text-black transform transition hover:scale-105 duration-300 ease-in-out">
                       continue reading ...
                     </p>
                   </span>
@@ -172,7 +176,10 @@ const Home: NextPage = () => {
         <div className="pb-8 container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
           {pyoInstitute?.map((item) => {
             return (
-              <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-justify mx-uato" key={item?.id}>
+              <div
+                className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-justify mx-uato"
+                key={item?.id}
+              >
                 <h3 className=" text-xl text-center mx-auto pb-[20px] font-bold">
                   {item?.title}
                 </h3>
@@ -185,11 +192,13 @@ const Home: NextPage = () => {
                 </span>
                 {showInitiative ? (
                   <>
-                    <span className=" text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
-                      {moreTextInitiative?.id === item?.id && moreTextInitiative?.text2}
+                    <span className="text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
+                      {moreTextInitiative?.id === item?.id &&
+                        moreTextInitiative?.text2}
                     </span>
                     <p className="text-lg text-[#000] font-[400] leading-[1.5rem] text-justify">
-                      {moreTextInitiative?.id === item?.id && moreTextInitiative?.text3}
+                      {moreTextInitiative?.id === item?.id &&
+                        moreTextInitiative?.text3}
                     </p>
                   </>
                 ) : (
@@ -202,7 +211,7 @@ const Home: NextPage = () => {
                     onClick={() => setShowInitiative(!showInitiative)}
                   >
                     <br />
-                    <p className="font-bold hover:scale-105 text-black">
+                    <p className="text-left font-bold text-black -mt-4 pl-2 transform transition hover:scale-105 duration-300 ease-in-out">
                       Show less
                     </p>
                   </span>
@@ -212,7 +221,7 @@ const Home: NextPage = () => {
                     onClick={() => showMoreInitiative(item?.id!)}
                   >
                     <br />
-                    <p className=" pl-2 font-bold hover:scale-105 text-black">
+                    <p className="pl-2 font-bold text-black transform transition hover:scale-105 duration-300 ease-in-out">
                       continue reading ...
                     </p>
                   </span>
