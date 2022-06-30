@@ -43,7 +43,7 @@ const Dashboard = () => {
           </div>
           <ProfileCard />
         </div>
-        <div className="lg:flex-1 mx-3 mt-12 lg:mt-0">
+        <div className="lg:flex-1 mx-3 mt-12 lg:mt-0 overflow-x-auto">
           <div className='ml-12 mb-5 text-[#000]'>
             <span className="capitalize font-bold text-2xl">My Schedules <i className="fa-solid fa-timer"></i></span>
           </div>
