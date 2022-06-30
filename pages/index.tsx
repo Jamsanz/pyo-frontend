@@ -106,10 +106,11 @@ const Home: NextPage = () => {
                 <h3 className="monoFont text-[22px] font-bold text-center md:pb-0 h-auto md:h-16">
                   {data?.title}
                 </h3>
-                <div className="text-center mx-auto">
+                <div className="w-full text-center mx-auto">
                   <img
                     src={data?.images}
                     width="100%"
+                    height="70px"
                     className="rounded-lg mb-[20px] boxShadow2"
                   />
                 </div>
