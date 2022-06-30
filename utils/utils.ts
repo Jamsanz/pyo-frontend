@@ -51,6 +51,7 @@ export const handleScroll = () => {
 export interface IReadMore  {
   id?: number,
   title?: string,
+  slug?: string,
   images?: string,
   text1?: string,
   text2?: string,
@@ -117,6 +118,7 @@ export const pyoInstitute: IReadMore[] = [
   {
     id: 2,
     title: "PYO - Tech for Growth",
+    slug: "(Tech 4 Growth)",
     images: "images/5.png",
     text1:
       "PYO-Tech for Growth initiative seeks to facilitate growth in the technology and creative ecosystem in order to boost innovation, create employment, encourage entrepreneurship, improve social development, and achieve economic transformation. ICTs can assist underprivileged communities in obtaining, managing, and disseminating knowledge, as well as connecting to global information and service networks. ",
@@ -124,6 +126,7 @@ export const pyoInstitute: IReadMore[] = [
   {
     id: 3,
     title: "PYO - Just Energy Transition",
+    slug: "(JET)",
     images: "images/6.png",
     text1:
       "PYO Just Energy Transition is based on two grounds: that collective global action is necessary to address the drivers and consequences of climate change; and the transformational change required to solve these challenges for economies, societies, and the global commons has the potential to affect some stakeholders while benefiting others. ",

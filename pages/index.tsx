@@ -93,7 +93,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="pb-8 md:py-16 bg-[#fff]" id="fellow">
-        <h1 className=" pt-10 md:pt-0 px-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
+        <h1 className=" px-5  pt-10 md:pt-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
           Fellowship Programmes
         </h1>
         <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
                 className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={data?.id}
               >
-                <h3 className="monoFont text-[22px] font-bold text-center mx-auto pb-[20px]">
+                <h3 className="monoFont text-[22px] font-bold text-center md:pb-0 h-auto md:h-16">
                   {data?.title}
                 </h3>
                 <div className="text-center mx-auto">
@@ -121,11 +121,9 @@ const Home: NextPage = () => {
                     <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                       {moreText?.id === data?.id && moreText?.text2}
                     </p>
-                    {moreText?.id === data?.id &&
-                    moreText?.text4 !== "" ? (
+                    {moreText?.id === data?.id && moreText?.text4 !== "" ? (
                       <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
-                        {moreText?.id === data?.id &&
-                          moreText?.text4}
+                        {moreText?.id === data?.id && moreText?.text4}
                       </p>
                     ) : (
                       ""
@@ -167,7 +165,6 @@ const Home: NextPage = () => {
             );
           })}
 
-          
           <div className="text-center mx-auto">
             <Link href="#members">
               <button
@@ -182,18 +179,19 @@ const Home: NextPage = () => {
       </div>
 
       <div className="lg:px-24 bg-[#fff] text-center mx-uato">
-        <h1 className=" px-0 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
+        <h1 className=" px-5 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
           Latest Initiatives from the PYO Institute
         </h1>
-        <div className="pb-8 container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
+        <div className="pb-8 container mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
           {pyoInstitute?.map((item) => {
             return (
               <div
                 className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={item?.id}
               >
-                <h3 className="monoFont text-[22px] font-bold text-center mx-auto pb-[20px]">
+                <h3 className="monoFont text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16">
                   {item?.title}
+                  <br /> {item?.slug}
                 </h3>
                 <div className="w-full text-center mx-auto">
                   <img
@@ -212,12 +210,15 @@ const Home: NextPage = () => {
                       {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text2}
                     </p>
-                    {(moreTextInitiative?.id === item?.id &&
-                      moreTextInitiative?.text4 !== "") ?
+                    {moreTextInitiative?.id === item?.id &&
+                    moreTextInitiative?.text4 !== "" ? (
                       <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreTextInitiative?.id === item?.id &&
                           moreTextInitiative?.text4}
-                      </p> : ""}
+                      </p>
+                    ) : (
+                      ""
+                    )}
                     <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                       {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text3}
@@ -256,8 +257,7 @@ const Home: NextPage = () => {
               </div>
             );
           })}
-          
-          
+
           <div className="text-center m-auto ">
             <Button gray text="Coming Soon" />
           </div>
