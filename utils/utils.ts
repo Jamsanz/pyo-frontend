@@ -54,27 +54,28 @@ export interface IReadMore  {
   images?: string,
   text1?: string,
   text2?: string,
-  text3?:string,
+  text3?: string,
+  text4?: string
 }
 
 export const pyoFellowship:IReadMore[] = [
   {
     id: 1,
-    title: "PYO FELLOWS",
+    title: "PYO Fellows",
     images: "images/1 3.png",
     text1:
       "A proposed one-year fellowship which will be offered on a yearly basis is aimed at building a network of high-potential young Nigerians who are already making a difference in their communities.",
   },
   {
     id: 2,
-    title: "PYO NEW TRIBE (White-Collar)",
+    title: "PYO New Tribe (White-Collar)",
     images: "images/2 3.png",
     text1:
       "PYO New Tribe White Collar will bring together various age groups and demographics, to create awareness and develop a nuanced perspective among Nigerians to tackle challenges in various fields in the public and private sectors.",
   },
   {
     id: 3,
-    title: "PYO NEW  TRIBE (Blue-Collar)",
+    title: "PYO New Tribe (Blue-Collar)",
     images: "images/3 3.png",
     text1:
       "The PYO New Tribe Blue-Collar will provide funding, skills development programmes and capacity building across various blue collar demographics such as market women, taxi drivers, okada riders, artisans etc."
@@ -99,7 +100,8 @@ export const readMore:IReadMore[] = [
   {
     id: 3,
     text2:
-      " The project will coordinate and support these groups with tools and advisory for business development, supporting them with their daily businesses while engaging and indoctrinating them with the values of the PYO Insititute. The project will also seek to support these groups with loans, grants, and equipment for work through non-government organizations, loan organizations, UN bodies, etc. The beneficiaries will receive various training packages which will include selling the values and ideals of PYO Institute. ",
+      " The project will coordinate and support these groups with tools and advisory for business development, supporting them with their daily businesses while engaging and indoctrinating them with the values of the PYO Insititute. ",
+    text4: "The project will also seek to support these groups with loans, grants, and equipment for work through non-government organizations, loan organizations, UN bodies, etc. The beneficiaries will receive various training packages which will include selling the values and ideals of PYO Institute.",
     text3:
       "For  Artisans, Market women and men, and workers in the service industry (bikes, taxis etc)",
   },
@@ -146,7 +148,8 @@ export const readMoreInstitute:IReadMore[] = [
   {
     id: 3,
     text2:
-      "The PYO-JET Initiative is aligned with the Climate Investment Funds (CIF) view that just energy transitions to low-carbon and climate-resilient development can create opportunities for social equity, environmental sustainability and economic prosperity. As societies transition to low-carbon and resilient economies, PYO-JET's framework will focus on promoting equitable access to the benefits and sharing of the costs of sustainable development, ensuring that the livelihoods of all people, including the most vulnerable, are supported and enhanced.",
+      "The PYO-JET Initiative is aligned with the Climate Investment Funds (CIF) view that just energy transitions to low-carbon and climate-resilient development can create opportunities for social equity, environmental sustainability and economic prosperity. ",
+    text4: "As societies transition to low-carbon and resilient economies, PYO-JET's framework will focus on promoting equitable access to the benefits and sharing of the costs of sustainable development, ensuring that the livelihoods of all people, including the most vulnerable, are supported and enhanced.",
     text3:
       "For Young Graduates, Professionals (Junior level, Mid level and Advanced Level) and Entrepreneurs",
   },

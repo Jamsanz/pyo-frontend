@@ -103,14 +103,13 @@ const Home: NextPage = () => {
                 className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={data?.id}
               >
-                <h3 className="monoFont text-xl text-center mx-auto pb-[20px]">
+                <h3 className="monoFont text-[22px] font-bold text-center mx-auto pb-[20px]">
                   {data?.title}
                 </h3>
                 <div className="text-center mx-auto">
                   <img
                     src={data?.images}
                     width="100%"
-                    height="70px"
                     className="rounded-lg mb-[20px] boxShadow2"
                   />
                 </div>
@@ -122,6 +121,15 @@ const Home: NextPage = () => {
                     <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                       {moreText?.id === data?.id && moreText?.text2}
                     </p>
+                    {moreText?.id === data?.id &&
+                    moreText?.text4 !== "" ? (
+                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        {moreText?.id === data?.id &&
+                          moreText?.text4}
+                      </p>
+                    ) : (
+                      ""
+                    )}
                     <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                       {moreText?.id === data?.id && moreText?.text3}
                     </p>
@@ -144,7 +152,11 @@ const Home: NextPage = () => {
                     className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem] "
                     onClick={() => showMore(data?.id!)}
                   >
-                    <p className={`${show? "-mt-4" : ""} text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}>
+                    <p
+                      className={`${
+                        show ? "-mt-4" : ""
+                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                    >
                       Continue reading ...
                     </p>
                   </span>
@@ -177,10 +189,10 @@ const Home: NextPage = () => {
           {pyoInstitute?.map((item) => {
             return (
               <div
-                className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#000] text-justify"
+                className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={item?.id}
               >
-                <h3 className="monoFont text-[18px]  text-center mx-auto pb-[20px] uppercase">
+                <h3 className="monoFont text-[22px] font-bold text-center mx-auto pb-[20px]">
                   {item?.title}
                 </h3>
                 <div className="w-full text-center mx-auto">
@@ -200,6 +212,12 @@ const Home: NextPage = () => {
                       {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text2}
                     </p>
+                    {(moreTextInitiative?.id === item?.id &&
+                      moreTextInitiative?.text4 !== "") ?
+                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        {moreTextInitiative?.id === item?.id &&
+                          moreTextInitiative?.text4}
+                      </p> : ""}
                     <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                       {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text3}
