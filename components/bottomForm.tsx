@@ -134,7 +134,7 @@ const BottomForm = () => {
                       value={data?.country}
                       required
                     >
-                      <option value="">Country of residence* </option>
+                      <option value="" disabled>Country of residence* </option>
                       <option value="AF">Afghanistan</option>
                       <option value="AL">Albania</option>
                       <option value="DZ">Algeria</option>
