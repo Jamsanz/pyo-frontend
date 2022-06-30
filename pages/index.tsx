@@ -9,7 +9,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import ImageText from "../components/imageText";
 import Layout from "../components/layout";
-import { handleScroll } from "../utils/utils";
+import { handleScroll, IReadMore, pyoFellowship, pyoInstitute, readMore, readMoreInstitute } from "../utils/utils";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -19,6 +19,34 @@ const Home: NextPage = () => {
     };
   }, []);
 
+  const [show, setShow] = useState<boolean>(false)
+  const [showInitiative, setShowInitiative] = useState<boolean>(false);
+
+  const [moreText, setMoreText] = useState<IReadMore>();
+  const [moreTextInitiative, setMoreTextInitiative] = useState<IReadMore>();
+
+  
+
+  let readMoreText: IReadMore[]
+  let readMoreTextInitiative: IReadMore[];
+
+  
+  const showMore = (id: number) => {
+    setShow(true)
+    console.log(show)
+    readMoreText = readMore?.filter((item: any) => item.id === id)?.map((data: any) => data)
+    setMoreText(readMoreText?.pop())
+    console.log(moreText)
+   return readMoreText
+  }
+  const showMoreInitiative = (id: number) => {
+    setShowInitiative(true);
+    readMoreTextInitiative = readMoreInstitute
+      ?.filter((item: any) => item.id === id)
+      ?.map((data: any) => data);
+    setMoreTextInitiative(readMoreTextInitiative?.pop());
+    return readMoreTextInitiative;
+  };
   return (
     <Layout>
       <div
@@ -30,11 +58,14 @@ const Home: NextPage = () => {
           backgroundPosition: "left",
         }}
       >
-        <div className="container pl-[10%]  mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-36 pb-36">
-          <div className="flex flex-col w-full md:w-[50%] justify-center items-start text-center ">
-            <h1 className="text-center my-4 text-[40px] leading-tight lg:text-6xl m-auto font-bold md:text-left">
+        <div className="container pl-[3%] pr-[3%]  md:pl-[15%]  lg:pl-[25%] mx-auto flex flex-wrap flex-col md:flex-row items-center justify-center text-white pt-[10rem] pb-36">
+          <div className="flex flex-col w-full md:w-[100%] xl:w-[80%] justify-center items-start text-center ">
+            <h1 className=" mt-4 text-[40px] leading-tight lg:text-6xl m-auto font-bold text-left">
               Visionary leaders for Africa's economic future
             </h1>
+            <p className="tribe italic text-left text-[40px] lg:text-3xl monoFont">
+              It is time for a new tribe
+            </p>
           </div>
         </div>
       </div>
@@ -48,9 +79,9 @@ const Home: NextPage = () => {
           </div>
 
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
-            <p className="mb-4 text-lg text-[white] font-[400] leading-loose text-justify">
+            <p className="mb-4 text-lg text-[white] font-[400] leading-[1.5rem] text-justify">
               As a unifying platform for the exchange of knowledge and mutual
-              learning, the Prof. Yemi Osinhajo Institute brings together all
+              learning, the Prof. Yemi Osinbajo Institute brings together all
               the different people and partners involved in promoting
               sustainable growth and development across a diverse fora.
             </p>
@@ -62,89 +93,170 @@ const Home: NextPage = () => {
       </div>
 
       <div className="pb-8 md:py-16 bg-[#fff]" id="fellow">
-        <h1 className=" pt-10 md:pt-0 px-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
-          Programmes and Fellowships
+        <h1 className=" px-5  pt-10 md:pt-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
+          Fellowship Programmes
         </h1>
-        <div className="pb-8 border-b-[1px] border-b-solid border-b-[#53575B] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
-          <div className="flex flex-col w-full md:w-2/6 justify-start items-center md:items-start text-center md:text-left">
-            <h1 className="hidden md:block my-4 text-3xl mt-5 md:mt-10 font-bold leading-tight text-[#53575B] border-0 md:border-l-[6px] border-l-solid border-l-[#53575B] pl-5">
-              Prof. Yemi Osinbajo <br /> Fellowship Programme
-            </h1>
-          </div>
+        <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
+          {pyoFellowship?.map((data) => {
+            return (
+              <div
+                className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
+                key={data?.id}
+              >
+                <h3 className="monoFont text-[22px] font-bold text-center md:pb-0 h-auto md:h-16">
+                  {data?.title}
+                </h3>
+                <div className="text-center mx-auto">
+                  <img
+                    src={data?.images}
+                    width="100%"
+                    className="rounded-lg mb-[20px] boxShadow2"
+                  />
+                </div>
+                <span className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                  {data?.text1}
+                </span>
+                {show ? (
+                  <>
+                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      {moreText?.id === data?.id && moreText?.text2}
+                    </p>
+                    {moreText?.id === data?.id && moreText?.text4 !== "" ? (
+                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        {moreText?.id === data?.id && moreText?.text4}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      {moreText?.id === data?.id && moreText?.text3}
+                    </p>
+                  </>
+                ) : (
+                  ""
+                )}
 
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#53575B]">
-            <h3 className="text-3xl text-center mx-auto pb-[20px]">
-              {" "}
-              PYO Fellows
-            </h3>
-            <div className="w-full">
-              <img
-                src="images/1.png"
-                width="100%"
-                height="70px"
-                className="rounded-lg mb-[20px] boxShadow2"
-              />
-            </div>
-            <p className="mb-4 text-lg text-[#53575B] font-[400] leading-loose text-center md:text-justify">
-              Building a network of higher potential young Nigerians ready to
-              make a difference.
-            </p>
-            <div className="text-center m-auto"></div>
-          </div>
+                {moreText?.id === data?.id && show ? (
+                  <span
+                    className="cursor-pointer text-lg text-[#000] font-[400] leading-[1.5rem] text-center"
+                    onClick={() => setShow(!show)}
+                  >
+                    <p className="mt-2 text-[17px] font-bold text-black text-left transform transition hover:text-[#14084e] duration-300 ease-in-out">
+                      Show less
+                    </p>
+                  </span>
+                ) : (
+                  <span
+                    className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem] "
+                    onClick={() => showMore(data?.id!)}
+                  >
+                    <p
+                      className={`${
+                        show ? "-mt-4" : ""
+                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                    >
+                      Continue reading ...
+                    </p>
+                  </span>
+                )}
 
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-5 text-[#53575B]">
-            <h3 className="text-3xl text-center mx-auto pb-[20px]">
-              PYO New Tribe
-            </h3>
-            <div className="w-full ">
-              <img
-                src="images/merge.jpeg"
-                width="100%"
-                height="70px"
-                className="rounded-lg mb-[20px] boxShadow2"
-              />
-            </div>
+                <div className="text-center m-auto"></div>
+              </div>
+            );
+          })}
 
-            <p className="mb-4 text-lg text-[#53575B] font-[400] leading-loose text-center md:text-justify">
-              Skills development programmes, empowerment and capacity building
-              across various white and blue collar demographics.
-            </p>
-            <div className="text-center m-auto"></div>
-          </div>
-
-          <div className="w-200px text-center lg:text-left ml-0 lg:ml-[60%]">
+          <div className="text-center mx-auto">
             <Link href="#members">
-              <Button gray text="Sign up" />
+              <button
+                type="button"
+                className="bg-[#000] text-[18px] text-[#fff] rounded-lg lg:mx-0px-6 py-3 px-8 font-bold shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold"
+              >
+                Sign up
+              </button>
             </Link>
           </div>
         </div>
       </div>
 
       <div className="lg:px-24 bg-[#fff] text-center mx-uato">
-        <h1 className=" px-0 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#53575B]">
-          Latest Initiativies from the Institute
+        <h1 className=" px-5 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
+          Latest Initiatives from the PYO Institute
         </h1>
-        <div className="pb-8 container px-3 mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#53575B]">
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-center mx-uato">
-            <img src="images/4.png" className="boxShadow2 mx-auto rounded-lg" />
-            <p className="mb-4 text-2xl text-[#53575B] font-[400] leading-thin text-center mt-5 ">
-              Global Institute for Governance
-            </p>
-          </div>
+        <div className="pb-8 container mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
+          {pyoInstitute?.map((item) => {
+            return (
+              <div
+                className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
+                key={item?.id}
+              >
+                <h3 className="monoFont text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16">
+                  {item?.title}
+                  <br /> {item?.slug}
+                </h3>
+                <div className="w-full text-center mx-auto">
+                  <img
+                    src={item?.images}
+                    width="100%"
+                    height="70px"
+                    className="rounded-lg mb-[20px] boxShadow2"
+                  />
+                </div>
+                <p className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                  {item?.text1}
+                </p>
+                {showInitiative ? (
+                  <>
+                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      {moreTextInitiative?.id === item?.id &&
+                        moreTextInitiative?.text2}
+                    </p>
+                    {moreTextInitiative?.id === item?.id &&
+                    moreTextInitiative?.text4 !== "" ? (
+                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        {moreTextInitiative?.id === item?.id &&
+                          moreTextInitiative?.text4}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      {moreTextInitiative?.id === item?.id &&
+                        moreTextInitiative?.text3}
+                    </p>
+                  </>
+                ) : (
+                  ""
+                )}
 
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10 text-center">
-            <img src="images/5.png" className="boxShadow2 mx-auto rounded-lg" />
-            <p className="mb-4 text-2xl text-[#53575B] font-[400] leading-thin text-center mt-5 ">
-              PYO - Tech for Growth
-            </p>
-          </div>
+                {moreTextInitiative?.id === item?.id && showInitiative ? (
+                  <span
+                    className="cursor-pointer text-lg text-[#000] font-[400] leading-[1.5rem] text-center"
+                    onClick={() => setShowInitiative(!showInitiative)}
+                  >
+                    <br />
+                    <p className="-mt-4 text-[17px] font-bold text-black text-left transform transition hover:text-[#14084e] duration-300 ease-in-out">
+                      Show less
+                    </p>
+                  </span>
+                ) : (
+                  <span
+                    className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem]"
+                    onClick={() => showMoreInitiative(item?.id!)}
+                  >
+                    <p
+                      className={`${
+                        showInitiative ? "-mt-4" : ""
+                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                    >
+                      Continue reading ...
+                    </p>
+                  </span>
+                )}
 
-          <div className="w-full md:w-2/6 pt-4 pb-8 align-middle  px-0 md:px-10">
-            <img src="images/6.png" className="boxShadow2 mx-auto rounded-lg" />
-            <p className="mb-4 text-2xl text-[#53575B] font-[400] leading-thin text-center mt-5 ">
-              PYO - Just Energy Transition
-            </p>
-          </div>
+                <div className="text-center m-auto"></div>
+              </div>
+            );
+          })}
 
           <div className="text-center m-auto ">
             <Button gray text="Coming Soon" />

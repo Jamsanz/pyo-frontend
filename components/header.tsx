@@ -7,7 +7,7 @@ const Header = () => {
     <nav id="header" className="fixed w-full z-30 top-0 text-white bg-white merrifont">
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div className="pl-4 flex items-center">
-          <img src="/images/logo2.jpeg" width="200px" />
+          <img src="/images/logo.jpeg" width="200px" />
         </div>
         <div className="block lg:hidden pr-4">
           <button
@@ -34,7 +34,7 @@ const Header = () => {
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3">
               <a
-                className="inline-block py-2 px-4 text-[#53575B] no-underline"
+                className="inline-block py-2 px-4 text-[#000] font-bold font-[18px] no-underline"
                 href="#about"
               >
                 About
@@ -42,7 +42,7 @@ const Header = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-[#53575B] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-[#000] font-bold font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#members"
               >
                 Members
@@ -50,7 +50,7 @@ const Header = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-[#53575B] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-[#000] font-bold font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#fellow"
               >
                 Fellowship

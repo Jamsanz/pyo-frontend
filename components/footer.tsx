@@ -10,14 +10,14 @@ const Footer = () => {
       <div className="container mx-auto px-8">
         <div className="w-full flex flex-col md:flex-row py-6">
           <div className="flex-1 mb-6 text-black">
-            <img src="/images/logo2.jpeg" width="200px" />
+            <img src="/images/logo.jpeg" width="200px" />
           </div>
           <div className="flex-1">
             <p className="uppercase text-[#53575B] md:mb-6">Links</p>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   FAQ
@@ -25,7 +25,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Help
@@ -33,7 +33,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Support
@@ -46,7 +46,7 @@ const Footer = () => {
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Terms
@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   Privacy
@@ -67,7 +67,7 @@ const Footer = () => {
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   <img
@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   <img
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
-                  href="#"
+                  href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
                 >
                   <img
