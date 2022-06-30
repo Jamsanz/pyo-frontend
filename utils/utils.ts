@@ -60,22 +60,22 @@ export interface IReadMore  {
 export const pyoFellowship:IReadMore[] = [
   {
     id: 1,
-    title: "PYO Fellows",
-    images: "images/1 2.png",
+    title: "PYO FELLOWS",
+    images: "images/1 3.png",
     text1:
       "A proposed one-year fellowship which will be offered on a yearly basis is aimed at building a network of high-potential young Nigerians who are already making a difference in their communities.",
   },
   {
     id: 2,
-    title: "PYO New Tribe (white-collar)",
-    images: "images/2 2.png",
+    title: "PYO NEW TRIBE (White-Collar)",
+    images: "images/2 3.png",
     text1:
       "PYO New Tribe White Collar will bring together various age groups and demographics, to create awareness and develop a nuanced perspective among Nigerians to tackle challenges in various fields in the public and private sectors.",
   },
   {
     id: 3,
-    title: "PYO New Tribe (blue-collar)",
-    images: "images/3 2.png",
+    title: "PYO NEW  TRIBE (Blue-Collar)",
+    images: "images/3 3.png",
     text1:
       "The PYO New Tribe Blue-Collar will provide funding, skills development programmes and capacity building across various blue collar demographics such as market women, taxi drivers, okada riders, artisans etc."
   }
