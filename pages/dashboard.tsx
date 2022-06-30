@@ -6,8 +6,10 @@ import ProfileCard from '../components/profileCard';
 
 const Dashboard = () => {
   const [firstName, setFirstName] = useState<string>("");
+
   useEffect(() => {
     setFirstName(localStorage.getItem("firstName")!);
+
   }, []);
   return (
     <DashboardLayout pageName="dashboard">

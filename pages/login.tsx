@@ -35,6 +35,7 @@ const Login = () => {
       localStorage.setItem("token", response.data.data._id);
       localStorage.setItem("useremail", response.data.data.email);
       localStorage.setItem("firstName", response.data.data.firstName);
+      localStorage.setItem("lastName", response.data.data.lastName);
       localStorage.setItem("country", response.data.data.country);
       if (response) router.push("/dashboard");
       toastr.success("Login successful");
