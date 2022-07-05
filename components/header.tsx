@@ -44,26 +44,25 @@ const Header = ({}) => {
               >
                 About
               </a>
-                <div className='absolute navItem bg-white text-black rounded-lg boxShadow3 w-[140px]'>
-                  <ul>
-                    <li className="mr-3">
-                      <a
-                        className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                        href="/gallery"
-                      >
+              <div className="absolute navItem bg-white text-black rounded-lg boxShadow3 w-[140px]">
+                <ul>
+                  <li className="mr-3">
+                    <Link href="/gallery">
+                      <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                         Gallery
                       </a>
-                    </li>
-                    <li className="mr-3">
-                      <a
-                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                        href="#members"
-                      >
-                        Contribution
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                    </Link>
+                  </li>
+                  <li className="mr-3">
+                    <a
+                      className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                      href="#members"
+                    >
+                      Contribution
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className="mr-3">
               <a
