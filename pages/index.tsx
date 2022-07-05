@@ -264,6 +264,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+      <BottomForm />
     </Layout>
   );
 };

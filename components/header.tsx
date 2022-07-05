@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import Link from "next/link";
 
-const Header = () => {
+const Header = ({}) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
-    <nav id="header" className="fixed w-full z-30 top-0 text-white bg-white merrifont">
+    <nav
+      id="header"
+      className="fixed w-full z-30 top-0 text-white bg-white merrifont"
+    >
       <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
-        <div className="pl-4 flex items-center">
-          <img src="/images/logo.jpeg" width="200px" />
+        <div className="pl-4 flex items-center hover:cursor-pointer">
+          <Link href="/">
+            <img src="/images/logo.jpeg" width="200px" />
+          </Link>
         </div>
         <div className="block lg:hidden pr-4">
           <button
@@ -32,17 +37,37 @@ const Header = () => {
           id="nav-content"
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
-            <li className="mr-3">
+            <li className="mr-3 relative nav">
               <a
-                className="inline-block py-2 px-4 text-[#000] font-bold font-[18px] no-underline"
+                className="inline-block py-2 px-4 text-[#000] font-[18px] no-underline "
                 href="#about"
               >
                 About
               </a>
+                <div className='absolute navItem bg-white text-black rounded-lg boxShadow3 w-[140px]'>
+                  <ul>
+                    <li className="mr-3">
+                      <a
+                        className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                        href="/gallery"
+                      >
+                        Gallery
+                      </a>
+                    </li>
+                    <li className="mr-3">
+                      <a
+                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                        href="#members"
+                      >
+                        Contribution
+                      </a>
+                    </li>
+                  </ul>
+                </div>
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-[#000] font-bold font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#members"
               >
                 Members
@@ -50,7 +75,7 @@ const Header = () => {
             </li>
             <li className="mr-3">
               <a
-                className="inline-block text-[#000] font-bold font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                 href="#fellow"
               >
                 Fellowship
@@ -59,7 +84,6 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <hr className="border-b border-gray-100 opacity-25 my-0 py-0" />
     </nav>
   );
 }

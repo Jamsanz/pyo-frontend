@@ -273,6 +273,20 @@ label {
   font-size: 1.0625rem;
 }
 
+.default-input2 {
+  border-radius: 0;
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.66em 1.33em;
+  font-family: "Brandon Grotesque";
+  background: white;
+  color: black;
+  border: none;
+  -webkit-appearance: none;
+  box-shadow: inset 1px 1px 0 #d8d8d8, inset -1px -1px 0 #d8d8d8;
+  font-size: 1.0625rem;
+}
+
 .PYO-select {
   margin-bottom: 1em;
   position: relative;
@@ -438,4 +452,17 @@ select{
 }
 .monoFont2{
   font-family: "Prata", sans-serif;
+}
+
+.boxShadow3{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.nav .navItem {
+  visibility: hidden;
+  z-index: 1;
+}
+
+.nav:hover .navItem {
+  visibility: visible;
 }

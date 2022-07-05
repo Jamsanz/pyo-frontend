@@ -17,7 +17,7 @@ export const handleScroll = () => {
   const scrollpos = window.scrollY;
 
   if (scrollpos > 10) {
-    header?.classList.add("bg-black");
+    header?.classList.add("bg-white");
     navaction?.classList.remove("bg-white");
     navaction?.classList.add("gradient");
     navaction?.classList.remove("text-gray-800");
