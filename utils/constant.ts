@@ -3,11 +3,11 @@ export const gallery = [
   {
     id: 1,
     images: [
-      { img: "/images/screenshot1.png" },
-      { img: "/images/screenshot12.png" },
-      { img: "/images/screenshot3.png" },
-      { img: "/images/screenshot4.png" },
-      { img: "/images/screenshot5.png" },
+      { img: "/images/contribution/screenshot1.png" },
+      { img: "/images/contribution/screenshot2.png" },
+      { img: "/images/contribution/screenshot3.png" },
+      { img: "/images/contribution/screenshot4.png" },
+      { img: "/images/contribution/screenshot5.png" },
     ],
   },
   {
@@ -34,11 +34,11 @@ export const gallery = [
   {
     id: 4,
     images: [
-      { img: "/images/screenshot1.png" },
-      { img: "/images/screenshot12.png" },
-      { img: "/images/screenshot3.png" },
-      { img: "/images/screenshot4.png" },
-      { img: "/images/screenshot5.png" },
+      { img: "/images/contribution/screenshot1.png" },
+      { img: "/images/contribution/screenshot2.png" },
+      { img: "/images/contribution/screenshot3.png" },
+      { img: "/images/contribution/screenshot4.png" },
+      { img: "/images/contribution/screenshot5.png" },
     ],
   },
   {
