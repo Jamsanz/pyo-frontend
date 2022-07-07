@@ -14,14 +14,6 @@ const Dashboard = () => {
   return (
     <DashboardLayout pageName="dashboard">
       <div className="bg-[#f4f4f4] min-h-screen py-3 flex flex-col">
-        {/* <div className="w-[100%] flex justify-between mt-5 mb-3">
-          <h1 className='text-[#000] text-center text-4xl flex-1 font-bold'>PYO Fellows</h1>
-          <h2 className="text-[#000] mr-4 self-end hidden md:block">
-            {" "}
-            Welcome{" "}
-            <span className="capitalize"> {firstName && firstName} </span>
-          </h2>
-        </div> */}
         <div className="flex md:justify-around mt-5">
           <div className="flex-1 items-center md:items-start inline-flex flex-col md:flex-row space-y-5 md:space-y-0 justify-center md:justify-around">
             <Link href="/schedule-meeting">

@@ -1,5 +1,4 @@
 import React, { useRef }  from "react";
-import BottomForm from "../components/bottomForm";
 import GalleryForm from "../components/galleryForm";
 import Layout from "../components/layout";
 import { gallery } from "../utils/constant";
@@ -10,21 +9,18 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 
 const GalleryBox = () => {
 
-  const reference = useRef<HTMLImageElement>(null)
-
-
   return (
     <Layout>
       <div
-        className="pt-[15rem] pb-10 md:py-[9rem] object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
+        className="pt-[5rem] pb-5 md:pt-[15rem] md:pb-10 md:py-[9rem] object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
         style={{
           background: "url('/images/messagehero.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPosition: "center top",
+          backgroundPosition: "top center",
         }}
       >
-        <div className="container pr-[10%] pl-[5rem] pt-[10rem] mx-auto flex flex-wrap flex-col md:flex-row items-start justify-start text-white pb-36">
+        <div className="container  pr-[5%] md:pr-[10%] pl-[5rem] pt-[5rem] md:pt-[10rem] mx-auto flex flex-wrap flex-col md:flex-row items-start justify-start text-white pb-36">
           <div className="flex flex-col w-full md:w-[100%] xl:w-[40%] justify-center items-start text-left ">
             <h1 className="text-[40px] leading-tight lg:text-8xl m-auto font-bold text-left">
               Message Gallery

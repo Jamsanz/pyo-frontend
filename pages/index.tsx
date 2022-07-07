@@ -1,13 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import Script from "next/script";
 import { useEffect, useState } from "react";
 import BottomForm from "../components/bottomForm";
 import Button from "../components/button";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import ImageText from "../components/imageText";
 import Layout from "../components/layout";
 import { handleScroll, IReadMore, pyoFellowship, pyoInstitute, readMore, readMoreInstitute } from "../utils/utils";
 
@@ -85,9 +81,9 @@ const Home: NextPage = () => {
               the different people and partners involved in promoting
               sustainable growth and development across a diverse fora.
             </p>
-            <div className="text-center m-auto text-xl">
+            {/* <div className="text-center m-auto text-xl">
               <Button text="Learn more" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

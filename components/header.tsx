@@ -3,6 +3,22 @@ import Link from "next/link";
 
 const Header = ({}) => {
   const [open, setOpen] = useState<boolean>(false);
+  const [about, setAbout] = useState<boolean>(false);
+
+
+  const navigateBar = () => {
+    setOpen(!open)
+    if (open === false) setAbout(false)
+  }
+  
+  const navigateAbout = () => {
+    if (window.innerWidth < 1024) {
+      setAbout(!about)
+    console.log("clicked");
+
+    }
+    return;
+  }
   return (
     <nav
       id="header"
@@ -18,7 +34,7 @@ const Header = ({}) => {
           <button
             id="nav-toggle"
             className="flex items-center p-1 text-[#53575B] hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-            onClick={() => setOpen(!open)}
+            onClick={navigateBar}
           >
             <svg
               className="fill-current h-6 w-6"
@@ -39,12 +55,16 @@ const Header = ({}) => {
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3 relative nav">
               <a
-                className="inline-block py-2 px-4 text-[#000] font-[18px] no-underline "
-                href="#about"
+                className="inline-block py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer"
+                onClick={navigateAbout}
               >
                 About
               </a>
-              <div className="absolute navItem bg-white text-black rounded-lg boxShadow3 w-[140px]">
+              <div
+                className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-[140px] ${
+                  about ? "block relative " : "absolute hidden lg:block"
+                }`}
+              >
                 <ul>
                   <li className="mr-3">
                     <Link href="/gallery">
@@ -54,31 +74,33 @@ const Header = ({}) => {
                     </Link>
                   </li>
                   <li className="mr-3">
-                    <a
-                      className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                      href="#members"
-                    >
-                      Contribution
-                    </a>
+                    <Link href="/contribution">
+                      <a
+                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                        href=""
+                      >
+                        Contribution
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </li>
             <li className="mr-3">
-              <a
-                className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                href="#members"
+              <Link
+                href="/#members">
+              <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
               >
-                Members
-              </a>
+                  Members
+                  </a>
+              </Link>
             </li>
             <li className="mr-3">
-              <a
-                className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                href="#fellow"
-              >
-                Fellowship
-              </a>
+              <Link href="/#fellow">
+                <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                  Fellowship
+                </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -67,14 +67,14 @@ const GalleryForm = () => {
 
   return (
     <div className={styles.container}>
-      <div className="container  mt-0 px-0 md:px-16 py-12" id="members">
+      <div className="container  mt-0 px-0 md:px-16 py-12">
         <div
           className={`${
             show ? "items-start" : "items-center"
           }  flex flex-col md:flex-row w-full items-center`}
         >
           <div className="col w-full px-0 mr-5">
-            <div className="text-[#000] leading-8 lg:w-[75%] pl-5 mb-10 mx-auto border-l-8 border-l-black border-solid">
+            <div className="text-[#000] leading-8 lg:w-[75%] pl-5 mb-10 mx-auto border-l-0 md:border-l-8 border-l-black border-solid">
               <img src="images/message.png" width="60%" className="block mx-auto w-[50%] md:inline md:w-[60%]"/>
             </div>
           </div>
