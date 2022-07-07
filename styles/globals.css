@@ -514,4 +514,15 @@ select{
         .boxShadow5 {
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
+  .scheduleNav .navItem {
+      visibility: hidden;
+      z-index: 1;
+    }
+  
+    .scheduleNav:hover .navItem {
+      visibility: visible;
+    }
+        .boxShadow5 {
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
 }
