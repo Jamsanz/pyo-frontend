@@ -10,7 +10,7 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 const GalleryBox = () => {
 
   const ref = useRef<HTMLImageElement>(null)
-  
+
   return (
     <Layout>
       <div
@@ -66,7 +66,7 @@ const GalleryBox = () => {
                             {({ ref, open }) => (
                               <div className=" bg-black">
                                 <img
-                                  ref={ref}
+                                  itemRef={ref}
                                   onClick={open}
                                   alt=""
                                   src={item.img}
