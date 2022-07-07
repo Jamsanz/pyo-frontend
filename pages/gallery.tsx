@@ -64,10 +64,9 @@ const GalleryBox = () => {
                             height="550"
                           >
                             {({ ref, open }) => (
-                              <div className=" bg-black">
+                              <div className=" bg-black"
+                                ref={ref}>
                                 <img
-                                  // ref={ref}
-
                                   onClick={open}
                                   alt=""
                                   src={item.img}
