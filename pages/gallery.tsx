@@ -30,11 +30,11 @@ const GalleryBox = () => {
 
       <div className="mx-2 flex md:mx-10 mt-20 pb-20 flex-wrap h-auto border-black border-b-[1px] border-solid">
        
-        {gallery.map((item: any) => {
+        {gallery.map((item: any, index: number) => {
           const { images, id } = item;
           return (
             <div
-              key={id}
+              key={index}
               className="w-[100%] p-[5px] border-solid border-[1px] border-[#000] shadow-md md:w-[46%] mx-[2%] hover:cursor-pointer mb-[30px] mt-[50px] rounded-lg relative"
             >
               <ul className="inline-flex space-x-3 mt-2 absolute -top-[50px]">
