@@ -1,9 +1,8 @@
-import axios from 'axios';
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
-import { http } from '../utils/utils';
+import axios from "axios";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import styles from "../styles/Home.module.css";
+import { http } from "../utils/utils";
 import toastr from "../utils/toastr";
-
 
 interface IData {
   firstName?: string;
@@ -17,63 +16,81 @@ const BottomForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    country: ""
+    country: "",
   });
+  const [show, setShow] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
+  const [fellow, setFellow] = useState<boolean>(false)
 
+  const showForm = () => {
+    setShow(true);
+  };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ): void => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
-    console.log(data)
-  }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    http.post('/register', data).then((res) => {
-      toastr.success("Succesfully registered")
-      if (data) setSuccess(true)
-    
-    })
-      .catch(err => {
-        console.log(err)
+    http
+      .post("/register", data)
+      .then((res) => {
+        toastr.success("Succesfully registered");
+        if (data) setSuccess(true);
+      })
+      .catch((err) => {
+        console.log(err);
         if (err) {
-          toastr.error("Registration fail, try again")
+          toastr.error("Registration fail, try again");
         }
       })
       .finally(() => {
         setLoading(false);
-        setSuccess(true)
+        setSuccess(true);
+      });
+  };
 
-      })
-  }
-
-  useEffect(():any => {
-    if (success) setData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      country: ""
-    })
-  }, [success])
+  useEffect((): any => {
+    if (success)
+      setData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        country: "",
+      });
+  }, [success]);
 
   return (
     <div className={styles.container}>
-      <div className="container mt-10">
-        <div className="row items-center">
-          <div className="col">
-            <h6 className='text-black'>Don't Miss Anything.</h6>
-            <h2 className='text-black'>
-              Be the first to know what we're doing <br />
-              - and how you can get more involved.
+      <div
+        className="container  mt-0 md:mt-10 px-0 md:px-16 py-12"
+        id="members"
+      >
+        <div
+          className={`${
+            show ? "items-start" : "items-center"
+          }  flex flex-col md:flex-row w-full items-center`}
+        >
+          <div className="col w-full px-0 mr-5">
+            <h2 className="text-[#000] border-0 md:border-l-[6px] leading-8 lg:w-[75%] border-l-solid border-l-[#000] pl-5 mb-10">
+              Be the first to know what we're doing.
             </h2>
-            <p className='text-black'>Sign up to hear more and get involved.</p>
           </div>
-          <div className="form-wrap">
-            <form onSubmit={handleSubmit}>
-              <div className="fields-wrapper">
+          <div className="w-full">
+            <form
+              onSubmit={handleSubmit}
+              className={` ${
+                show
+                  ? " animate__animated animate__fadeInDown h-auto w-auto overflow-auto"
+                  : "h-0 w-0 overflow-hidden"
+              }`}
+            >
+              <div className="fields-wrapper pb-[30px] lg:p-30px">
                 <div className="fields-set">
                   <input
                     type="text"
@@ -112,14 +129,17 @@ const BottomForm = () => {
                 </div>
                 <div className="fields-set">
                   <div className="PYO-select">
-                    <select id="dropdown"
+                    <select
+                      id="dropdown"
+                      className="default select"
                       name="country"
                       onChange={handleChange}
                       data-error="Please select your country."
-                      placeholder='Country*'
+                      placeholder="Country of residence*"
                       value={data?.country}
-                      required >
-                      <option value="">Country*</option>
+                      required
+                    >
+                      <option value="" disabled>Country of residence* </option>
                       <option value="AF">Afghanistan</option>
                       <option value="AL">Albania</option>
                       <option value="DZ">Algeria</option>
@@ -151,9 +171,7 @@ const BottomForm = () => {
                       <option value="BW">Botswana</option>
                       <option value="BV">Bouvet Island</option>
                       <option value="BR">Brazil</option>
-                      <option value="IO">
-                        British Indian Ocean Territory
-                      </option>
+                      <option value="IO">British Indian Ocean Territory</option>
                       <option value="VG">British Virgin Islands</option>
                       <option value="BN">Brunei</option>
                       <option value="BG">Bulgaria</option>
@@ -385,30 +403,67 @@ const BottomForm = () => {
                     </select>
                   </div>
                 </div>
+                {fellow && (
+                  <div className="fields-set">
+                    <div className="PYO-select">
+                      <select
+                        id="dropdown"
+                        className="default text-[#53575b] select"
+                        name="country"
+                        // onChange={handleChange}
+                        data-error="Please select your country."
+                        placeholder="Country of residence*"
+                        // value={data?.country}
+                        required
+                      >
+                        <option value="" disabled selected>Select Fellowship Programme* </option>
+                        <option value="PYO Fellows">PYO Fellows </option>
+                        <option value="PYO New Tribe">PYO New Tribe </option>
+                      </select>
+                    </div>
+                  </div>
+                )}
+                <div className="ml-2 my-2 flex items-center space-x-3">
+                  <input
+                    type="checkbox"
+                    name="membership_interest"
+                    id=""
+                    onClick={() => setFellow(!fellow)}
+                  />
+                  <label htmlFor="memeber">
+                    Would you like to become a member of the PYO institute?
+                  </label>
+                </div>
 
-                <div className="Submit hover:bg-black">
-                  <input className='' type="submit" name="submit" value={loading ? "Loading...":"Sign up"} disabled={loading} />
+                <div className="Submit" >
+                  <input
+                    className=""
+                    type="submit"
+                    name="submit"
+                    value={loading ? "Loading..." : "Sign up"}
+                    disabled={loading}
+                  />
                 </div>
               </div>
-              <div className="pyo-privacy-policy">
-                <input
-                  type="checkbox"
-                  name="privacy-policy"
-                  data-error="Please acknowledge that you want to receive emails from us by checking the box."
-                  id="privacy-label"
-                />
-                <label
-                >Yes, I agree to receive emails about the work of Professor Yemi Osinbanjo and
-                  the Professor Yemi Osinbanjo Institute.
-                  For full information on the use of your data please see our
-                  <a href="/privacy-policy">privacy policy</a>.</label>
-              </div>
             </form>
+
+            {!show ? (
+              <div className="Submit">
+                <input
+                  className=""
+                  type="submit"
+                  value={"Sign up"}
+                  onClick={showForm}
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default BottomForm;

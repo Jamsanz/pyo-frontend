@@ -2,11 +2,11 @@ import React from 'react'
 
 const Form = () => {
   return (
-    <div className='flex flex-1'>
+    <div className='flex flex-1' id="member">
       <div className='w-full md:w-1/2 inline-flex flex-col p-10'>
-        <h6 className='text-[1rem] tracking-widest font-bold'>Don't Miss Anything.</h6>
+        <h6 className='text-[1rem] tracking-widest font-bold'>Don&apos;t Miss Anything.</h6>
         <h2 className='text-[2.375rem] tracking-[-0.02rem]'>
-          Be the first to know what we're doing - and how you can get more involved.
+          Be the first to know what we&apos;re doing - and how you can get more involved.
         </h2>
         <p>Sign up to hear more and get involved.</p>
       </div>
