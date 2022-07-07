@@ -1,12 +1,17 @@
 import axios from "axios";
 
-let baseURL =
-  process.env.NODE_ENV !== "development"
-    ? "https://pyo-institute-backend.herokuapp.com/"
-    : "http://localhost:5000";
 export const http = axios.create({
-  baseURL,
+  baseURL: "https://pyo-institute-backend.herokuapp.com/",
 });
+
+export const getUser = () => ({
+  _id: localStorage.getItem("token"),
+  email: localStorage.getItem("useremail"),
+  firstName: localStorage.getItem("firstName"),
+  lastName: localStorage.getItem("lastName"),
+  country: localStorage.getItem("country"),
+});
+
 
 export const handleScroll = () => {
   var header: any = document.getElementById("header");
