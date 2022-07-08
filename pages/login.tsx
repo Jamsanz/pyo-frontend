@@ -6,6 +6,7 @@ import { http } from "../utils/utils";
 
 const Login = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
   interface ILogin {
     email: string;
     password: string;
@@ -28,6 +29,7 @@ const Login = () => {
 
   const submithandler = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await http.post("/login", {
         email: login?.email,
@@ -37,11 +39,13 @@ const Login = () => {
       localStorage.setItem("firstName", response.data.data.firstName);
       localStorage.setItem("lastName", response.data.data.lastName);
       localStorage.setItem("country", response.data.data.country);
+      setLoading(false);
       if (response) router.push("/dashboard");
       toastr.success("Login successful");
     } catch (error: any) {
       toastr.error("Email does not exist");
       setError(error.response.data.message);
+      setLoading(false);
     }
   };
   return (
@@ -71,18 +75,18 @@ const Login = () => {
                   />
                 </div>
 
-                {/* <div className="mb-6">
+                <div className="mb-6">
                   <input
                     type="password"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="exampleFormControlInput2"
                     placeholder="Password"
                     name="password"
-                    value={login?.password}
+                    // value={login?.password}
                     required
-                    onChange={handleInput}
+                    // onChange={handleInput}
                   />
-                </div> */}
+                </div>
 
                 <div className="flex justify-between items-center mb-6"></div>
 
@@ -94,8 +98,11 @@ const Login = () => {
                     type="button"
                     className="inline-block px-7 py-3 bg-[#0a2d6b] text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                     onClick={submithandler}
+                    disabled={loading}
                   >
-                    Login
+                    {
+                      loading  ? '...' : 'Login'
+                    }
                   </button>
                   {/* <div>
                     <a

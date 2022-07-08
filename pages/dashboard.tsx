@@ -3,13 +3,12 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import DashboardLayout from '../components/dashboardLayout';
 import ProfileCard from '../components/profileCard';
+import { getUser } from '../utils/utils';
 
 const Dashboard = () => {
-  const [firstName, setFirstName] = useState<string>("");
-
+  const [user, setUser] = useState({});
   useEffect(() => {
-    setFirstName(localStorage.getItem("firstName")!);
-
+    setUser(getUser());
   }, []);
   return (
     <DashboardLayout pageName="dashboard">
@@ -19,7 +18,7 @@ const Dashboard = () => {
             <Link href="/schedule-meeting">
               <a className="dashboard-card w-[250px] h-[250px] cursor-pointer hover:scale-110 flex flex-col justify-center items-center">
                 <i className="fa-solid fa-calendar text-3xl"></i>
-                <h1>Sehedule Meeting</h1>
+                <h1>Schedule Meeting</h1>
               </a>
             </Link>
             <Link href="/news-feed">
