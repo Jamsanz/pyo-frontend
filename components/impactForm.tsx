@@ -1,27 +1,19 @@
 import axios from "axios";
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { http } from "../utils/utils";
-import toastr from "../utils/toastr";
 
 interface IData {
-  firstName?: string;
-  lastName?: string;
+  name?: string;
   email?: string;
-  country?: string;
 }
 
 const ImpactForm = () => {
   const [data, setData] = useState<IData>({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    country: "",
   });
   const [show, setShow] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(false);
-  const [fellow, setFellow] = useState<boolean>(false);
+  const [download, setDownload] = useState<boolean>(false);
 
   const showForm = () => {
     setShow(true);
@@ -35,35 +27,23 @@ const ImpactForm = () => {
   };
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    http
-      .post("/register", data)
-      .then((res) => {
-        toastr.success("Succesfully registered");
-        if (data) setSuccess(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        if (err) {
-          toastr.error("Registration fail, try again");
-        }
-      })
-      .finally(() => {
-        setLoading(false);
-        setSuccess(true);
-      });
+    e.preventDefault()
+    setData({
+      name: "",
+      email: "",
+    });
+    setDownload(true)
   };
 
-  useEffect((): any => {
-    if (success)
-      setData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        country: "",
-      });
-  }, [success]);
+  // useEffect((): any => {
+  //   if (success)
+  //     setData({
+  //       firstName: "",
+  //       lastName: "",
+  //       email: "",
+  //       country: "",
+  //     });
+  // }, [success]);
 
   return (
     <div className={styles.container}>
@@ -95,9 +75,9 @@ const ImpactForm = () => {
                   <input
                     type="text"
                     data-error="Please enter yourname."
-                    name="Name"
+                    name="name"
                     onChange={handleChange}
-                    value={data?.firstName}
+                    value={data?.name}
                     required
                     placeholder="Name*"
                     className="default-input"
@@ -109,20 +89,35 @@ const ImpactForm = () => {
                     data-error="Please enter your email."
                     name="email"
                     onChange={handleChange}
-                    value={data?.lastName}
+                    value={data?.email}
                     required
                     placeholder="Email*"
                     className="default-input"
                   />
                 </div>
+                {download && (
+                  <div className="text-black bg-[#d8d8d8] text-center mb-4 py-6 relative">
+                    <p
+                      className="text-[#000] absolute right-4 top-1 cursor-pointer"
+                      onClick={() => setDownload(false)}
+                    >
+                      {" "}
+                      x{" "}
+                    </p>
+                    <a href="/assets/concept note.pdf" download="Impact Report">
+                      {" "}
+                      Download Impact Report
+                    </a>
+                  </div>
+                )}
 
                 <div className="Submit">
                   <input
                     className=""
                     type="submit"
                     name="submit"
-                    value={loading ? "Loading..." : "Generate download link"}
-                    disabled={loading}
+                    value={"Generate download"}
+                    disabled={download}
                   />
                 </div>
               </div>
