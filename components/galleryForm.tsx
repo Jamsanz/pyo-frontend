@@ -4,20 +4,19 @@ import styles from "../styles/Home.module.css";
 import { http } from "../utils/utils";
 import toastr from "../utils/toastr";
 
-interface IData {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  country?: string;
+interface IMessage {
+  name?: string,
+  email?: string,
+  message?: string
 }
 
 const GalleryForm = () => {
-  const [data, setData] = useState<IData>({
-    firstName: "",
-    lastName: "",
+  const [data, setData] = useState<IMessage>({
+    name: "",
     email: "",
-    country: "",
+    message: ""
   });
+
   const [show, setShow] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
@@ -28,7 +27,7 @@ const GalleryForm = () => {
   };
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ): void => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -38,15 +37,15 @@ const GalleryForm = () => {
     e.preventDefault();
     setLoading(true);
     http
-      .post("/register", data)
+      .post("/message", data)
       .then((res) => {
-        toastr.success("Succesfully registered");
+        toastr.success("Message sent successfully");
         if (data) setSuccess(true);
       })
       .catch((err) => {
         console.log(err);
         if (err) {
-          toastr.error("Registration fail, try again");
+          toastr.error("Failed, please try again");
         }
       })
       .finally(() => {
@@ -58,10 +57,9 @@ const GalleryForm = () => {
   useEffect((): any => {
     if (success)
       setData({
-        firstName: "",
-        lastName: "",
+        name: "",
+        message: "",
         email: "",
-        country: "",
       });
   }, [success]);
 
@@ -75,7 +73,11 @@ const GalleryForm = () => {
         >
           <div className="col w-full px-0 mr-5">
             <div className="text-[#000] leading-8 lg:w-[75%] pl-5 mb-10 mx-auto border-l-0 md:border-l-8 border-l-black border-solid">
-              <img src="images/message.png" width="60%" className="block mx-auto w-[50%] md:inline md:w-[60%]"/>
+              <img
+                src="images/message.png"
+                width="60%"
+                className="block mx-auto w-[50%] md:inline md:w-[60%]"
+              />
             </div>
           </div>
           <div className="w-full">
@@ -91,10 +93,10 @@ const GalleryForm = () => {
                 <div className="fields-set">
                   <input
                     type="text"
-                    data-error="Please enter yourname."
-                    name="Name"
+                    data-error="Please enter your name."
+                    name="name"
                     onChange={handleChange}
-                    value={data?.firstName}
+                    value={data?.name}
                     required
                     placeholder="Name*"
                     className="default-input"
@@ -103,10 +105,10 @@ const GalleryForm = () => {
                 <div className="fields-set">
                   <input
                     type="email"
-                    data-error="Please enter your email."
+                    data-error="Please enter your email"
                     name="email"
                     onChange={handleChange}
-                    value={data?.lastName}
+                    value={data?.email}
                     required
                     placeholder="Email*"
                     className="default-input"
@@ -114,10 +116,12 @@ const GalleryForm = () => {
                 </div>
                 <div className="fields-set">
                   <textarea
-                    data-error="Please enter your email address."
-                    name="email"
+                    data-error="Please enter your message"
+                    name="message"
                     required
                     placeholder="Enter message*"
+                    onChange={handleChange}
+                    value={data?.message}
                     className="default-input2 resize-none h-[100px]"
                   />
                 </div>
@@ -127,7 +131,7 @@ const GalleryForm = () => {
                     className=""
                     type="submit"
                     name="submit"
-                    value={loading ? "Loading..." : "Send"}
+                    value={loading ? "Sending..." : "Send"}
                     disabled={loading}
                   />
                 </div>
