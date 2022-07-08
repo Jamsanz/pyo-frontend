@@ -38,7 +38,7 @@ const GalleryBox = () => {
           return (
             <div
               key={id}
-              className="w-[100%] p-[5px] border-solid border-[1px] border-[#000] shadow-md md:w-[46%] mx-[2%] hover:cursor-pointer mb-[30px] mt-[50px] rounded-lg relative"
+              className="w-full p-[5px] border-solid border-[1px] border-[#000] shadow-md  mx-[2%] hover:cursor-pointer mb-[30px] mt-[50px] rounded-lg relative"
             >
               <ul className="inline-flex space-x-3 mt-2 absolute -top-[50px]">
                 <a href="">
@@ -66,8 +66,7 @@ const GalleryBox = () => {
                             {({ ref, open }) => (
                               <div className=" bg-black">
                                 <img
-                                ref={ref}
-
+                                itemRef={ref}
                                   onClick={open}
                                   alt=""
                                   src={item.img}
