@@ -1,11 +1,9 @@
-import React, { useRef }  from "react";
+import React  from "react";
 import GalleryForm from "../components/galleryForm";
 import Layout from "../components/layout";
 import { gallery } from "../utils/constant";
 
 import { Gallery, Item } from "react-photoswipe-gallery";
-
-
 
 const GalleryBox = () => {
   return (

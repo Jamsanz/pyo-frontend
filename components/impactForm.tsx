@@ -74,7 +74,7 @@ const ImpactForm = () => {
           }  flex flex-col md:flex-row w-full items-center`}
         >
           <div className="col w-full px-0 mr-5">
-            <div className="text-[#000] leading-8 lg:w-[75%] pl-5 mb-10 mx-auto">
+            <div className="text-[#000] leading-8 lg:w-[90%] pl-5 mb-10 mx-auto">
               {/* <h2 className="text-[2.375rem] tracking-[-0.02rem]"></h2> */}
               <h2 className="text-[#000] border-0 md:border-l-[6px] leading-8 lg:w-[75%] border-l-solid border-l-[#000] pl-5 mb-10">
                 Download the full Impact Report
