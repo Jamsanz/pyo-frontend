@@ -5,7 +5,14 @@ import { useEffect, useState } from "react";
 import BottomForm from "../components/bottomForm";
 import Button from "../components/button";
 import Layout from "../components/layout";
-import { handleScroll, IReadMore, pyoFellowship, pyoInstitute, readMore, readMoreInstitute } from "../utils/utils";
+import {
+  handleScroll,
+  IReadMore,
+  pyoFellowship,
+  pyoInstitute,
+  readMore,
+  readMoreInstitute,
+} from "../utils/utils";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -15,26 +22,25 @@ const Home: NextPage = () => {
     };
   }, []);
 
-  const [show, setShow] = useState<boolean>(false)
+  const [show, setShow] = useState<boolean>(false);
   const [showInitiative, setShowInitiative] = useState<boolean>(false);
 
   const [moreText, setMoreText] = useState<IReadMore>();
   const [moreTextInitiative, setMoreTextInitiative] = useState<IReadMore>();
 
-  
-
-  let readMoreText: IReadMore[]
+  let readMoreText: IReadMore[];
   let readMoreTextInitiative: IReadMore[];
 
-  
   const showMore = (id: number) => {
-    setShow(true)
-    console.log(show)
-    readMoreText = readMore?.filter((item: any) => item.id === id)?.map((data: any) => data)
-    setMoreText(readMoreText?.pop())
-    console.log(moreText)
-   return readMoreText
-  }
+    setShow(true);
+    console.log(show);
+    readMoreText = readMore
+      ?.filter((item: any) => item.id === id)
+      ?.map((data: any) => data);
+    setMoreText(readMoreText?.pop());
+    console.log(moreText);
+    return readMoreText;
+  };
   const showMoreInitiative = (id: number) => {
     setShowInitiative(true);
     readMoreTextInitiative = readMoreInstitute
@@ -102,14 +108,12 @@ const Home: NextPage = () => {
                 <h3 className="monoFont text-[22px] font-bold text-center md:pb-0 h-auto md:h-16">
                   {data?.title}
                 </h3>
-                <div className="w-full text-center mx-auto">
-                  <img
-                    src={data?.images}
-                    width="100%"
-                    height="70px"
-                    className="rounded-lg mb-[20px] boxShadow2"
-                  />
-                </div>
+                <div
+                  className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
+                  style={{
+                    backgroundImage: `url('${data?.images}')`,
+                  }}
+                ></div>
                 <span className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                   {data?.text1}
                 </span>
@@ -190,14 +194,12 @@ const Home: NextPage = () => {
                   {item?.title}
                   <br /> {item?.slug}
                 </h3>
-                <div className="w-full text-center mx-auto">
-                  <img
-                    src={item?.images}
-                    width="100%"
-                    height="70px"
-                    className="rounded-lg mb-[20px] boxShadow2"
-                  />
-                </div>
+                <div
+                  className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
+                  style={{
+                    backgroundImage: `url('${item?.images}')`,
+                  }}
+                ></div>
                 <p className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                   {item?.text1}
                 </p>
