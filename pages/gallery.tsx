@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import GalleryForm from "../components/galleryForm";
 import Layout from "../components/layout";
 import { gallery } from "../utils/constant";
@@ -27,7 +27,6 @@ const GalleryBox = () => {
       </div>
 
       <div className="mx-2 flex md:mx-10 mt-20 pb-20 flex-wrap h-auto border-black border-b-[1px] border-solid">
-       
         {gallery.map((item: any, index: number) => {
           const { images, id } = item;
           return (
@@ -55,8 +54,9 @@ const GalleryBox = () => {
                           <Item
                             original={item.img}
                             thumbnail={item.img}
-                            width="900"
-                            height="550"
+                            width={item.width}
+                            height={item.height}
+                            cropped={true}
                           >
                             {({ ref, open }: any) => (
                               <div className=" bg-black">

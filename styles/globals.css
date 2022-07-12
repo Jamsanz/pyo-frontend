@@ -183,8 +183,16 @@ body {
   color: #53565a;
 }
 
+/*
+  Colors
+*/
+
+.text-main {
+  color: #b1803c !important;
+}
+
 /* 
-  Homepage components
+  Homepage elements
 */
 .bg-img-box {
   height: 400px;
