@@ -1,3 +1,5 @@
+export const siteUrl = "https://pyo-ten.vercel.app";
+
 export const gallery = [
   {
     id: 1,
