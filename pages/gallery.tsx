@@ -1,11 +1,21 @@
-import React  from "react";
+import React from "react";
 import GalleryForm from "../components/galleryForm";
 import Layout from "../components/layout";
-import { gallery } from "../utils/constant";
+import { gallery, siteUrl } from "../utils/constant";
 
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from "react-share";
 import { Gallery, Item } from "react-photoswipe-gallery";
 
 const GalleryBox = () => {
+  const shareUrl = `${siteUrl}/gallery`;
+  console.log(shareUrl);
   return (
     <Layout>
       <div
@@ -27,7 +37,6 @@ const GalleryBox = () => {
       </div>
 
       <div className="mx-2 flex md:mx-10 mt-20 pb-20 flex-wrap h-auto border-black border-b-[1px] border-solid">
-       
         {gallery.map((item: any, index: number) => {
           const { images, id } = item;
           return (
@@ -35,19 +44,23 @@ const GalleryBox = () => {
               key={id}
               className="w-full p-[5px] border-solid border-[1px] border-[#000] shadow-md  mx-[2%] hover:cursor-pointer mb-[30px] mt-[50px] rounded-lg relative"
             >
-              <ul className="inline-flex space-x-3 mt-2 absolute -top-[50px]">
-                <a href="">
-                  <i className="fa-brands text-[#4064AC] text-xl fa-facebook"></i>
-                </a>
-                <a href="">
-                  <i className="fa-brands text-xl text-[#1C9CEA] fa-twitter"></i>
-                </a>
-                <a href="">
-                  <i className="fa-brands text-xl text-[#7C47AE] fa-instagram"></i>
-                </a>
-              </ul>
-              <div className="flex flex-wrap w-[100%] content-center justify-center ">
+              <div className="flex flex-wrap w-[100%] ">
                 <Gallery id={id}>
+                  <ul className="inline-flex space-x-3 mt-2 absolute -top-[50px]">
+                    <FacebookShareButton
+                      url={shareUrl}
+                      quote="PYO Institute Message Gallery"
+                      hashtag="pyoinstitute"
+                    >
+                      <FacebookIcon size={32} round={true} />
+                    </FacebookShareButton>
+                    <TwitterShareButton url={shareUrl}>
+                      <TwitterIcon size={32} round={true} />
+                    </TwitterShareButton>
+                    <LinkedinShareButton url={shareUrl}>
+                      <LinkedinIcon size={32} round={true} />
+                    </LinkedinShareButton>
+                  </ul>
                   {images.map((item: any, index: any) => {
                     return (
                       <>
@@ -55,8 +68,9 @@ const GalleryBox = () => {
                           <Item
                             original={item.img}
                             thumbnail={item.img}
-                            width="900"
-                            height="550"
+                            width={item.width}
+                            height={item.height}
+                            cropped={true}
                           >
                             {({ ref, open }: any) => (
                               <div className=" bg-black">
