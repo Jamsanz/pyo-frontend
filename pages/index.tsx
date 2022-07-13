@@ -83,7 +83,7 @@ const Home: NextPage = () => {
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
             <p className="mb-4 text-lg text-[white] font-[400] leading-[1.5rem] text-justify">
               As a unifying platform for the exchange of knowledge and mutual
-              learning, the Prof. Yemi Osinbajo Institute brings together all
+              learning, the PYO Institute brings together all
               the different people and partners involved in promoting
               sustainable growth and development across a diverse fora.
             </p>
