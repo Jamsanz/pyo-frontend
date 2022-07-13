@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import BottomForm from "../components/bottomForm";
 import Button from "../components/button";
 import Layout from "../components/layout";
-import { handleScroll, IReadMore, pyoFellowship, pyoInstitute, readMore, readMoreInstitute } from "../utils/utils";
+import {
+  handleScroll,
+  IReadMore,
+  pyoFellowship,
+  pyoInstitute,
+  readMore,
+  readMoreInstitute,
+} from "../utils/utils";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -15,26 +21,25 @@ const Home: NextPage = () => {
     };
   }, []);
 
-  const [show, setShow] = useState<boolean>(false)
+  const [show, setShow] = useState<boolean>(false);
   const [showInitiative, setShowInitiative] = useState<boolean>(false);
 
   const [moreText, setMoreText] = useState<IReadMore>();
   const [moreTextInitiative, setMoreTextInitiative] = useState<IReadMore>();
 
-  
-
-  let readMoreText: IReadMore[]
+  let readMoreText: IReadMore[];
   let readMoreTextInitiative: IReadMore[];
 
-  
   const showMore = (id: number) => {
-    setShow(true)
-    console.log(show)
-    readMoreText = readMore?.filter((item: any) => item.id === id)?.map((data: any) => data)
-    setMoreText(readMoreText?.pop())
-    console.log(moreText)
-   return readMoreText
-  }
+    setShow(true);
+    console.log(show);
+    readMoreText = readMore
+      ?.filter((item: any) => item.id === id)
+      ?.map((data: any) => data);
+    setMoreText(readMoreText?.pop());
+    console.log(moreText);
+    return readMoreText;
+  };
   const showMoreInitiative = (id: number) => {
     setShowInitiative(true);
     readMoreTextInitiative = readMoreInstitute
@@ -77,8 +82,8 @@ const Home: NextPage = () => {
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
             <p className="mb-4 text-lg text-[white] font-[400] leading-[1.5rem] text-justify">
               As a unifying platform for the exchange of knowledge and mutual
-              learning, the Prof. Yemi Osinbajo Institute brings together all
-              the different people and partners involved in promoting
+              learning, the PYO Institute for Global Governance brings together
+              all the different people and partners involved in promoting
               sustainable growth and development across a diverse fora.
             </p>
             {/* <div className="text-center m-auto text-xl">
@@ -89,7 +94,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="pb-8 md:py-16 bg-[#fff]" id="fellow">
-        <h1 className=" px-5  pt-10 md:pt-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
+        <h1 className=" px-5  pt-10 md:pt-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-main">
           Fellowship Programmes
         </h1>
         <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
@@ -99,17 +104,15 @@ const Home: NextPage = () => {
                 className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={data?.id}
               >
-                <h3 className="monoFont text-[22px] font-bold text-center md:pb-0 h-auto md:h-16">
+                <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
                   {data?.title}
                 </h3>
-                <div className="w-full text-center mx-auto">
-                  <img
-                    src={data?.images}
-                    width="100%"
-                    height="70px"
-                    className="rounded-lg mb-[20px] boxShadow2"
-                  />
-                </div>
+                <div
+                  className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
+                  style={{
+                    backgroundImage: `url('${data?.images}')`,
+                  }}
+                ></div>
                 <span className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                   {data?.text1}
                 </span>
@@ -176,7 +179,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="lg:px-24 bg-[#fff] text-center mx-uato">
-        <h1 className=" px-5 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-[#000]">
+        <h1 className=" px-5 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-main">
           Latest Initiatives from the PYO Institute
         </h1>
         <div className="pb-8 container mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
@@ -186,18 +189,16 @@ const Home: NextPage = () => {
                 className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={item?.id}
               >
-                <h3 className="monoFont text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16">
+                <h3 className="monoFont border-below text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16 mb-4">
                   {item?.title}
                   <br /> {item?.slug}
                 </h3>
-                <div className="w-full text-center mx-auto">
-                  <img
-                    src={item?.images}
-                    width="100%"
-                    height="70px"
-                    className="rounded-lg mb-[20px] boxShadow2"
-                  />
-                </div>
+                <div
+                  className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
+                  style={{
+                    backgroundImage: `url('${item?.images}')`,
+                  }}
+                ></div>
                 <p className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                   {item?.text1}
                 </p>

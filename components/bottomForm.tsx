@@ -21,7 +21,7 @@ const BottomForm = () => {
   const [show, setShow] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
-  const [fellow, setFellow] = useState<boolean>(false)
+  const [fellow, setFellow] = useState<boolean>(false);
 
   const showForm = () => {
     setShow(true);
@@ -67,17 +67,14 @@ const BottomForm = () => {
 
   return (
     <div className={styles.container}>
-      <div
-        className="container  mt-0 md:mt-10 px-0 md:px-16 py-12"
-        id="members"
-      >
+      <div className="row mt-0 md:mt-10 px-0 md:px-16 py-12" id="members">
         <div
           className={`${
             show ? "items-start" : "items-center"
           }  flex flex-col md:flex-row w-full items-center`}
         >
           <div className="col w-full px-0 mr-5">
-            <h2 className="text-[#000] border-0 md:border-l-[6px] leading-8 lg:w-[75%] border-l-solid border-l-[#000] pl-5 mb-10">
+            <h2 className="text-main border-0 md:border-l-[6px] leading-8 lg:w-[75%] border-l-solid border-l-[#000] pl-5 mb-10">
               Be the first to know what we're doing.
             </h2>
           </div>
@@ -139,7 +136,9 @@ const BottomForm = () => {
                       value={data?.country}
                       required
                     >
-                      <option value="" disabled>Country of residence* </option>
+                      <option value="" disabled>
+                        Country of residence*{" "}
+                      </option>
                       <option value="AF">Afghanistan</option>
                       <option value="AL">Albania</option>
                       <option value="DZ">Algeria</option>
@@ -416,7 +415,9 @@ const BottomForm = () => {
                         // value={data?.country}
                         required
                       >
-                        <option value="" disabled selected>Select Fellowship Programme* </option>
+                        <option value="" disabled selected>
+                          Select Fellowship Programme*{" "}
+                        </option>
                         <option value="PYO Fellows">PYO Fellows </option>
                         <option value="PYO New Tribe">PYO New Tribe </option>
                       </select>
@@ -435,7 +436,7 @@ const BottomForm = () => {
                   </label>
                 </div>
 
-                <div className="Submit" >
+                <div className="Submit">
                   <input
                     className=""
                     type="submit"
