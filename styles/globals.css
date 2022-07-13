@@ -377,7 +377,7 @@ label[for="country"] {
   transition: all 0.3s ease-in-out;
 }
 
-input[type="submit"] {
+input[type="submit"], .download {
   width: 100%;
   color: white;
   border: none;
