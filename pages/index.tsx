@@ -83,8 +83,8 @@ const Home: NextPage = () => {
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
             <p className="mb-4 text-lg text-[white] font-[400] leading-[1.5rem] text-justify">
               As a unifying platform for the exchange of knowledge and mutual
-              learning, the Prof. Yemi Osinbajo Institute brings together all
-              the different people and partners involved in promoting
+              learning, the PYO Institute for Global Governance brings together
+              all the different people and partners involved in promoting
               sustainable growth and development across a diverse fora.
             </p>
             {/* <div className="text-center m-auto text-xl">
@@ -105,7 +105,7 @@ const Home: NextPage = () => {
                 className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={data?.id}
               >
-                <h3 className="monoFont text-[22px] font-bold text-center md:pb-0 h-auto md:h-16">
+                <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
                   {data?.title}
                 </h3>
                 <div
@@ -190,7 +190,7 @@ const Home: NextPage = () => {
                 className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                 key={item?.id}
               >
-                <h3 className="monoFont text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16">
+                <h3 className="monoFont border-below text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16 mb-4">
                   {item?.title}
                   <br /> {item?.slug}
                 </h3>
