@@ -100,7 +100,7 @@ const Dashboard = () => {
               <tbody className='overflow-x-scroll'>
                 {
                   schedules?.map((schedule, index) => (
-                    <tr className='bg-white border-b'>
+                    <tr className='bg-white border-b' key={index}>
                       <th scope='row' className='px-6 py-4'>{schedule.title}</th>
                       <td className='px-6 py-4'>{schedule.type}</td>
                       <td className='px-6 py-4'>{dateTimeFormatter(`${schedule.date}`)}</td>
