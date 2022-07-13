@@ -63,7 +63,6 @@ const GalleryBox = () => {
                   </ul>
                   {images.map((item: any, index: any) => {
                     return (
-                      <>
                         <div key={index} className=" w-[50%]">
                           <Item
                             original={item.img}
@@ -84,7 +83,6 @@ const GalleryBox = () => {
                             )}
                           </Item>
                         </div>
-                      </>
                     );
                   })}
                 </Gallery>
