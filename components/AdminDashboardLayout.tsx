@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-const DashboardLayout = (props: any) => {
+const AdminDashboardLayout = (props: any) => {
   const router = useRouter()
 
   const [nav, setNav] = useState<boolean>(false)
@@ -139,62 +139,6 @@ const DashboardLayout = (props: any) => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/group">
-                    <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "group" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
-                    >
-                      <span className="mx-4 font-medium text-[15px]">
-                        <i className="fa-solid fa-people-group mr-2" /> Fellows Chat Group
-                      </span>
-                    </a>
-                  </Link>
-                </li>
-                <li className="mr-3 relative scheduleNav">
-                    <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "schedule-meeting" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
-                      onClick={navigateAbout}
-                    >
-                      <span className="mx-4 font-medium text-[15px]">
-                        <i className="fa-solid fa-calendar mr-2" /> Schedule Meeting
-                      </span>
-                    </a>
-                    <div
-                      className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${about ? "block relative " : "absolute hidden lg:block"
-                        }`}
-                    >
-                      <ul>
-                        <li className="mr-3">
-                          <Link href="/schedule-meeting">
-                            <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
-                              Schedule General meeting
-                            </a>
-                          </Link>
-                        </li>
-                        <li className="mr-3">
-                          <Link href="#">
-                            <a
-                              className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                            >
-                              Schedule meeting with PYO
-                            </a>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                </li>
-                <li>
-                  <Link href="/news-feed">
-                    <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "news-feed" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
-
-                    >
-                      <span className="mx-4 font-medium text-[15px]">
-                        <i className="fa-solid fa-rss mr-2" /> News feed
-                      </span>
-                    </a>
-                  </Link>
-                </li>
-                <li>
                   <button
                     className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${props.pageName === "" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
                     onClick={logout}
@@ -216,4 +160,4 @@ const DashboardLayout = (props: any) => {
   )
 }
 
-export default DashboardLayout;
+export default AdminDashboardLayout;

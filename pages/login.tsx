@@ -39,6 +39,7 @@ const Login = () => {
       localStorage.setItem("firstName", response.data.data.firstName);
       localStorage.setItem("lastName", response.data.data.lastName);
       localStorage.setItem("country", response.data.data.country);
+      localStorage.setItem("fellowship", response.data.data?.fellowship);
       setLoading(false);
       if (response) router.push("/dashboard");
       toastr.success("Login successful");
