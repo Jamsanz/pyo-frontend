@@ -104,7 +104,7 @@ const ImpactForm = () => {
                       {" "}
                       x{" "}
                     </p>
-                    <a href="/assets/concept note.pdf" download="Impact Report">
+                    <a href="/concept note.pdf" download="Impact Report">
                       {" "}
                       Download Impact Report
                     </a>
