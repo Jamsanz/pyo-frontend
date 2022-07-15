@@ -22,17 +22,6 @@ const Index = () => {
     setPyoMeetings(true)
     setGeneral(false)
   }
-
-  
-
-  const editApproval = (id: string) => { 
-
-    http
-      .put(`/schedule/${id}`, {status: "true"})
-      .then((res) => setSchedules(res.data.data))
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
-  }
   
   useEffect(() => {
     setLoading(true);
@@ -78,6 +67,7 @@ console.log(schedules)
   }, []);
 
   
+  console.log(pyoSchedules)
 
   return (
     <AdminDashboardLayout>
@@ -182,97 +172,114 @@ console.log(schedules)
                       </th>
                     </tr>
                   </thead>
-                  {schedules && schedules?.map((schedule: any, index: any) => (
-                    <tbody className="overflow-x-scroll" key={index}>
-                      <tr className="bg-white border-b">
-                        <th scope="row" className="px-6 py-4">
-                          {schedule?.title}
-                        </th>
-                        <td className="px-6 py-4">{schedule?.type}</td>
-                        <td className="px-6 py-4">
-                          {dateTimeFormatter(`${schedule?.date}`)}
-                        </td>
-                        <td className="px-6 py-4">{schedule?.location}</td>
+                  {schedules &&
+                    schedules?.map((schedule: any, index: any) => (
+                      <tbody className="overflow-x-scroll" key={index}>
+                        <tr className="bg-white border-b">
+                          <th scope="row" className="px-6 py-4">
+                            {schedule?.title}
+                          </th>
+                          <td className="px-6 py-4">{schedule?.type}</td>
+                          <td className="px-6 py-4">
+                            {dateTimeFormatter(`${schedule?.date}`)}
+                          </td>
+                          <td className="px-6 py-4">{schedule?.location}</td>
 
-                        <td className="px-6 py-4">{schedule?.city}</td>
-                        <td className="px-6 py-4">{schedule?.state}</td>
-                        <td className="px-6 py-4">{schedule?.country}</td>
-                        <td className="px-6 py-4 cursor-pointer">
-                            <div className={`w-[90px] ${schedule?.status ? "bg-[green]" : "bg-[red]"} text-white p-2 rounded-sm`}
-                            onClick={() => editApproval(schedule?._id)}>
-                             {schedule?.status ? "Approved" : "Not Approved"}
-                              <i className={`ml-[2px]  ${schedule?.status ? "fa-check" : "fa-xmark"}  fa-solid text-[10px]`}></i>
+                          <td className="px-6 py-4">{schedule?.city}</td>
+                          <td className="px-6 py-4">{schedule?.state}</td>
+                          <td className="px-6 py-4">{schedule?.country}</td>
+                          <td className="px-6 py-4 cursor-pointer">
+                            <div
+                              className={`w-[90px] ${
+                                schedule?.status
+                                  ? "bg-[green] w-[90px] "
+                                  : "bg-[red] w-[110px] "
+                              } text-white p-2 rounded-sm`}
+                              // onClick={() => editApproval(schedule?._id)}
+                            >
+                              {schedule?.status ? "Approved" : "Not Approved"}
+                              <i
+                                className={`ml-[2px]  ${
+                                  schedule?.status ? "fa-check" : "fa-xmark"
+                                }  fa-solid text-[10px]`}
+                              ></i>
                             </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  ))}
+                          </td>
+                        </tr>
+                      </tbody>
+                    ))}
                 </>
               )}
               {pyoMeetings && (
                 <>
-                  <p> PYO Meetings</p>
                   <thead className="text-xs overflow-x-scroll text-gray-700 uppercase bg-gray-50 ">
                     <tr>
                       <th scope="col" className="px-6 py-3">
-                        Title
+                        Host Name
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Type
+                        Host Email
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Date
+                        host Phone
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Location
+                        Event Title
+                      </th>
+
+                      <th scope="col" className="px-6 py-3">
+                        State
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        City
+                      </th>
+
+                      <th scope="col" className="px-6 py-3">
+                        Country
                       </th>
                       <th scope="col" className="px-6 py-3">
                         Status
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        City
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        State
-                      </th>
-                      <th scope="col" className="px-6 py-3">
-                        Country
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="overflow-x-scroll">
-                    {/* {schedules?.map((schedule, index) => ( */}
-                    <tr className="bg-white border-b">
-                      <th scope="row" className="px-6 py-4">
-                        title
-                      </th>
-                      <td className="px-6 py-4">
-                        {/* {schedule.type} */}
-                        tyoe
-                      </td>
-                      <td className="px-6 py-4">
-                        {/* {dateTimeFormatter(`${schedule.date}`)} */}
-                        date
-                      </td>
-                      <td className="px-6 py-4">
-                        {/* {schedule.location} */}
-                        location
-                      </td>
-                      <td className="px-6 py-4">
-                        {/* {schedule.status ? "approved" : "unapproved"}{" "} */}
-                        status
-                      </td>
-                      <td className="px-6 py-4">
-                        {/* {schedule.city} */}
-                        city
-                      </td>
-                      <td className="px-6 py-4">
-                        {/* {schedule.state} */}
-                        state
-                      </td>
-                      <td className="px-6 py-4">{/* {schedule.country} */}</td>
-                    </tr>
-                  </tbody>
+                  {pyoSchedules &&
+                    pyoSchedules?.map((schedule: any, index: any) => (
+                      <tbody className="overflow-x-scroll" key={index}>
+                        <tr className="bg-white border-b">
+                          <th scope="row" className="px-6 py-4">
+                            {schedule?.hostName}
+                          </th>
+                          <td className="px-6 py-4">{schedule?.hostEmail}</td>
+                          <td className="px-6 py-4">{schedule?.hostPhone}</td>
+
+                          <td className="px-6 py-4">{schedule?.eventTitle}</td>
+                          <td className="px-6 py-4">{schedule?.state}</td>
+
+                          <td className="px-6 py-4">{schedule?.city}</td>
+                          <td className="px-6 py-4">{schedule?.country}</td>
+                          <td className="px-6 py-4 cursor-pointer">
+                            <div
+                              className={`${
+                                schedule?.status
+                                  ? "bg-[green] w-[90px] "
+                                  : "bg-[red] w-[110px] "
+                              } text-white p-2 rounded-lg`}
+                              // onClick={() => editApproval(schedule?._id)}
+                            >
+                              {schedule?.status ? "Approved" : "Not Approved"}
+                              <i
+                                className={`ml-[2px]  ${
+                                  schedule?.status ? "fa-check" : "fa-xmark"
+                                }  fa-solid text-[10px]`}
+                              ></i>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 font-bold cursor-pointer"> See more </td>
+                        </tr>
+                      </tbody>
+                    ))}
                 </>
               )}
             </table>

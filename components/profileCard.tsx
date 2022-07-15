@@ -23,8 +23,8 @@ const ProfileCard = () => {
   }, []);
 
   return (
-    <div className="hidden hover:scale-110 lg:flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[350px] max-h-[350px] max-w-[350px] rounded-lg overflow-hidden mx-4">
-      <div className="profile-card min-h-[96px] w-full"></div>
+    <div className="hidden hover:scale-110 lg:flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[400px] max-h-[400px] max-w-[350px] rounded-lg overflow-hidden mx-4">
+      <div className="profile-card w-full"></div>
       <img src="/images/woman-2.avif" alt="" className='w-[100px] h-[100px] object-cover rounded-full -mt-12 bg-white p-1 shadow-md outline-white outline-2 outline-offset-2' />
       <h1 className='text-xl font-bold text-black font-sans my-2'>{firstName + " " + lastName}</h1>
       <ul className='inline-flex flex-col space-y-2 w-[250px] mt-2 items-center'>
