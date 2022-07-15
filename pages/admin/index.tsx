@@ -66,7 +66,7 @@ const Index = () => {
   }, []);
 
   return (
-    <AdminDashboardLayout>
+    <AdminDashboardLayout pageName="dashboard">
       <div className="bg-[#f4f4f4] min-h-screen py-3 flex flex-col">
         <div className="flex md:justify-around mt-5  mb-12">
           <div className="flex-1 items-center md:items-start inline-flex flex-col md:flex-row space-y-5 md:space-y-0 justify-center md:justify-around">
