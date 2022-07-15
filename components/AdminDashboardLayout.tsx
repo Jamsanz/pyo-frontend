@@ -102,35 +102,85 @@ const AdminDashboardLayout = (props: any) => {
 
                 <div className="absolute right-0 z-20 w-56 mt-2 overflow-hidden bg-white rounded-md"></div>
               </div>
-              <i className='fas fa-user lg:hidden' />
+              <i className="fas fa-user lg:hidden" />
             </div>
           </div>
         </div>
       </nav>
       <div className="lg:flex bottom-0 pt-16">
         <div
-          className={`${nav ? "flex" : "hidden"
-            } lg:flex flex-col bg-white w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[250px] fixed`}
+          className={`${
+            nav ? "flex" : "hidden"
+          } lg:flex flex-col bg-white w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[250px] fixed`}
         >
           <div className="flex flex-col justify-between mt-12 lg:mt-10 bg-white">
             <aside>
               <ul>
                 <li>
-                  <Link href="/dashboard">
+                  <Link href="/admin/">
                     <a
-                      className={`flex items-center px-[4px] py-2 rounded-md hover:bg-gray-200 ${props.pageName === "dashboard" && 'bg-[#1F2937] text-white'}`}
+                      className={`flex items-center px-[4px] py-2 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "dashboard" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
-                        <i className="fas fa-tachometer-alt-fast mr-2" /> Dashboard
+                        <i className="fas fa-tachometer-alt-fast mr-2" />{" "}
+                        Dashboard
                       </span>
                     </a>
                   </Link>
                 </li>
-
+                
                 <li>
-                  <Link href="/profile">
+                  <Link href="#">
                     <a
-                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${props.pageName === "profile" && 'bg-[#1F2937] text-white'}`}
+                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "profile" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
+                    >
+                      <span className="mx-4 font-medium text-[15px]">
+                        <i className="fas fa-user mr-2" /> Membership
+                      </span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#">
+                    <a
+                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "profile" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
+                    >
+                      <span className="mx-4 font-medium text-[15px]">
+                        <i className="fas fa-user mr-2" /> Message Gallery
+                      </span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#">
+                    <a
+                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "profile" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
+                    >
+                      <span className="mx-4 font-medium text-[15px]">
+                        <i className="fas fa-user mr-2" /> Messages
+                      </span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#">
+                    <a
+                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "profile" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
                         <i className="fas fa-user mr-2" /> Profile
@@ -140,7 +190,9 @@ const AdminDashboardLayout = (props: any) => {
                 </li>
                 <li>
                   <button
-                    className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${props.pageName === "" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
+                    className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${
+                      props.pageName === "" && "bg-[#1F2937] text-white"
+                    } rounded-md hover:bg-gray-200`}
                     onClick={logout}
                   >
                     <span className="mx-4 font-medium text-[15px] hover:bg-gray-200">
@@ -152,12 +204,12 @@ const AdminDashboardLayout = (props: any) => {
             </aside>
           </div>
         </div>
-        <div className="my-12 lg:ml-[250px] lg:h-full w-full">
+        <div className="mt-12 lg:ml-[250px] lg:h-full w-full">
           {props.children}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default AdminDashboardLayout;

@@ -22,6 +22,8 @@ const Dashboard = () => {
   useEffect(() => {
     setUser(getUser());
   }, []);
+
+  
   return (
     <DashboardLayout pageName="dashboard">
       <div className="bg-[#f4f4f4] min-h-screen py-3 flex flex-col">
