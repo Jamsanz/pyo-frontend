@@ -11,6 +11,10 @@ interface IMessage {
 }
 export const Message: IMessage[] = [
   {
+    text: '"The point is it is easy to criticise. A lot of people don’t know the role that man is playing there. He is the ‘sole light’ in the midst of darkness in Aso Villa and he is doing his best"',
+    name: "Bishop Wale Oke",
+  },
+  {
     text: '"Osinbajo is the pride of Nigeria"',
     name: "Nigerian Supreme Council for Islamic Affairs (NSCIA)",
   },
@@ -30,10 +34,7 @@ export const Message: IMessage[] = [
     text: '"Osinbajo has provided excellent leadership"',
     name: "El-Rufai",
   },
-  {
-    text: '"The point is it is easy to criticise. A lot of people don’t know the role that man is playing there. He is the ‘sole light’ in the midst of darkness in Aso Villa and he is doing his best"',
-    name: "Bishop Wale Oke",
-  },
+
   {
     text: '"In public and personal lives, Prof Osinbajo has demonstrated that the most worthy service is that ​carried out for the good of fellow human beings even for no personal gains and comfort"',
     name: "Rauf ​Aregbesola",

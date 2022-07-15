@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import BottomForm from "../components/bottomForm";
@@ -268,3 +267,4 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
