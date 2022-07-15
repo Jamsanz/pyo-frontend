@@ -26,7 +26,6 @@ const ScheduleMeeting = () => {
         reset.current.click();
         setData(undefined);
       }).catch(err => {
-        console.log(err.response.data.message);
         toastr.error(err.response.data.message);
       }).finally(() => setLoading(false));
   }
