@@ -61,13 +61,9 @@ const Index = () => {
    }, []);
   
   
-console.log(schedules)
   useEffect(() => {
     // setUser(getUser());
   }, []);
-
-  
-  console.log(pyoSchedules)
 
   return (
     <AdminDashboardLayout>
@@ -194,7 +190,7 @@ console.log(schedules)
                                 schedule?.status
                                   ? "bg-[green] w-[90px] "
                                   : "bg-[red] w-[110px] "
-                              } text-white p-2 rounded-sm`}
+                              } text-white p-2 rounded-lg`}
                               // onClick={() => editApproval(schedule?._id)}
                             >
                               {schedule?.status ? "Approved" : "Not Approved"}
