@@ -51,6 +51,11 @@ a {
   font-size: 20px;
 }
 
+.required::after{
+  content: '*';
+  color: red;
+}
+
 .main-menu:hover,
 nav.main-menu.expanded {
   width: 250px;
@@ -522,6 +527,7 @@ option {
 .boxShadow5 {
   box-shadow: none;
 }
+
 
 @media only screen and (min-width: 1024px) {
   .nav .navItem {

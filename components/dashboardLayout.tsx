@@ -171,7 +171,7 @@ const DashboardLayout = (props: any) => {
                           </Link>
                         </li>
                         <li className="mr-3">
-                          <Link href="#">
+                          <Link href="pyo-schedule">
                             <a
                               className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
                             >
@@ -208,7 +208,7 @@ const DashboardLayout = (props: any) => {
             </aside>
           </div>
         </div>
-        <div className="my-12 lg:ml-[250px] lg:h-full w-full">
+        <div className="mt-12 lg:ml-[250px] lg:h-full w-full">
           {props.children}
         </div>
       </div>
