@@ -7,21 +7,11 @@ import Schedule from "../interfaces/schedule.interface";
 import { dateTimeFormatter, getUser, http } from "../utils/utils";
 
 const Dashboard = () => {
-  const [user, setUser] = useState<Member>();
+  const [user, setUser] = useState<any>();
   const [schedules, setSchedules] = useState<Schedule[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-<<<<<<< HEAD
-    setLoading(true);
-    http.get(`/schedule/user/${user._id}`)
-      .then((res) => setSchedules(res.data.data))
-      .catch(err => console.log(err))
-      .finally(() => setLoading(false));
-  }, [user._id]);
-
-  
-=======
     if (user?.userId) {
       setLoading(true);
       http
@@ -31,7 +21,6 @@ const Dashboard = () => {
         .finally(() => setLoading(false));
     }
   }, [user]);
->>>>>>> d294e6aa175b3f464d96b9d672f1ca0208295890
   useEffect(() => {
     setUser(getUser());
   }, []);

@@ -24,7 +24,7 @@ const ProfileCard = () => {
   // const [firstName, setFirstName] = useState<string>("");
   // const [lastName, setLastName] = useState<string>("");
   // const [email, setEmail] = useState<string>("");
-  const [user, setUser] = useState<Member>();
+  const [user, setUser] = useState<any>();
   useEffect(() => {
     // setEmail(localStorage.getItem("useremail")!);
     // setFirstName(localStorage.getItem("firstName")!);
@@ -33,7 +33,6 @@ const ProfileCard = () => {
     setUser(getUser());
   }, []);
 
-  
   return (
     <div className="hidden hover:scale-110 lg:flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[400px] max-h-[400px] max-w-[350px] rounded-lg overflow-hidden mx-4">
       <div className="profile-card w-full"></div>
