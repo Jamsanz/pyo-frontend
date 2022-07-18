@@ -20,7 +20,7 @@ const ScheduleMeeting = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    http.post('/schedule', {...data, userId: user._id})
+    http.post('/schedule', {...data, userId: user.userId})
       .then(res => {
         toastr.success(res.data.message);
         reset.current.click();
