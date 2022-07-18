@@ -155,7 +155,7 @@ const AdminDashboardLayout = (props: any) => {
                       }`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
-                        <i className="fas fa-user mr-2" /> Message Gallery
+                        <i className="fas fa-message mr-2" /> Message Gallery
                       </span>
                     </a>
                   </Link>
@@ -169,7 +169,7 @@ const AdminDashboardLayout = (props: any) => {
                       }`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
-                        <i className="fas fa-user mr-2" /> Messages
+                        <i className="fa-solid fa-message mr-2" /> Messages
                       </span>
                     </a>
                   </Link>

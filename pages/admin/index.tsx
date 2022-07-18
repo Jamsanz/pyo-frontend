@@ -61,16 +61,12 @@ const Index = () => {
    }, []);
   
   
-console.log(schedules)
   useEffect(() => {
     // setUser(getUser());
   }, []);
 
-  
-  console.log(pyoSchedules)
-
   return (
-    <AdminDashboardLayout>
+    <AdminDashboardLayout pageName="dashboard">
       <div className="bg-[#f4f4f4] min-h-screen py-3 flex flex-col">
         <div className="flex md:justify-around mt-5  mb-12">
           <div className="flex-1 items-center md:items-start inline-flex flex-col md:flex-row space-y-5 md:space-y-0 justify-center md:justify-around">
@@ -194,7 +190,7 @@ console.log(schedules)
                                 schedule?.status
                                   ? "bg-[green] w-[90px] "
                                   : "bg-[red] w-[110px] "
-                              } text-white p-2 rounded-sm`}
+                              } text-white p-2 rounded-lg`}
                               // onClick={() => editApproval(schedule?._id)}
                             >
                               {schedule?.status ? "Approved" : "Not Approved"}
