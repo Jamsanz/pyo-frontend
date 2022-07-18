@@ -19,6 +19,8 @@ const Dashboard = () => {
       .catch(err => console.log(err))
       .finally(() => setLoading(false));
   }, [user._id]);
+
+  
   useEffect(() => {
     setUser(getUser());
   }, []);

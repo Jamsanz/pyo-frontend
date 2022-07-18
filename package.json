@@ -2,6 +2,7 @@
   "name": "pyoinstitute",
   "version": "0.1.0",
   "private": true,
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,6 +20,7 @@
     "animate.css": "^4.1.1",
     "axios": "^0.27.2",
     "font-awesome": "^4.7.0",
+    "http-proxy-middleware": "^2.0.6",
     "moment": "^2.29.4",
     "next": "12.1.6",
     "photoswipe": "^5.2.8",
