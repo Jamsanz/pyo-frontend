@@ -1,40 +1,38 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { Member } from "../interfaces/member.interface";
 
 const DashboardLayout = (props: any) => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const [nav, setNav] = useState<boolean>(false)
-
+  const [nav, setNav] = useState<boolean>(false);
+  const [user, setUser] = useState<Member>();
   const [email, setEmail] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
 
-
   const navigateBar = () => {
-    setOpen(!open)
-    if (open === false) setAbout(false)
-  }
+    setOpen(!open);
+    if (open === false) setAbout(false);
+  };
 
   const navigateAbout = () => {
     if (window.innerWidth < 1024) {
-      setAbout(!about)
+      setAbout(!about);
     }
-  }
+  };
 
   const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
+    localStorage.removeItem("appUser");
     window.location.reload();
-  }
+  };
   useEffect(() => {
-
-    const id = localStorage.getItem("token");
-    setEmail(localStorage.getItem("useremail")!);
-    if (!id) {
-      router.push("/login")
+    const user = JSON.parse(localStorage.getItem("appUser")!);
+    setUser(user);
+    setEmail(user.username!);
+    if (!user.userId) {
+      router.push("/login");
     }
   }, []);
 
@@ -86,7 +84,7 @@ const DashboardLayout = (props: any) => {
 
               <div className="relative hidden lg:inline-block">
                 <button className="relative flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none">
-                  <span className="mx-1">{email && email}</span>
+                  <span className="mx-1">{email && user?.username}</span>
                   <svg
                     className="w-5 h-5 mx-1"
                     viewBox="0 0 24 24"
@@ -102,15 +100,16 @@ const DashboardLayout = (props: any) => {
 
                 <div className="absolute right-0 z-20 w-56 mt-2 overflow-hidden bg-white rounded-md"></div>
               </div>
-              <i className='fas fa-user lg:hidden' />
+              <i className="fas fa-user lg:hidden" />
             </div>
           </div>
         </div>
       </nav>
       <div className="lg:flex bottom-0 pt-16">
         <div
-          className={`${nav ? "flex" : "hidden"
-            } lg:flex flex-col bg-white w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[250px] fixed`}
+          className={`${
+            nav ? "flex" : "hidden"
+          } lg:flex flex-col bg-white w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[250px] fixed`}
         >
           <div className="flex flex-col justify-between mt-12 lg:mt-10 bg-white">
             <aside>
@@ -118,10 +117,14 @@ const DashboardLayout = (props: any) => {
                 <li>
                   <Link href="/dashboard">
                     <a
-                      className={`flex items-center px-[4px] py-2 rounded-md hover:bg-gray-200 ${props.pageName === "dashboard" && 'bg-[#1F2937] text-white'}`}
+                      className={`flex items-center px-[4px] py-2 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "dashboard" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
-                        <i className="fas fa-tachometer-alt-fast mr-2" /> Dashboard
+                        <i className="fas fa-tachometer-alt-fast mr-2" />{" "}
+                        Dashboard
                       </span>
                     </a>
                   </Link>
@@ -130,7 +133,10 @@ const DashboardLayout = (props: any) => {
                 <li>
                   <Link href="/profile">
                     <a
-                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${props.pageName === "profile" && 'bg-[#1F2937] text-white'}`}
+                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${
+                        props.pageName === "profile" &&
+                        "bg-[#1F2937] text-white"
+                      }`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
                         <i className="fas fa-user mr-2" /> Profile
@@ -141,52 +147,60 @@ const DashboardLayout = (props: any) => {
                 <li>
                   <Link href="/group">
                     <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "group" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
+                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
+                        props.pageName === "group" && "bg-[#1F2937] text-white"
+                      } rounded-md hover:bg-gray-200`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
-                        <i className="fa-solid fa-people-group mr-2" /> Fellows Chat Group
+                        <i className="fa-solid fa-people-group mr-2" /> Fellows
+                        Chat Group
                       </span>
                     </a>
                   </Link>
                 </li>
                 <li className="mr-3 relative scheduleNav">
-                    <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "schedule-meeting" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
-                      onClick={navigateAbout}
-                    >
-                      <span className="mx-4 font-medium text-[15px]">
-                        <i className="fa-solid fa-calendar mr-2" /> Schedule Meeting
-                      </span>
-                    </a>
-                    <div
-                      className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${about ? "block relative " : "absolute hidden lg:block"
-                        }`}
-                    >
-                      <ul>
-                        <li className="mr-3">
-                          <Link href="/schedule-meeting">
-                            <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
-                              Schedule General meeting
-                            </a>
-                          </Link>
-                        </li>
-                        <li className="mr-3">
-                          <Link href="pyo-schedule">
-                            <a
-                              className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                            >
-                              Schedule meeting with PYO
-                            </a>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
+                  <a
+                    className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
+                      props.pageName === "schedule-meeting" &&
+                      "bg-[#1F2937] text-white"
+                    } rounded-md hover:bg-gray-200`}
+                    onClick={navigateAbout}
+                  >
+                    <span className="mx-4 font-medium text-[15px]">
+                      <i className="fa-solid fa-calendar mr-2" /> Schedule
+                      Meeting
+                    </span>
+                  </a>
+                  <div
+                    className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${
+                      about ? "block relative " : "absolute hidden lg:block"
+                    }`}
+                  >
+                    <ul>
+                      <li className="mr-3">
+                        <Link href="/schedule-meeting">
+                          <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
+                            Schedule General meeting
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="mr-3">
+                        <Link href="pyo-schedule">
+                          <a className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                            Schedule meeting with PYO
+                          </a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li>
                   <Link href="/news-feed">
                     <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "news-feed" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
-
+                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
+                        props.pageName === "news-feed" &&
+                        "bg-[#1F2937] text-white"
+                      } rounded-md hover:bg-gray-200`}
                     >
                       <span className="mx-4 font-medium text-[15px]">
                         <i className="fa-solid fa-rss mr-2" /> News feed
@@ -196,7 +210,9 @@ const DashboardLayout = (props: any) => {
                 </li>
                 <li>
                   <button
-                    className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${props.pageName === "" && 'bg-[#1F2937] text-white'} rounded-md hover:bg-gray-200`}
+                    className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${
+                      props.pageName === "" && "bg-[#1F2937] text-white"
+                    } rounded-md hover:bg-gray-200`}
                     onClick={logout}
                   >
                     <span className="mx-4 font-medium text-[15px] hover:bg-gray-200">
@@ -213,7 +229,7 @@ const DashboardLayout = (props: any) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default DashboardLayout;
