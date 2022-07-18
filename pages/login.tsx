@@ -31,20 +31,24 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await http.post("/login", {
-        email: login?.email,
+      const response = await http.post("/auth/login", {
+        username: login?.email,
+        password: login?.password,
       });
-      localStorage.setItem("token", response.data.data._id);
-      localStorage.setItem("useremail", response.data.data.email);
-      localStorage.setItem("firstName", response.data.data.firstName);
-      localStorage.setItem("lastName", response.data.data.lastName);
-      localStorage.setItem("country", response.data.data.country);
-      localStorage.setItem("fellowship", response.data.data?.fellowship);
-      setLoading(false);
-      if (response) router.push("/dashboard");
-      toastr.success("Login successful");
+
+      if (response) {
+        if (response.status == 200) {
+          // Save user to local storage
+          localStorage.setItem("appUser", JSON.stringify(response.data.data));
+          router.push("/dashboard");
+          toastr.success(response.data.message);
+        } else {
+          toastr.error(response.data.message);
+        }
+        setLoading(false);
+      }
     } catch (error: any) {
-      toastr.error("Email does not exist");
+      toastr.error(error.response.data.message);
       setError(error.response.data.message);
       setLoading(false);
     }
@@ -54,7 +58,6 @@ const Login = () => {
       <section className="h-screen">
         <div className="px-6 h-full text-gray-800">
           <div className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
-           
             <div className="xl:ml-20 xl:w-4/12 lg:w-4/12 md:w-8/12 mb-12 md:mb-0 rounded-lg p-8 boxShadow">
               <form>
                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
@@ -68,7 +71,7 @@ const Login = () => {
                     type="text"
                     name="email"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput2"
+                    id="email"
                     placeholder="Email address"
                     value={login?.email}
                     required
@@ -80,7 +83,7 @@ const Login = () => {
                   <input
                     type="password"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput2"
+                    id="password"
                     placeholder="Password"
                     name="password"
                     // value={login?.password}
@@ -101,9 +104,7 @@ const Login = () => {
                     onClick={submithandler}
                     disabled={loading}
                   >
-                    {
-                      loading  ? '...' : 'Login'
-                    }
+                    {loading ? "..." : "Login"}
                   </button>
                   {/* <div>
                     <a
