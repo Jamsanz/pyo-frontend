@@ -5,20 +5,6 @@ export const http = axios.create({
   baseURL: "https://pyo-institute-backend.herokuapp.com/",
 });
 
-
-
-// export const https = axios.create({
-//   baseURL: "https://via.placeholder.com/",
-//   headers: {
-//     "X-Requested-With": "XMLHttpsRequest",
-//     "Access-Control-Allow-Origin": "*",
-//     "Access-Control-Allow-Credentials": "true",
-//     "Access-Control-Allow-Headers": "content-type",
-//     "Access-Control-Allow-Methods": "GET",
-//   },
-// });
-
-
 export const getUser = () => ({
   _id: localStorage.getItem("token"),
   email: localStorage.getItem("useremail"),

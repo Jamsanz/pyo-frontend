@@ -3,6 +3,7 @@ import { handleScroll } from "../utils/utils";
 import BottomForm from "./bottomForm";
 import Footer from "./footer";
 import Header from "./header";
+import Head from "next/head";
 
 
 const Layout = (props: any) => {
@@ -13,6 +14,10 @@ const Layout = (props: any) => {
     };
   }, []);
   return (
+    <>
+      <Head>
+        
+      </Head>
       <div
         className="leading-normal tracking-normal text-white gradient merrifont"
         style={{ fontFamily: "Merriweather, sans - serif" }}
@@ -22,6 +27,7 @@ const Layout = (props: any) => {
         {props.children}
         <Footer />
       </div>
+    </>
   );
 };
 
