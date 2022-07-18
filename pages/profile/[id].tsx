@@ -61,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
-  const members = await http.get(`/register/${params?.id}`)
+  const members = await http.get(`/signup/${params?.id}`)
   return {
     props: {
       data: members.data.data

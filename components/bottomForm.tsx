@@ -44,7 +44,7 @@ const BottomForm = () => {
     e.preventDefault();
     setLoading(true);
     http
-      .post("/register", data)
+      .post("/signup", data)
       .then((res) => {
         if (res.status == 201) {
           toastr.success(res.data.message);
