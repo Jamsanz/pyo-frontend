@@ -2,22 +2,13 @@ import axios from "axios";
 import moment from "moment";
 
 export const http = axios.create({
-  baseURL: "https://pyo-institute-backend.herokuapp.com/",
+  baseURL: "https://pyo-institute-backend.herokuapp.com",
 });
 
-
-export const getUser = () => ({
-  _id: localStorage.getItem("token"),
-  email: localStorage.getItem("useremail"),
-  firstName: localStorage.getItem("firstName"),
-  lastName: localStorage.getItem("lastName"),
-  country: localStorage.getItem("country"),
-  fellowship: localStorage.getItem("fellowship")
-});
+export const getUser = () => JSON.parse(localStorage.getItem("appUser")!);
 
 export const dateTimeFormatter = (date: string): string =>
   moment(date).format("Do MMMM, YYYY h:mm:ss A ");
-
 
 export const handleScroll = () => {
   var header: any = document.getElementById("header");
@@ -59,18 +50,18 @@ export const handleScroll = () => {
   }
 };
 
-export interface IReadMore  {
-  id?: number,
-  title?: string,
-  slug?: string,
-  images?: string,
-  text1?: string,
-  text2?: string,
-  text3?: string,
-  text4?: string
+export interface IReadMore {
+  id?: number;
+  title?: string;
+  slug?: string;
+  images?: string;
+  text1?: string;
+  text2?: string;
+  text3?: string;
+  text4?: string;
 }
 
-export const pyoFellowship:IReadMore[] = [
+export const pyoFellowship: IReadMore[] = [
   {
     id: 1,
     title: "PYO Fellows",
@@ -90,11 +81,11 @@ export const pyoFellowship:IReadMore[] = [
     title: "PYO New Tribe (Blue-Collar)",
     images: "images/3 3.png",
     text1:
-      "The PYO New Tribe Blue-Collar will provide funding, skills development programmes and capacity building across various blue collar demographics such as market women, taxi drivers, okada riders, artisans etc."
-  }
+      "The PYO New Tribe Blue-Collar will provide funding, skills development programmes and capacity building across various blue collar demographics such as market women, taxi drivers, okada riders, artisans etc.",
+  },
 ];
 
-export const readMore:IReadMore[] = [
+export const readMore: IReadMore[] = [
   {
     id: 1,
     text2:
@@ -113,7 +104,8 @@ export const readMore:IReadMore[] = [
     id: 3,
     text2:
       " The project will coordinate and support these groups with tools and advisory for business development, supporting them with their daily businesses while engaging and indoctrinating them with the values of the PYO Insititute. ",
-    text4: "The project will also seek to support these groups with loans, grants, and equipment for work through non-government organizations, loan organizations, UN bodies, etc. The beneficiaries will receive various training packages which will include selling the values and ideals of PYO Institute.",
+    text4:
+      "The project will also seek to support these groups with loans, grants, and equipment for work through non-government organizations, loan organizations, UN bodies, etc. The beneficiaries will receive various training packages which will include selling the values and ideals of PYO Institute.",
     text3:
       "For  Artisans, Market women and men, and workers in the service industry (bikes, taxis etc)",
   },
@@ -144,7 +136,7 @@ export const pyoInstitute: IReadMore[] = [
   },
 ];
 
-export const readMoreInstitute:IReadMore[] = [
+export const readMoreInstitute: IReadMore[] = [
   {
     id: 1,
     text2:
@@ -163,7 +155,8 @@ export const readMoreInstitute:IReadMore[] = [
     id: 3,
     text2:
       "The PYO-JET Initiative is aligned with the Climate Investment Funds (CIF) view that just energy transitions to low-carbon and climate-resilient development can create opportunities for social equity, environmental sustainability and economic prosperity. ",
-    text4: "As societies transition to low-carbon and resilient economies, PYO-JET's framework will focus on promoting equitable access to the benefits and sharing of the costs of sustainable development, ensuring that the livelihoods of all people, including the most vulnerable, are supported and enhanced.",
+    text4:
+      "As societies transition to low-carbon and resilient economies, PYO-JET's framework will focus on promoting equitable access to the benefits and sharing of the costs of sustainable development, ensuring that the livelihoods of all people, including the most vulnerable, are supported and enhanced.",
     text3:
       "For Young Graduates, Professionals (Junior level, Mid level and Advanced Level) and Entrepreneurs",
   },
