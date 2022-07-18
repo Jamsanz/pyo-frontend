@@ -31,7 +31,7 @@ const Contribution = () => {
       <div className="py-4 bg-[#53575B]" id="about">
         <div className="container px-3 mx-auto text-black">
           <h1
-            className="my-4 text-2xl md:text-4xl leading-tight text-[#fff]
+            className="my-8 text-2xl md:text-5xl leading-tight text-[#fff]
              md:px-5 text-center momoFont italic" 
           >
             "The movement for a new Nigeria has only just started" ~ Yemi
