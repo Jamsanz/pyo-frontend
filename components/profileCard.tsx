@@ -25,18 +25,19 @@ const ProfileCard = () => {
     setFirstName(localStorage.getItem('firstName')!);
     setLastName(localStorage.getItem('lastName')!);
     setId(localStorage.getItem('token')!);
-
     setInitial((firstName.charAt(0) + " " + lastName.charAt(0)))
 
   }, []);
 
   useEffect(() => {
+   
       axios
         .get(
           `https://via.placeholder.com/200x200.png/000/fff/?text=${initial}`
         )
-        .then((res) => setImage(res.data))
-        .catch((err) => console.log(err));
+      .then((res) => setImage(res.data))
+      .catch((err) => console.log(err));
+    
   }, [initial])
   
 
@@ -50,7 +51,7 @@ const ProfileCard = () => {
         className="w-[100px] h-[100px] object-cover rounded-full -mt-12 bg-white p-1 shadow-md outline-white outline-2 outline-offset-2"
       />
       <h1 className="text-xl font-bold text-black font-sans my-2">
-        {firstName + " " + lastName} {initial}
+        {firstName + " " + lastName} 
       </h1>
       <ul className="inline-flex flex-col space-y-2 w-[250px] mt-2 items-center">
         <li>
