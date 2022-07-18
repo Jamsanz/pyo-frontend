@@ -2,10 +2,10 @@ import axios from "axios";
 import moment from "moment";
 
 export const http = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://pyo-institute-backend.herokuapp.com",
 });
 
-export const getUser = () => JSON.parse(localStorage.getItem("appUser") ?? "");
+export const getUser = () => JSON.parse(localStorage.getItem("appUser")!);
 
 export const dateTimeFormatter = (date: string): string =>
   moment(date).format("Do MMMM, YYYY h:mm:ss A ");

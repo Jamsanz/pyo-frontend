@@ -30,11 +30,15 @@ const DashboardLayout = (props: any) => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("appUser")!);
     setUser(user);
-    setEmail(user.username!);
-    if (!user.userId) {
+    setEmail(user?.username);
+    if (!user?.userId) {
       router.push("/login");
     }
   }, []);
+
+  if (!user?.userId) {
+    return <div className="flex justify-center items-center w-full min-h-screen">...</div>
+  }
 
   return (
     <div>

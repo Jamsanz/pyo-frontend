@@ -7,4 +7,5 @@ export interface Member {
   country: string;
   fellowship: string;
   status?: boolean;
+  _id?: string;
 }
