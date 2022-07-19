@@ -26,8 +26,6 @@ const ProfileCard = () => {
     let user = window.localStorage.getItem("appUser");
     let save = JSON.parse(user!);
     setUser(save)
- 
-
   }, []);
   return (
     <div className="hidden hover:scale-110 lg:flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[400px] max-h-[400px] max-w-[350px] rounded-lg overflow-hidden mx-4">
