@@ -6,10 +6,10 @@ export const http = axios.create({
 });
 
 export const getUser = () => ({
-  _id: localStorage.getItem("token"),
+  _id: localStorage.getItem("id"),
   email: localStorage.getItem("useremail"),
   firstName: localStorage.getItem("firstName"),
-  lastName: localStorage.getItem("lastName"),
+  lastName: localStorage.getItem("appUser.lastName"),
   country: localStorage.getItem("country"),
   fellowship: localStorage.getItem("fellowship")
 });

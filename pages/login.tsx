@@ -40,6 +40,8 @@ const Login = () => {
         if (response.status == 200) {
           // Save user to local storage
           localStorage.setItem("appUser", JSON.stringify(response.data.data));
+          localStorage.setItem("id", JSON.stringify(response.data.data.userId));
+
           router.push("/dashboard");
           toastr.success(response.data.message);
         } else {
@@ -48,8 +50,8 @@ const Login = () => {
         setLoading(false);
       }
     } catch (error: any) {
-      toastr.error(error.response.data.message);
-      setError(error.response.data.message);
+      toastr.error(error?.response?.data?.message);
+      setError(error?.response?.data?.message);
       setLoading(false);
     }
   };
