@@ -28,26 +28,22 @@ const ImpactForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // setData({
-    //   name: "",
-    //   email: "",
-    // });
-    setDownload(true);
+
+    if (data.name !== "" && data.email !== "") {
+       setData({
+         name: "",
+         email: "",
+       });
+      
+       setDownload(true);
+    }
+   
   };
 
-  // useEffect((): any => {
-  //   if (success)
-  //     setData({
-  //       firstName: "",
-  //       lastName: "",
-  //       email: "",
-  //       country: "",
-  //     });
-  // }, [success]);
 
-  useEffect(() => {
-    if (data.name !== "" && data.email !== "") setDownload(true);
-  }, [data]);
+  // useEffect(() => {
+  //   if (data.name !== "" && data.email !== "") setDownload(true);
+  // }, [data]);
 
   return (
     <div className={styles.container}>
@@ -99,38 +95,39 @@ const ImpactForm = () => {
                     className="default-input"
                   />
                 </div>
-                {/* {download && (
+
+                {download && (
                   <div className="text-black bg-[#d8d8d8] text-center mb-4 py-6 relative">
                     <p
                       className="text-[#000] absolute right-4 top-1 cursor-pointer"
                       onClick={() => setDownload(false)}
                     >
-                      {" "}
-                      x{" "}
+                      x
                     </p>
-                    <a href="/concept note.pdf" download="Impact Report">
-                      {" "}
+                    <a
+                      href="/impact report.pdf"
+                      download="Osinbajo Impact Assessment Report"
+                    >
                       Download Impact Report
                     </a>
                   </div>
-                )} */}
+                )}
 
-                {/* <input
-                    className=""
-                    type="submit"
-                    name="submit"
-                    value={download ? "Download Impact Report" : "Generate download"}
-                  
-                    // disabled={download}
-                  /> */}
-                <a
-                  href={download ? "/concept note.pdf" : "#"}
+                <input
+                  className=""
+                  type="submit"
+                  name="submit"
+                  value="Generate download"
+                  onClick={handleSubmit}
+                />
+
+                {/* <a href={ download ? "/impact report.pdf" : "#"}
                   className="download"
-                  download={"Impact Report"}
+                  download={"Osinbajo Impact Assessment Report"}
                   onClick={(e) => setData({email: "", name: ""})}
                 >
                   {download ? "Download Impact Report" : "Generate Download"}
-                </a>
+                </a> */}
               </div>
             </form>
 
