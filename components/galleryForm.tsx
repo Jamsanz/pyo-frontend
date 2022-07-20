@@ -74,8 +74,8 @@ const GalleryForm = () => {
           <div className="col w-full px-0 mr-5">
             <div className="text-[#000] leading-8 lg:w-[75%] pl-5 mb-10 mx-auto border-l-0 md:border-l-8 border-l-black border-solid">
               <img
-                src="images/message.png"
-                width="60%"
+                src="images/chat.png"
+                width="200px"
                 className="block mx-auto w-[50%] md:inline md:w-[60%]"
               />
             </div>

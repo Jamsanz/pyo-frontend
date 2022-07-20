@@ -50,6 +50,7 @@ const Login = () => {
     } catch (error: any) {
       toastr.error(error.response.data.message);
       setError(error.response.data.message);
+    } finally {
       setLoading(false);
     }
   };

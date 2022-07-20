@@ -99,7 +99,7 @@ const MessageCarousel = () => {
       <div className=" bg-[#53575B] text-center lg:py-10">
         <Swiper
           autoplay={{
-            delay: 8000,
+            delay: 4000,
           }}
           modules={[Autoplay]}
           className="mySwiper md:w-[85%] text-center mx-auto self-center"

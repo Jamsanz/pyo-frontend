@@ -55,7 +55,7 @@ const Header = ({}) => {
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3">
               <Link href="/#about">
-                <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                   About
                 </a>
               </Link>
@@ -63,19 +63,36 @@ const Header = ({}) => {
 
             <li className="mr-3">
               <Link href="/#members">
-                <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                   Members
                 </a>
               </Link>
             </li>
             <li className="mr-3">
               <Link href="/#fellow">
-                <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                   Fellowship
                 </a>
               </Link>
             </li>
-            <li className="mr-3 relative nav">
+            <li className="mr-3">
+              <Link href="/gallery">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 py-2 px-4">
+                  Gallery
+                </a>
+              </Link>
+            </li>
+            <li className="mr-3">
+              <Link href="/contribution">
+                <a
+                  className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
+                  href=""
+                >
+                  Contribution
+                </a>
+              </Link>
+            </li>
+            {/* <li className="mr-3 relative nav">
               <a
                 className="inline-block py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer"
                 onClick={navigateAbout}
@@ -88,26 +105,10 @@ const Header = ({}) => {
                 }`}
               >
                 <ul>
-                  <li className="mr-3">
-                    <Link href="/gallery">
-                      <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
-                        Gallery
-                      </a>
-                    </Link>
-                  </li>
-                  <li className="mr-3">
-                    <Link href="/contribution">
-                      <a
-                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                        href=""
-                      >
-                        Contribution
-                      </a>
-                    </Link>
-                  </li>
+                 
                 </ul>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
