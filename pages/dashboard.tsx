@@ -7,7 +7,7 @@ import Schedule from "../interfaces/schedule.interface";
 import { dateTimeFormatter, getUser, http } from "../utils/utils";
 
 const Dashboard = () => {
-  const [user, setUser] = useState<Member>();
+  const [user, setUser] = useState<any>();
   const [schedules, setSchedules] = useState<Schedule[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 

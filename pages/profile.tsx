@@ -21,7 +21,9 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    setUser(getUser);
+    let user = window.localStorage.getItem("appUser");
+    let save = JSON.parse(user!);
+    setUser(save);
   }, []);
   return (
     <DashboardLayout pageName="profile">
