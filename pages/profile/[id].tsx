@@ -28,7 +28,7 @@ const ProfilePage = (props: any) => {
         <div className=" flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[350px] max-w-[350px] rounded-lg overflow-hidden mx-4">
           <div className="profile-card min-h-[96px] w-full"></div>
           <img
-            src="/images/woman-2.avif"
+            src={`https://via.placeholder.com/200x200/efefef/333333?text=${member?.firstName![0]}${member?.lastName![0]}`}
             alt=""
             className="w-[100px] h-[100px] object-cover rounded-full -mt-12 bg-white p-1 shadow-md outline-white outline-2 outline-offset-2"
           />

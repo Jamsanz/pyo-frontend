@@ -56,16 +56,16 @@ const ProfileCard = () => {
       <hr className="w-[80%] h-[1px] mt-4 text-xl" />
       <ul className="inline-flex space-x-3 my-2">
         <FacebookShareButton
-          url={`${siteUrl}/profile/${user?.userId}`}
+          url={`${siteUrl}/profile/${user?.subscriberId}`}
           quote="PYO Institute Message Gallery"
           hashtag="pyoinstitute"
         >
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <TwitterShareButton url={`${siteUrl}/profile/${user?.userId}`}>
+        <TwitterShareButton url={`${siteUrl}/profile/${user?.subscriberId}`}>
           <TwitterIcon size={32} round={true} />
         </TwitterShareButton>
-        <LinkedinShareButton url={`${siteUrl}/profile/${user?.userId}`}>
+        <LinkedinShareButton url={`${siteUrl}/profile/${user?.subscriberId}`}>
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
       </ul>
