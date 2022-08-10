@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import BottomForm from "../components/bottomForm";
 import Button from "../components/button";
 import Layout from "../components/layout";
+import Modal from "../components/signUpModal";
 import {
   handleScroll,
   IReadMore,
@@ -14,13 +15,7 @@ import {
 } from "../utils/utils";
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  const [open, setOpen] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
   const [showInitiative, setShowInitiative] = useState<boolean>(false);
 
@@ -29,6 +24,11 @@ const Home: NextPage = () => {
 
   let readMoreText: IReadMore[];
   let readMoreTextInitiative: IReadMore[];
+
+  const handleShowModal = (e?: MouseEvent): void => {
+    e?.preventDefault();
+    setOpen(!open);
+  }
 
   const showMore = (id: number) => {
     setShow(true);
@@ -47,6 +47,13 @@ const Home: NextPage = () => {
     setMoreTextInitiative(readMoreTextInitiative?.pop());
     return readMoreTextInitiative;
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Layout>
       <div
@@ -104,7 +111,9 @@ const Home: NextPage = () => {
                 key={data?.id}
               >
                 <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
-                  {data?.title}
+                  <span>{data?.title}</span>
+                  {/* {data?.title} */}
+                  <small className="text-xs font-light block">Coming soon</small>
                 </h3>
                 <div
                   className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
@@ -150,9 +159,8 @@ const Home: NextPage = () => {
                     onClick={() => showMore(data?.id!)}
                   >
                     <p
-                      className={`${
-                        show ? "-mt-4" : ""
-                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                      className={`${show ? "-mt-4" : ""
+                        } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
                     >
                       Continue reading ...
                     </p>
@@ -165,14 +173,13 @@ const Home: NextPage = () => {
           })}
 
           <div className="text-center mx-auto">
-            <Link href="#members">
-              <button
-                type="button"
-                className="bg-[#000] text-[18px] text-[#fff] rounded-lg lg:mx-0px-6 py-3 px-8 font-bold shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold"
-              >
-                Sign up
-              </button>
-            </Link>
+            <button
+              type="button"
+              className="bg-[#000] text-[18px] text-[#fff] rounded-lg lg:mx-0px-6 py-3 px-8 font-bold shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold"
+              onClick={handleShowModal}
+            >
+              Sign up
+            </button>
           </div>
         </div>
       </div>
@@ -208,7 +215,7 @@ const Home: NextPage = () => {
                         moreTextInitiative?.text2}
                     </p>
                     {moreTextInitiative?.id === item?.id &&
-                    moreTextInitiative?.text4 !== "" ? (
+                      moreTextInitiative?.text4 !== "" ? (
                       <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreTextInitiative?.id === item?.id &&
                           moreTextInitiative?.text4}
@@ -241,9 +248,8 @@ const Home: NextPage = () => {
                     onClick={() => showMoreInitiative(item?.id!)}
                   >
                     <p
-                      className={`${
-                        showInitiative ? "-mt-4" : ""
-                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                      className={`${showInitiative ? "-mt-4" : ""
+                        } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
                     >
                       Continue reading ...
                     </p>
@@ -261,6 +267,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <BottomForm />
+      <Modal open={open} setOpen={handleShowModal} />
     </Layout>
   );
 };

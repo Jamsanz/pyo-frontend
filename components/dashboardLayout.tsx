@@ -164,39 +164,49 @@ const DashboardLayout = (props: any) => {
                 </li>
                 <li className="mr-3 relative scheduleNav">
                   <a
-                    className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
-                      props.pageName === "schedule-meeting" &&
+                    className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "pyo-schedule" &&
                       "bg-[#1F2937] text-white"
-                    } rounded-md hover:bg-gray-200`}
+                      } rounded-md hover:bg-gray-200`}
                     onClick={navigateAbout}
                   >
-                    <span className="mx-4 font-medium text-[15px]">
-                      <i className="fa-solid fa-calendar mr-2" /> Schedule
-                      Meeting
+                    <span className="font-medium text-[15px] text-center">
+                      <i className="fa-solid fa-calendar mr-2" /> Schedule Engagement With PYO
                     </span>
                   </a>
                   <div
-                    className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${
-                      about ? "block relative " : "absolute hidden lg:block"
-                    }`}
+                    className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${about ? "block relative " : "absolute hidden lg:block"
+                      }`}
                   >
                     <ul>
                       <li className="mr-3">
-                        <Link href="/schedule-meeting">
-                          <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
-                            Schedule General meeting
+                        <Link href="/">
+                          <a className="hover:font-bold inline-block w-full text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
+                            Meeting
                           </a>
                         </Link>
                       </li>
                       <li className="mr-3">
                         <Link href="pyo-schedule">
-                          <a className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
-                            Schedule meeting with PYO
+                          <a className="hover:font-bold w-full inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                            Event Invitation
                           </a>
                         </Link>
                       </li>
                     </ul>
                   </div>
+                </li>
+                <li>
+                  <Link href="/schedule-meeting">
+                    <a
+                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
+                        props.pageName === "schedule-meeting" && "bg-[#1F2937] text-white"
+                      } rounded-md hover:bg-gray-200`}
+                    >
+                      <span className="mx-4 font-medium text-[15px]">
+                        <i className="fa-solid fa-calendar mr-2" /> Schedule Event
+                      </span>
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/news-feed">
