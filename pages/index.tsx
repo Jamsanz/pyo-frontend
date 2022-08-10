@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   const handleShowModal = (e?: MouseEvent): void => {
     e?.preventDefault();
     setOpen(!open);
-  }
+  };
 
   const showMore = (id: number) => {
     setShow(true);
@@ -113,7 +113,9 @@ const Home: NextPage = () => {
                 <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
                   <span>{data?.title}</span>
                   {/* {data?.title} */}
-                  <small className="text-xs font-light block">Coming soon</small>
+                  <small className="text-xs font-light block">
+                    Coming soon
+                  </small>
                 </h3>
                 <div
                   className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
@@ -159,8 +161,9 @@ const Home: NextPage = () => {
                     onClick={() => showMore(data?.id!)}
                   >
                     <p
-                      className={`${show ? "-mt-4" : ""
-                        } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                      className={`${
+                        show ? "-mt-4" : ""
+                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
                     >
                       Continue reading ...
                     </p>
@@ -215,7 +218,7 @@ const Home: NextPage = () => {
                         moreTextInitiative?.text2}
                     </p>
                     {moreTextInitiative?.id === item?.id &&
-                      moreTextInitiative?.text4 !== "" ? (
+                    moreTextInitiative?.text4 !== "" ? (
                       <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreTextInitiative?.id === item?.id &&
                           moreTextInitiative?.text4}
@@ -248,8 +251,9 @@ const Home: NextPage = () => {
                     onClick={() => showMoreInitiative(item?.id!)}
                   >
                     <p
-                      className={`${showInitiative ? "-mt-4" : ""
-                        } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                      className={`${
+                        showInitiative ? "-mt-4" : ""
+                      } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
                     >
                       Continue reading ...
                     </p>
@@ -273,4 +277,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-

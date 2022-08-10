@@ -85,7 +85,7 @@ export const pyoFellowship: IReadMore[] = [
   },
 ];
 
-export const readMore: IReadMore[] = [
+export const  readMore: IReadMore[] = [
   {
     id: 1,
     text2:

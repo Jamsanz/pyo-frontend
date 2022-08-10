@@ -8,6 +8,8 @@ import ProfileCarousel, { Profile } from "../components/profileCarousel";
 import MessageCarousel from "../components/messageCarousel";
 
 const Contribution = () => {
+
+  
   return (
     <Layout>
       <div
@@ -32,7 +34,7 @@ const Contribution = () => {
         <div className="container px-3 mx-auto text-black">
           <h1
             className="my-8 text-2xl md:text-5xl leading-tight text-[#fff]
-             md:px-5 text-center momoFont italic" 
+             md:px-5 text-center momoFont italic"
           >
             "The movement for a new Nigeria has only just started" ~ Yemi
             Osinbajo
@@ -42,12 +44,9 @@ const Contribution = () => {
       <ProfileCarousel />
       <SectorContribution />
       <ImpactForm />
-        <MessageCarousel />
+      <MessageCarousel />
     </Layout>
   );
 };
 
 export default Contribution;
-
-
-
