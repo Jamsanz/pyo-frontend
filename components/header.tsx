@@ -88,7 +88,7 @@ const Header = ({}) => {
                   className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
                   href=""
                 >
-                  Contribution
+                  Impact
                 </a>
               </Link>
             </li>

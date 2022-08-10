@@ -29,12 +29,24 @@ const ProfileCard = () => {
   }, []);
   return (
     <div className="hidden hover:scale-110 lg:flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[400px] max-h-[400px] max-w-[350px] rounded-lg overflow-hidden mx-4">
-      <div className="profile-card w-full"></div>
-
+      <div className="w-full h-[200px]">
+        <img
+          src="/images/logotrans.png"
+          alt=""
+          className="mx-auto mt-3"
+          height={180}
+          width={180}
+        />
+      </div>
+      {
+        /*
+          This dns has been broken and longer works
+          https://via.placeholder.com/200x200/efefef/333333?text=${member?.firstName![0]}${member?.lastName![0]}
+        */
+      }
       <img
-        src={`https://via.placeholder.com/200x200/efefef/333333?text=${
-          user?.firstName?.[0] + user?.lastName?.[0]
-        }`}
+        src={`https://dummyimage.com/200x200/efefef/333333.png&text=${user?.firstName?.[0] + user?.lastName?.[0]
+          }`}
         alt=""
         className="w-[100px] h-[100px] object-cover rounded-full -mt-12 bg-white p-1 shadow-md outline-white outline-2 outline-offset-2"
       />
@@ -47,7 +59,7 @@ const ProfileCard = () => {
           <i className="fa-solid fa-envelope mr-2" /> {user?.username}
         </li>
         <li>
-          <i className="fa-solid fa-people-group mr-2" /> PYO Fellows
+          <i className="fa-solid fa-people-group mr-2" /> {user?.fellowship}
         </li>
         <li>
           <i className="fa-solid fa-location-dot mr-2" /> Nigeria
