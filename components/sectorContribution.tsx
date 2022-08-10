@@ -27,7 +27,7 @@ const SectorContribution = () => {
       <div className="pb-8 container mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000] justify-center">
         {sectSpecific.map((data: any) => {
           return (
-            <div className="w-full md:w-3/6 xl:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left">
+            <div id={data?.id} className="w-full md:w-3/6 xl:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left">
               <div className="w-full text-center mx-auto">
                 <img
                   src={data?.img}
