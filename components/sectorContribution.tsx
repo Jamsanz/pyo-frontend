@@ -43,7 +43,7 @@ const SectorContribution = () => {
                 {show && (
                   <span>
                     {moreText?.id === data?.id &&
-                      moreText?.text1?.substring(
+                      moreText?.text1?.substrin(
                         220,
                         moreText?.text1.length - 1
                       )}
