@@ -32,7 +32,6 @@ const Home: NextPage = () => {
 
   const showMore = (id: number) => {
     setShow(true);
-    console.log(show);
     readMoreText = readMore
       ?.filter((item: any) => item.id === id)
       ?.map((data: any) => data);
