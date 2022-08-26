@@ -43,7 +43,6 @@ const GalleryForm = () => {
         if (data) setSuccess(true);
       })
       .catch((err) => {
-        console.log(err);
         if (err) {
           toastr.error("Failed, please try again");
         }

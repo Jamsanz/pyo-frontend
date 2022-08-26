@@ -29,7 +29,7 @@ const PyoSchedule = () => {
   }
   
   return (
-    <DashboardLayout pageName="schedule-meeting">
+    <DashboardLayout pageName="pyo-schedule">
       <div className='min-h-[100vh] px-3 pt-3 bg-[#F4F4F4]'>
         <div className='md:p-3'>
           <h1 className='text-2xl font-bold'>Scheduling</h1>

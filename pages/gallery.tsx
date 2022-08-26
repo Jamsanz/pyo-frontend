@@ -15,7 +15,6 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 
 const GalleryBox = () => {
   const shareUrl = `${siteUrl}/gallery`;
-  console.log(shareUrl);
   return (
     <Layout>
       <div

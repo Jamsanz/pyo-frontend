@@ -6,7 +6,7 @@ import toastr from "../utils/toastr";
 
 import countries from "../data/countries";
 
-interface IData {
+export interface IData {
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -54,7 +54,6 @@ const BottomForm = () => {
         }
       })
       .catch((err) => {
-        console.log(err);
         if (err) {
           toastr.error("Registration fail, try again");
         }
@@ -181,7 +180,7 @@ const BottomForm = () => {
                     </div>
                   </div>
                 )}
-                <div className="ml-2 my-2 flex items-center space-x-3">
+                {/* <div className="ml-2 my-2 flex items-center space-x-3">
                   <input
                     type="checkbox"
                     name="membership"
@@ -191,7 +190,7 @@ const BottomForm = () => {
                   <label htmlFor="memeber">
                     Would you like to become a member of the PYO institute?
                   </label>
-                </div>
+                </div> */}
 
                 <div className="Submit">
                   <input
@@ -210,7 +209,7 @@ const BottomForm = () => {
                 <input
                   className=""
                   type="submit"
-                  value={"Sign up"}
+                  value={"Sign up for our Newsletter"}
                   onClick={showForm}
                 />
               </div>

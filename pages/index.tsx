@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
 import BottomForm from "../components/bottomForm";
 import Button from "../components/button";
 import Layout from "../components/layout";
+import Modal from "../components/signUpModal";
 import {
   handleScroll,
   IReadMore,
@@ -14,13 +15,7 @@ import {
 } from "../utils/utils";
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+  const [open, setOpen] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
   const [showInitiative, setShowInitiative] = useState<boolean>(false);
 
@@ -30,14 +25,17 @@ const Home: NextPage = () => {
   let readMoreText: IReadMore[];
   let readMoreTextInitiative: IReadMore[];
 
+  const handleShowModal = (e?: MouseEvent): void => {
+    e?.preventDefault();
+    setOpen(!open);
+  };
+
   const showMore = (id: number) => {
     setShow(true);
-    console.log(show);
     readMoreText = readMore
       ?.filter((item: any) => item.id === id)
       ?.map((data: any) => data);
     setMoreText(readMoreText?.pop());
-    console.log(moreText);
     return readMoreText;
   };
   const showMoreInitiative = (id: number) => {
@@ -48,6 +46,13 @@ const Home: NextPage = () => {
     setMoreTextInitiative(readMoreTextInitiative?.pop());
     return readMoreTextInitiative;
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Layout>
       <div
@@ -105,7 +110,11 @@ const Home: NextPage = () => {
                 key={data?.id}
               >
                 <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
-                  {data?.title}
+                  <span>{data?.title}</span>
+                  {/* {data?.title} */}
+                  <small className="text-xs font-light block">
+                    Coming soon
+                  </small>
                 </h3>
                 <div
                   className="w-full rounded-lg mb-[20px] boxShadow2 bg-img-box text-center mx-auto"
@@ -166,14 +175,13 @@ const Home: NextPage = () => {
           })}
 
           <div className="text-center mx-auto">
-            <Link href="#members">
-              <button
-                type="button"
-                className="bg-[#000] text-[18px] text-[#fff] rounded-lg lg:mx-0px-6 py-3 px-8 font-bold shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold"
-              >
-                Sign up
-              </button>
-            </Link>
+            <button
+              type="button"
+              className="bg-[#000] text-[18px] text-[#fff] rounded-lg lg:mx-0px-6 py-3 px-8 font-bold shadow my-6  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex-1 hover:bold"
+              onClick={handleShowModal}
+            >
+              Sign up
+            </button>
           </div>
         </div>
       </div>
@@ -262,9 +270,9 @@ const Home: NextPage = () => {
         </div>
       </div>
       <BottomForm />
+      <Modal open={open} setOpen={handleShowModal} />
     </Layout>
   );
 };
 
 export default Home;
-
