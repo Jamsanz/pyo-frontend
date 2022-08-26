@@ -92,23 +92,48 @@ const Header = ({}) => {
                 </a>
               </Link>
             </li>
-            {/* <li className="mr-3 relative nav">
+            <li className="mr-3 relative nav">
               <a
-                className="inline-block py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer"
+                className="py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer flex justify-start lg:justify-center"
                 onClick={navigateAbout}
               >
-                Others
+                Supports
+                <img
+                  src="images/dropdown.png"
+                  alt=""
+                  className="relative bg-white "
+                  width="15px"
+                />
               </a>
               <div
-                className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-[140px] ${
+                className={`absolute navItem bg-[#F3F4F6] text-black ml-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-[170px] ${
                   about ? "block relative " : "absolute hidden lg:block"
                 }`}
               >
-                <ul>
-                 
+                <ul className="bg-[white]">
+                  <li className="mr-3">
+                    <Link href="/sponsorship">
+                      <a
+                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
+                        href=""
+                      >
+                        Sponsorship
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="mr-3">
+                    <Link href="/support">
+                      <a
+                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
+                        href=""
+                      >
+                        Financial Support
+                      </a>
+                    </Link>
+                  </li>
                 </ul>
               </div>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>

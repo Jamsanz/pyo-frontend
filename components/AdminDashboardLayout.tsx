@@ -36,6 +36,7 @@ const AdminDashboardLayout = (props: any) => {
   }, []);
 
   return (
+    <>
     <div>
       <nav className="fixed z-30 w-full bg-white border-b-2">
         <div className="px-6 py-3">
@@ -206,6 +207,7 @@ const AdminDashboardLayout = (props: any) => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
