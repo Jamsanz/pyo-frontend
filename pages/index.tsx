@@ -36,7 +36,6 @@ const Home: NextPage = () => {
       ?.filter((item: any) => item.id === id)
       ?.map((data: any) => data);
     setMoreText(readMoreText?.pop());
-    console.log(moreText);
     return readMoreText;
   };
   const showMoreInitiative = (id: number) => {

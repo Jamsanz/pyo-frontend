@@ -54,7 +54,6 @@ const BottomForm = () => {
         }
       })
       .catch((err) => {
-        console.log(err);
         if (err) {
           toastr.error("Registration fail, try again");
         }

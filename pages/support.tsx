@@ -52,7 +52,6 @@ const FinancialSupport = () => {
         }
       })
       .catch((err) => {
-        console.log(err);
         if (err) {
           toastr.error("Form submission fail, try again");
         }
@@ -72,7 +71,6 @@ const FinancialSupport = () => {
 
   useEffect(() => {
     if (state) {
-      console.log(state.state);
       const lga: any = NaijaStates.lgas(`${state.state}`);
       setLga(lga?.lgas);
     }

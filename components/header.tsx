@@ -14,8 +14,6 @@ const Header = ({}) => {
   const navigateAbout = () => {
     if (window.innerWidth < 1024) {
       setAbout(!about)
-    console.log("clicked");
-
     }
     return;
   }

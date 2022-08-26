@@ -14,7 +14,6 @@ const SectorContribution = () => {
       ?.filter((item: any) => item.id === id)
       ?.map((data: any) => data);
     setMoreText(readMoreText?.pop());
-    console.log(moreText);
     return readMoreText;
   };
 
