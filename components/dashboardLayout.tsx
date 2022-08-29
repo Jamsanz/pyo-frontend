@@ -126,7 +126,7 @@ const DashboardLayout = (props: any) => {
                         "bg-[#1F2937] text-white"
                       }`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fas fa-tachometer-alt-fast mr-2" />{" "}
                         Dashboard
                       </span>
@@ -142,7 +142,7 @@ const DashboardLayout = (props: any) => {
                         "bg-[#1F2937] text-white"
                       }`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fas fa-user mr-2" /> Profile
                       </span>
                     </a>
@@ -155,7 +155,7 @@ const DashboardLayout = (props: any) => {
                         props.pageName === "group" && "bg-[#1F2937] text-white"
                       } rounded-md hover:bg-gray-200`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fa-solid fa-people-group mr-2" /> Fellows
                         Chat Group
                       </span>
@@ -169,7 +169,7 @@ const DashboardLayout = (props: any) => {
                       } rounded-md hover:bg-gray-200`}
                     onClick={navigateAbout}
                   >
-                    <span className="font-medium text-[15px] text-center">
+                    <span className="font-medium text-[15px] text-left">
                       <i className="fa-solid fa-calendar mr-2" /> Schedule Engagement With PYO
                     </span>
                   </a>
@@ -202,7 +202,7 @@ const DashboardLayout = (props: any) => {
                         props.pageName === "schedule-meeting" && "bg-[#1F2937] text-white"
                       } rounded-md hover:bg-gray-200`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fa-solid fa-calendar mr-2" /> Schedule Event
                       </span>
                     </a>
@@ -216,7 +216,7 @@ const DashboardLayout = (props: any) => {
                         "bg-[#1F2937] text-white"
                       } rounded-md hover:bg-gray-200`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fa-solid fa-rss mr-2" /> News feed
                       </span>
                     </a>
@@ -229,7 +229,7 @@ const DashboardLayout = (props: any) => {
                     } rounded-md hover:bg-gray-200`}
                     onClick={logout}
                   >
-                    <span className="mx-4 font-medium text-[15px] hover:bg-gray-200">
+                    <span className="font-medium text-[15px] hover:bg-gray-200">
                       <i className="fa-solid fa-power-off mr-2"></i> Log out
                     </span>
                   </button>
