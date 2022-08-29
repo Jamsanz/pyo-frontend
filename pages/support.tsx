@@ -16,37 +16,48 @@ const FinancialSupport = () => {
     e: React.FormEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.currentTarget;
-    if (name === "registeredWithCooperative") {
+    if (name === "registerWithCooperative") {
       if (value === "true") {
         return setState({
           ...state,
-          registeredWithCooperative: true,
+          registerWithCooperative: true,
         });
-
-      }
-      else {
-         return setState({
-           ...state,
-           registeredWithCooperative: false,
-         });
+      } else {
+        return setState({
+          ...state,
+          registerWithCooperative: false,
+        });
       }
     }
-    setState((item:any) => {
+    setState((item: any) => {
       return {
         ...item,
         [name]: value,
       };
     });
   };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     http
-      .post("/sponsors", state)
+      .post("/financial-supports", state)
       .then((res) => {
         if (res.status == 201) {
           toastr.success(res.data.message);
-          setState({});
+          setState({
+            firstName: "",
+            middleName: "",
+            lastName: "",
+            gender: "",
+            email: "",
+            phone: "",
+            state: "",
+            lga: "",
+            applicantCategory: "",
+            registerWithCooperative: "",
+            monthlyEarnings: "",
+          });
         } else {
           toastr.error(res.data.message);
         }
@@ -59,20 +70,28 @@ const FinancialSupport = () => {
       .finally(() => {
         setLoading(false);
       });
-    setState({})
   };
 
   useEffect(() => {
-  const state:any = NaijaStates.states()
-  setStates(state);
+    try {
+       const state: any = NaijaStates?.states();
+       setStates(state);
+    }
+    catch (err){
+      console.log(err)
+    }
   }, [state]);
 
-
-
   useEffect(() => {
-    if (state) {
-      const lga: any = NaijaStates.lgas(`${state.state}`);
-      setLga(lga?.lgas);
+    
+    try {
+      if (state) {
+        const lga: any = NaijaStates?.lgas(`${state.state}`);
+        setLga(lga?.lgas);
+      }
+    }
+    catch (err) {
+      console.log(err)
     }
   }, [state, lga]);
   return (
@@ -121,7 +140,7 @@ const FinancialSupport = () => {
                       onChange={handleInput}
                     />
                     <input
-                      type="text"
+                      type="tel"
                       name="phone"
                       placeholder="Phone number"
                       required
@@ -153,7 +172,11 @@ const FinancialSupport = () => {
                         <option value="" selected>
                           Select Category
                         </option>
-                        <option value="Artissan">Artissan</option>
+                        <option value="Welding">Welding</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Carpentry">Carpentry</option>
+                        <option value="Painting">Painting</option>
                       </select>
                       <div className="select_arrow"></div>
                     </div>
@@ -171,8 +194,8 @@ const FinancialSupport = () => {
                     </div>
                     <div className="input_field select_option">
                       <select
-                        name="registeredWithCooperative"
-                        value={state?.registeredWithCooperative!}
+                        name="registerWithCooperative"
+                        value={state?.registerWithCooperative!}
                         onChange={handleInput}
                       >
                         <option value="" selected>
@@ -210,8 +233,8 @@ const FinancialSupport = () => {
                     </div>
                     <div className="input_field select_option">
                       <select
-                        name="applicantCategory"
-                        value={state?.applicantCategory}
+                        name="lga"
+                        value={state?.lga}
                         onChange={handleInput}
                       >
                         <option value="" selected>
