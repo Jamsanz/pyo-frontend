@@ -1606,7 +1606,7 @@ body {
 
 .form_wrapper input[type="text"],
 .form_wrapper input[type="email"],
-.form_wrapper input[type="password"] {
+.form_wrapper input[type="tel"]{
       width: 100%;
         padding: 8px 10px 9px 3px;
         height: 40px;
@@ -1660,7 +1660,7 @@ body {
 }
 
 .form_wrapper input[type="checkbox"],
-.form_wrapper input[type="radio"] {
+.form_wrapper input[type="radio"]{
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
