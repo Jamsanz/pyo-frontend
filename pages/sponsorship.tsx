@@ -181,7 +181,7 @@ const Sponsor = () => {
                     <input
                       type="number"
                       name="sponsor_count"
-                      placeholder="Specify number of people to sponsor"
+                      placeholder="Specify number of beneficiaries"
                       required
                       value={state?.sponsor_count}
                       onChange={handleInput}
