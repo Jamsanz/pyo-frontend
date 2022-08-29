@@ -8,6 +8,6 @@ export interface IFinancialSupport {
   state: string;
   lga: string;
   applicantCategory: string;
-  registeredWithCooperative: any | boolean;
+  registerWithCooperative: any | boolean;
   monthlyEarnings: string;
 }
