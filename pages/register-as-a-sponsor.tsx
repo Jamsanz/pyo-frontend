@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import ISponsor from "../interfaces/sponsor.interface";
-import { http } from "../utils/utils";
+import { http, sponsor } from "../utils/utils";
 import toastr from "../utils/toastr";
 
 const Sponsor = () => {
@@ -27,19 +27,7 @@ const Sponsor = () => {
       .then((res) => {
         if (res.status == 201) {
           toastr.success(res.data.message);
-          setState({
-            firstName: "",
-            middleName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            gender: "",
-            nationality: "",
-            offer: "",
-            amount: "",
-            location: "",
-            sponsor_count: "",
-          });
+          setState(sponsor);
         } else {
           toastr.error(res.data.message);
         }

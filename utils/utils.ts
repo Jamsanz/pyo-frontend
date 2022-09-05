@@ -50,6 +50,19 @@ export const handleScroll = () => {
   }
 };
 
+export const sponsor = {
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  gender: "",
+  nationality: "",
+  offer: "",
+  amount: "",
+  location: "",
+  sponsor_count: "",
+};
 export const financialSupport = {
   firstName: "",
   middleName: "",
