@@ -252,10 +252,10 @@ const PyoFellow = () => {
                 riders, artisans etc.
               </p>
               <p className="mt-4">
-                The project will coordinate and support these groups with tools
+                {/* The project will coordinate and support these groups with tools
                 and advisory for business development, supporting them with
                 their daily businesses while engaging and indoctrinating them
-                with the values of the PYO Insititute.
+                with the values of the PYO Insititute. */}
               </p>
               <p className="mt-4">
                 The project will also seek to support these groups with loans,
