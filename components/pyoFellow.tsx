@@ -293,14 +293,14 @@ const PyoFellow = () => {
                   Register as a sponsor
                 </a>
                 </Link> <br/>
-                <Link href="/support">
+                {/* <Link href="/support">
                   <a
                     href="/support"
                     className="font-[18px] hover:font-bold pb-1"
                   >
                     Apply for financial support
                   </a>
-                </Link>
+                </Link> */}
               </div>
             </div>
           : ""}
