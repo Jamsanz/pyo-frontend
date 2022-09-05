@@ -9,6 +9,8 @@ import NaijaStates from "naija-state-local-government";
 const FinancialSupport = () => {
   const [states, setStates] = useState<any>();
   const [lga, setLga] = useState<any>();
+  const [lgaOfResidence, setLgaOfResidence] = useState<any>();
+
   const [state, setState] = useState<IFinancialSupport | any>({});
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -50,10 +52,16 @@ const FinancialSupport = () => {
             middleName: "",
             lastName: "",
             gender: "",
+            stateOfResidence: "",
+            lgaOfResidence: "",
+            address: "",
+            dob: "",
+            maritalStatus: "",
             email: "",
             phone: "",
             state: "",
             lga: "",
+            qualification: "",
             applicantCategory: "",
             registerWithCooperative: "",
             monthlyEarnings: "",
@@ -74,33 +82,42 @@ const FinancialSupport = () => {
 
   useEffect(() => {
     try {
-       const state: any = NaijaStates?.states();
-       setStates(state);
-    }
-    catch (err){
-      console.log(err)
+      const state: any = NaijaStates?.states();
+      setStates(state);
+    } catch (err) {
+      console.log(err);
     }
   }, [state]);
 
   useEffect(() => {
-    
     try {
       if (state) {
         const lga: any = NaijaStates?.lgas(`${state.state}`);
         setLga(lga?.lgas);
       }
-    }
-    catch (err) {
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
   }, [state, lga]);
+
+  useEffect(() => {
+    try {
+      if (state) {
+        const lga: any = NaijaStates?.lgas(`${state.stateOfResidence}`);
+        setLgaOfResidence(lga?.lgas);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }, [state, setLgaOfResidence]);
+
   return (
     <Layout>
       <div className="py-[50px]">
         <div className="form_wrapper notransition">
           <div className="form_container">
             <div className="title_container">
-              <h2 className="text-[black]"> Financial Support Form </h2>
+              <h2 className="text-[black]"> Apply for Financial Support</h2>
             </div>
             <div className="row clearfix">
               <div className="">
@@ -109,7 +126,7 @@ const FinancialSupport = () => {
                     <input
                       type="text"
                       name="firstName"
-                      placeholder="First name"
+                      placeholder="Enter first name"
                       required
                       value={state?.firstName}
                       onChange={handleInput}
@@ -117,14 +134,14 @@ const FinancialSupport = () => {
                     <input
                       type="text"
                       name="middleName"
-                      placeholder="Middle name"
+                      placeholder="Enter middle name"
                       value={state?.middleName}
                       onChange={handleInput}
                     />
                     <input
                       type="text"
                       name="lastName"
-                      placeholder="Last name"
+                      placeholder="Enter Last name"
                       required
                       value={state?.lastName}
                       onChange={handleInput}
@@ -134,7 +151,7 @@ const FinancialSupport = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email"
+                      placeholder="Enter email"
                       required
                       value={state?.email}
                       onChange={handleInput}
@@ -142,7 +159,7 @@ const FinancialSupport = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="Phone number"
+                      placeholder="Enter phone number"
                       required
                       value={state?.phone}
                       onChange={handleInput}
@@ -151,12 +168,104 @@ const FinancialSupport = () => {
                   <div className="flex gap-2 flex-col sm:flex-row">
                     <div className="input_field select_option">
                       <select
+                        name="stateOfResidence"
+                        value={state?.stateOfResidence}
+                        onChange={handleInput}
+                      >
+                        <option value="" selected>
+                          Select state of origin
+                        </option>
+                        {states?.map((item: any) => {
+                          return (
+                            <option
+                              value={item}
+                              key={item}
+                              className="capitalize"
+                            >
+                              {item}
+                            </option>
+                          );
+                        })}
+                      </select>
+                      <div className="select_arrow"></div>
+                    </div>
+                    <div className="input_field select_option">
+                      <select
+                        name="lgaOfResidence"
+                        value={state?.lgaOfResidence}
+                        onChange={handleInput}
+                      >
+                        <option value="" selected>
+                          Select LGA of origin
+                        </option>
+                        {lgaOfResidence?.map((item: any) => {
+                          return (
+                            <option value={item} key={item}>
+                              {item}
+                            </option>
+                          );
+                        })}
+                      </select>
+                      <div className="select_arrow"></div>
+                    </div>
+                  </div>
+                  <div className="input_field flex gap-2 flex-col sm:flex-row">
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="Enter your address"
+                      required
+                      value={state?.address}
+                      onChange={handleInput}
+                    />
+                    <input
+                      type="text"
+                      name="qualification"
+                      placeholder="Enter your qualification"
+                      required
+                      value={state?.qualification}
+                      onChange={handleInput}
+                    />
+                  </div>
+
+                  <div className="flex gap-2 flex-1 flex-col sm:flex-row justify-center">
+                    <div className="">
+                      <small>Enter date of birth</small>
+                      <input
+                        type="date"
+                        name="dob"
+                        placeholder=""
+                        required
+                        value={state?.dob}
+                        onChange={handleInput}
+                      />
+                    </div>
+
+                    <div className="input_field select_option sm:mt-[20px]">
+                      <select
+                        name="maritalStatus"
+                        value={state?.maritalStatus}
+                        onChange={handleInput}
+                      >
+                        <option value="" selected>
+                          Select your marital status
+                        </option>
+                        <option value="Single">Single</option>
+                        <option value="Marries">Married</option>
+                      </select>
+                      <div className="select_arrow"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 flex-col sm:flex-row">
+                    <div className="input_field select_option">
+                      <select
                         name="gender"
                         value={state?.gender}
                         onChange={handleInput}
                       >
                         <option value="" selected>
-                          Select Gender
+                          Select gender
                         </option>
                         <option value="female">Female</option>
                         <option value="male">Male</option>
@@ -170,19 +279,30 @@ const FinancialSupport = () => {
                         onChange={handleInput}
                       >
                         <option value="" selected>
-                          Select Category
+                          Select category
                         </option>
-                        <option value="Welding">Welding</option>
-                        <option value="Mechanic">Mechanic</option>
-                        <option value="Electrician">Electrician</option>
                         <option value="Carpentry">Carpentry</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Cooking">Cooking</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Fashion Designing">Fashion Designing</option>
+                        <option value="Farming">Farming</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Minning">Minning</option>
                         <option value="Painting">Painting</option>
+                        <option value="Plumbering">Plumbering</option>
+                        <option value="Trading">Trading</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Welding">Welding</option>
+                        <option value="Others">Others</option>
                       </select>
                       <div className="select_arrow"></div>
                     </div>
                   </div>
                   <div className="flex gap-2 flex-1 flex-col sm:flex-row">
-                    <div className="input_field">
+                    <div>
+                      <small> How much do you make monthly?</small>
                       <input
                         type="text"
                         name="monthlyEarnings"
@@ -193,18 +313,21 @@ const FinancialSupport = () => {
                       />
                     </div>
                     <div className="input_field select_option">
-                      <select
-                        name="registerWithCooperative"
-                        value={state?.registerWithCooperative!}
-                        onChange={handleInput}
-                      >
-                        <option value="" selected>
-                          Registered with Cooperative?
-                        </option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                      </select>
-                      <div className="select_arrow"></div>
+                      <div>
+                        <small>Are you registered with a co-operative?</small>
+                        <select
+                          name="registerWithCooperative"
+                          value={state?.registerWithCooperative!}
+                          onChange={handleInput}
+                        >
+                          <option value="" selected>
+                            Registered with Cooperative?
+                          </option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                        <div className="select_arrow"></div>
+                      </div>
                     </div>
                   </div>
                   <div className="flex gap-2 flex-col sm:flex-row">
@@ -215,7 +338,7 @@ const FinancialSupport = () => {
                         onChange={handleInput}
                       >
                         <option value="" selected>
-                          Select State
+                          Select state of employment
                         </option>
                         {states?.map((item: any) => {
                           return (
@@ -238,7 +361,7 @@ const FinancialSupport = () => {
                         onChange={handleInput}
                       >
                         <option value="" selected>
-                          Select LGA
+                          Select LGA of employment
                         </option>
                         {lga?.map((item: any) => {
                           return (

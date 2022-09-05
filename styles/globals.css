@@ -1129,6 +1129,7 @@ body {
 
 .form_wrapper input[type="text"],
 .form_wrapper input[type="email"],
+.form_wrapper input[type="date"],
 .form_wrapper input[type="password"],
 .form_wrapper input[type="number"] {
     width: 100%;
