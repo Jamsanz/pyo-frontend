@@ -66,13 +66,13 @@ const PyoFellow = () => {
 
         <div
           className="md:flex-nowrap  
-        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-stretch"
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start"
         >
-          <div className="text-center mx-auto flex justify-center">
+          <div className="text-center mx-auto flex justify-end">
             <img
               src="images/1 3.png"
               alt=""
-              className="rounded-lg md:text-center w-[80%] h-auto"
+              className="rounded-lg md:text-center md:w-[80%] w-full h-auto"
             />
           </div>
           <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
@@ -134,15 +134,16 @@ const PyoFellow = () => {
               White Collar
             </p>
           </div>
-          <div className="md:flex-nowrap  flex-wrap w-[95%] md:w-[90%] lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
-            <div className="flex flex-col items-center mx-auto">
-              <div className="text-center mx-auto flex justify-center">
-                <img
-                  src="images/2 3.png"
-                  alt=""
-                  className="rounded-lg md:text-center w-[80%] h-auto"
-                />
-              </div>
+          <div
+            className="md:flex-nowrap  
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start"
+          >
+            <div className="text-center mx-auto flex justify-end">
+              <img
+                src="images/2 3.png"
+                alt=""
+                className="rounded-lg md:text-center md:w-[80%] w-full h-auto"
+              />
             </div>
             <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
               <p className="">
@@ -249,15 +250,16 @@ const PyoFellow = () => {
               Blue Collar
             </p>
           </div>
-          <div className="md:flex-nowrap  flex-wrap w-[95%] md:w-[90%] lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
-            <div className="flex flex-col items-center mx-auto">
-              <div className="text-center mx-auto flex justify-center">
-                <img
-                  src="images/3 3.png"
-                  alt=""
-                  className="rounded-lg md:text-center w-[80%] h-auto"
-                />
-              </div>
+          <div
+            className="md:flex-nowrap  
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start"
+          >
+            <div className="text-center mx-auto flex justify-end">
+              <img
+                src="images/3 3.png"
+                alt=""
+                className="rounded-lg md:text-center md:w-[80%] w-full h-auto"
+              />
             </div>
             <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
               <p className="">
