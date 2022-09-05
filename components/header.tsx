@@ -5,18 +5,18 @@ const Header = ({}) => {
   const [open, setOpen] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
 
-
   const navigateBar = () => {
-    setOpen(!open)
-    if (open === false) setAbout(false)
-  }
-  
+    setOpen(!open);
+    if (open === false) setAbout(false);
+  };
+
   const navigateAbout = () => {
     if (window.innerWidth < 1024) {
-      setAbout(!about)
+      setAbout(!about);
     }
+
     return;
-  }
+  };
   return (
     <nav
       id="header"
@@ -90,7 +90,7 @@ const Header = ({}) => {
                 </a>
               </Link>
             </li>
-            <li className="mr-3 relative nav">
+            {/* <li className="mr-3 relative nav">
               <a
                 className="py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer flex justify-start lg:justify-center"
                 onClick={navigateAbout}
@@ -131,12 +131,12 @@ const Header = ({}) => {
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Header;
