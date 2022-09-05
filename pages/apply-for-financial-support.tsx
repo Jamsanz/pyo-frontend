@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
-import { http } from "../utils/utils";
+import { financialSupport, http } from "../utils/utils";
 import toastr from "../utils/toastr";
 import { IFinancialSupport } from "../interfaces/support.interface";
 // @ts-ignore
@@ -47,25 +47,7 @@ const FinancialSupport = () => {
       .then((res) => {
         if (res.status == 201) {
           toastr.success(res.data.message);
-          setState({
-            firstName: "",
-            middleName: "",
-            lastName: "",
-            gender: "",
-            stateOfResidence: "",
-            lgaOfResidence: "",
-            address: "",
-            dob: "",
-            maritalStatus: "",
-            email: "",
-            phone: "",
-            state: "",
-            lga: "",
-            qualification: "",
-            applicantCategory: "",
-            registerWithCooperative: "",
-            monthlyEarnings: "",
-          });
+          setState(financialSupport);
         } else {
           toastr.error(res.data.message);
         }
@@ -231,14 +213,30 @@ const FinancialSupport = () => {
                       value={state?.address}
                       onChange={handleInput}
                     />
-                    <input
+                    <div className="input_field select_option">
+                      <select
+                        name="qualification"
+                        required
+                        value={state?.qualification}
+                        onChange={handleInput}
+                      >
+                        <option value="" selected>Enter your qualification</option>
+                        <option value="None">None</option>
+                        <option value="Primary School">Primary School Certificate</option>
+                        <option value="Secondary School">Secondary School Certificate</option>
+                        <option value="Vocational Certificate">Vocational Certificate</option>
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Masters Degree"> Master's Degree</option>
+                      </select>
+                      <div className="select_arrow"></div>
+                    </div>
+                    {/* <input
                       type="text"
                       name="qualification"
                       placeholder="Enter your qualification"
                       required
                       value={state?.qualification}
-                      onChange={handleInput}
-                    />
+                    /> */}
                   </div>
 
                   <div className="flex gap-2 flex-1 flex-col sm:flex-row justify-center">
