@@ -288,14 +288,14 @@ const PyoFellow = () => {
                 </button>
               </div>
               <div className="pt-8">
-                <a href="/sponsorship" className="font-[18px] hover:font-bold">
+                <Link to="/sponsorship" className="font-[18px] hover:font-bold">
                   {" "}
                   Register as a sponsor
-                </a>
+                </Link>
                 <br />
-                <a href="/support" className="font-[18px] hover:font-bold pb-1">
+                <Link to="/support" className="font-[18px] hover:font-bold pb-1">
                   Apply for financial support{" "}
-                </a>{" "}
+                </Link>{" "}
               </div>
             </div>
           )}
