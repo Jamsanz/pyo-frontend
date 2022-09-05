@@ -50,6 +50,26 @@ export const handleScroll = () => {
   }
 };
 
+export const financialSupport = {
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  gender: "",
+  stateOfResidence: "",
+  lgaOfResidence: "",
+  address: "",
+  dob: "",
+  maritalStatus: "",
+  email: "",
+  phone: "",
+  state: "",
+  lga: "",
+  qualification: "",
+  applicantCategory: "",
+  registerWithCooperative: "",
+  monthlyEarnings: "",
+};
+
 export interface IReadMore {
   id?: number;
   title?: string;

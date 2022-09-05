@@ -61,7 +61,7 @@ const Sponsor = () => {
         <div className="form_wrapper">
           <div className="form_container">
             <div className="title_container">
-              <h2 className="text-[black]"> Sponsorship Form </h2>
+              <h2 className="text-[black]"> Register as a Sponsor</h2>
             </div>
             <div className="row clearfix">
               <div className="">
@@ -70,7 +70,7 @@ const Sponsor = () => {
                     <input
                       type="text"
                       name="firstName"
-                      placeholder="First name"
+                      placeholder="Enter first name"
                       required
                       value={state?.firstName}
                       onChange={handleInput}
@@ -78,14 +78,14 @@ const Sponsor = () => {
                     <input
                       type="text"
                       name="middleName"
-                      placeholder="Middle name"
+                      placeholder="Enter middle name"
                       value={state?.middleName}
                       onChange={handleInput}
                     />
                     <input
                       type="text"
                       name="lastName"
-                      placeholder="Last name"
+                      placeholder="Enter last name"
                       required
                       value={state?.lastName}
                       onChange={handleInput}
@@ -95,7 +95,7 @@ const Sponsor = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email"
+                      placeholder="Enter email"
                       required
                       value={state?.email}
                       onChange={handleInput}
@@ -103,7 +103,7 @@ const Sponsor = () => {
                     <input
                       type="tel"
                       name="phone"
-                      placeholder="Phone number"
+                      placeholder="Enter phone number"
                       required
                       value={state?.phone}
                       onChange={handleInput}
@@ -115,6 +115,7 @@ const Sponsor = () => {
                         name="gender"
                         value={state?.gender}
                         onChange={handleInput}
+                        required
                       >
                         <option value="" selected>
                           Select Gender
@@ -124,16 +125,14 @@ const Sponsor = () => {
                       </select>
                       <div className="select_arrow"></div>
                     </div>
-                    <div className="input_field">
-                      <input
-                        type="text"
-                        name="nationality"
-                        placeholder="Nationality"
-                        required
-                        value={state?.nationality}
-                        onChange={handleInput}
-                      />
-                    </div>
+                    <input
+                      type="text"
+                      name="nationality"
+                      placeholder="Enter your nationality"
+                      required
+                      value={state?.nationality}
+                      onChange={handleInput}
+                    />
                   </div>
                   <div className="input_field flex gap-2 flex-col sm:flex-row">
                     <div className="input_field select_option">
@@ -141,9 +140,10 @@ const Sponsor = () => {
                         name="offer"
                         value={state?.offer}
                         onChange={handleInput}
+                        required
                       >
                         <option value="" selected>
-                          Select Offer
+                          What do you want to offer?
                         </option>
                         <option value="Grant">Grant</option>
                         <option value="Micro Credit">Micro Credit</option>
@@ -155,37 +155,54 @@ const Sponsor = () => {
                         name="amount"
                         value={state?.amount}
                         onChange={handleInput}
+                        required
                       >
                         <option value="" selected>
-                          Select Amount
+                          How much?
                         </option>
-                        <option value="10,000">&#8358;10,000</option>
-                        <option value="20,000">&#8358;20,000</option>
                         <option value="50,000">&#8358;50,000</option>
                         <option value="100,000">&#8358;100,000</option>
+                        <option value="200,000">&#8358;200,000</option>
                         <option value="500,000">&#8358;500,000</option>
-                        <option value="1,000,000">&#8358;1,000,000</option>
+                        <option value="1,000,000 or more">&#8358;1,000,000 or more</option>
                       </select>
                       <div className="select_arrow"></div>
                     </div>
                   </div>
                   <div className="input_field flex gap-2 flex-col sm:flex-row">
-                    <input
-                      type="text"
-                      name="location"
-                      placeholder="Location"
-                      required
-                      value={state?.location}
-                      onChange={handleInput}
-                    />
-                    <input
-                      type="number"
-                      name="sponsor_count"
-                      placeholder="Specify number of people to sponsor"
-                      required
-                      value={state?.sponsor_count}
-                      onChange={handleInput}
-                    />
+                    <div className="">
+                      <small>
+                        Do you have a specific location to sponsor? If yes,
+                        kindly state
+                      </small>
+
+                      <input
+                        type="text"
+                        name="location"
+                        placeholder="Enter location"
+                        value={state?.location}
+                        onChange={handleInput}
+                      />
+                    </div>
+                    <div className="input_field select_option sm:mt-[20px]">
+                      <small>How many people would you like to sponsor? </small>
+                      <select
+                        name="sponsor_count"
+                        value={state?.sponsor_count}
+                        onChange={handleInput}
+                        required
+                      >
+                        <option value="" selected>
+                          Select number
+                        </option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="500 or more">500 or more</option>
+                      </select>
+                      <div className="select_arrow"></div>
+                    </div>
                   </div>
 
                   <button
