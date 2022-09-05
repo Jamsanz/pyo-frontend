@@ -57,22 +57,25 @@ const PyoFellow = () => {
 
         <div className="text-center mt-8">
           <div className=" pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-center">
-            <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
-              <span>PYO Fellowship</span>
+            <h3 className="monoFont border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
+              <span className="text-2xl">PYO Fellowship</span>
               <small className="text-xs font-light block">Coming soon</small>
             </h3>
           </div>
         </div>
 
-        <div className="md:flex-nowrap  flex-wrap md:w-[75%] w-[95%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
-          <div className="text-center mx-auto">
+        <div
+          className="md:flex-nowrap  
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-stretch"
+        >
+          <div className="text-center mx-auto flex justify-center">
             <img
-              src="images/1 4.png"
+              src="images/1 3.png"
               alt=""
-              className="rounded-lg md:text-center"
+              className="rounded-lg md:text-center w-[80%] h-auto"
             />
           </div>
-          <div className=" md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
+          <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
             <p className="">
               A proposed one-year fellowship which will be offered on a yearly
               basis is aimed at building a network of high-potential young
@@ -94,10 +97,10 @@ const PyoFellow = () => {
           </div>
         </div>
 
-        <div className="text-center mt-8 ">
+        <div className="text-center mt-14 ">
           <div className=" pt-4 pb-2 align-middle  px-2 md:px-8 text-[#000] text-center">
-            <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
-              <span>PYO New Tribe</span>
+            <h3 className="monoFont border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
+              <span className="text-2xl">PYO New Tribe</span>
               <small className="text-xs font-light block">Coming soon</small>
             </h3>
           </div>
@@ -126,13 +129,19 @@ const PyoFellow = () => {
         </div>
 
         <div className="mt-16">
-          <div className="md:flex-nowrap  flex-wrap md:w-[75%] w-[95%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
+          <div className=" w-[170px] text-center mx-auto">
+            <p className="text-[22px] px-[15px] text-center monoFont text-white rounded-lg bg-[#b1803c] mb-[40px] font-bold">
+              White Collar
+            </p>
+          </div>
+          <div className="md:flex-nowrap  flex-wrap w-[95%] md:w-[90%] lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
             <div className="flex flex-col items-center mx-auto">
-              <p className="text-[18px] px-[15px] text-center monoFont text-white rounded-lg bg-[#b1803c] mb-[10px] font-bold">
-                White Collar
-              </p>
-              <div className="text-center">
-                <img src="images/2 4.png" alt="" className="rounded-lg" />
+              <div className="text-center mx-auto flex justify-center">
+                <img
+                  src="images/2 3.png"
+                  alt=""
+                  className="rounded-lg md:text-center w-[80%] h-auto"
+                />
               </div>
             </div>
             <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
@@ -180,20 +189,20 @@ const PyoFellow = () => {
                     </p>
                     {showInitiative ? (
                       <>
-                        <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        <p className="mt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify  ">
                           {moreTextInitiative?.id === item?.id &&
                             moreTextInitiative?.text2}
                         </p>
                         {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text4 !== "" ? (
-                          <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                          <p className="mt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify">
                             {moreTextInitiative?.id === item?.id &&
                               moreTextInitiative?.text4}
                           </p>
                         ) : (
                           ""
                         )}
-                        <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        <p className="mt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify">
                           {moreTextInitiative?.id === item?.id &&
                             moreTextInitiative?.text3}
                         </p>
@@ -219,8 +228,8 @@ const PyoFellow = () => {
                       >
                         <p
                           className={`${
-                            showInitiative ? "-mt-4" : ""
-                          } mx-auto text-center w-[120px] px-[15px] py-[5px] monoFont text-white rounded-lg bg-[#000] mb-[10px] text-[17px] font-bold transform  mt-3 transition hover:text-[#fff] duration-300 ease-in-out`}
+                            showInitiative && "-mt-2"
+                          } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
                         >
                           Learn more
                         </p>
@@ -235,13 +244,19 @@ const PyoFellow = () => {
           </div>
         </div>
         <div className="mx-auto text-center">
-          <div className="md:flex-nowrap  flex-wrap md:w-[75%] w-[95%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
+          <div className=" w-[170px] text-center mx-auto">
+            <p className="text-[22px] px-[15px] text-center monoFont text-white rounded-lg bg-[#b1803c] mb-[40px] font-bold">
+              Blue Collar
+            </p>
+          </div>
+          <div className="md:flex-nowrap  flex-wrap w-[95%] md:w-[90%] lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
             <div className="flex flex-col items-center mx-auto">
-              <p className="text-[18px] px-[15px] text-center monoFont text-white rounded-lg bg-[#b1803c] mb-[10px] font-bold">
-                Blue Collar
-              </p>
-              <div className="text-center">
-                <img src="images/3 4.png" alt="" className="rounded-lg" />
+              <div className="text-center mx-auto flex justify-center">
+                <img
+                  src="images/3 3.png"
+                  alt=""
+                  className="rounded-lg md:text-center w-[80%] h-auto"
+                />
               </div>
             </div>
             <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
@@ -269,17 +284,19 @@ const PyoFellow = () => {
                 For Artisans, Market women and men, and workers in the service
                 industry (bikes, taxis etc)
               </p>
+              <div className="text-center mx-auto lg:text-left">
+                <button
+                  type="button"
+                  className="mt-[30px] text-[18px] px-[30px] py-[7px] monoFont
+                text-white rounded-lg bg-[#000] mb-[10px] font-bold text-center"
+                  onClick={() => setShowLink(true)}
+                >
+                  Apply here
+                </button>
+              </div>
             </div>
           </div>
 
-          <button
-            type="button"
-            className="mt-[30px] w-[150px] text-[18px] px-[15px] py-[5px] monoFont
-           text-white rounded-lg bg-[#000] mb-[10px] font-bold"
-            onClick={() => setShowLink(true)}
-          >
-            Apply here
-          </button>
           {showLink ? (
             <div className="text-black relative w-[250px] mx-auto text-center mt-1 boxShadow5 pb-4 ">
               <div className="absolute top-0 right-0 m-2 px-2 py-1  hover:bg-[#f2f2f2] hover:rounded-full font-bold">
@@ -289,12 +306,16 @@ const PyoFellow = () => {
               </div>
               <div className="pt-8">
                 <div className="font-[18px] hover:font-bold">
-                  <Link href="/sponsorship">Register as a sponsor</Link>{" "}
+                  <Link href="/register-as-a-sponsor">
+                    Register as a sponsor
+                  </Link>{" "}
                 </div>
 
                 <br />
                 <div className="font-[18px] hover:font-bold pb-1">
-                  <Link href="/support">Apply for financial support</Link>
+                  <Link href="/apply-for-financial-support">
+                    Apply for financial support
+                  </Link>
                 </div>
               </div>
             </div>

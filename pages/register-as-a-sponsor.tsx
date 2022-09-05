@@ -61,7 +61,7 @@ const Sponsor = () => {
         <div className="form_wrapper">
           <div className="form_container">
             <div className="title_container">
-              <h2 className="text-[black]"> Apply as a Sponsor</h2>
+              <h2 className="text-[black]"> Register as a Sponsor</h2>
             </div>
             <div className="row clearfix">
               <div className="">

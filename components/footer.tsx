@@ -4,7 +4,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer
-      className="bg-grey-700 h-auto pt-10 "
+      className="bg-white h-auto pt-10 "
       style={{ borderTop: "1px solid black" }}
     >
       <div className="container mx-auto px-8">
@@ -64,8 +64,8 @@ const Footer = () => {
           </div>
           <div className="flex-1">
             <p className="uppercase text-[#53575B] md:mb-6">Social</p>
-            <ul className="list-reset mb-6">
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+            <div className="list-reset mb-6 flex justify-start gap-3">
+              <div className="mt-2divndivne-block mr-2 md:block md:mr-0">
                 <a
                   href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
@@ -76,8 +76,8 @@ const Footer = () => {
                     className="hover:scale-110"
                   />
                 </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+              </div>
+              <div className="inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
@@ -88,8 +88,8 @@ const Footer = () => {
                     className="hover:scale-110"
                   />
                 </a>
-              </li>
-              <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+              </div>
+              <div className="inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
                   className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
@@ -100,8 +100,8 @@ const Footer = () => {
                     className="hover:scale-110"
                   />
                 </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

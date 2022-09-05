@@ -113,8 +113,21 @@ const FinancialSupport = () => {
 
   return (
     <Layout>
-      <div className="py-[50px]">
-        <div className="form_wrapper notransition">
+      <div
+        className="bg-[url('/images/blue-collar-workers.png')]
+       lg:h-[115vh]
+       md:h-[130vh]
+       h-[210vh]
+       w-full
+       bg-cover
+       relative
+       mx-auto
+       bg-no-repeat
+       bg-fixed
+       pb-[50px]
+      "
+      >
+        <div className="form_wrapper top-[50px] mb-[50px]">
           <div className="form_container">
             <div className="title_container">
               <h2 className="text-[black]"> Apply for Financial Support</h2>
@@ -286,7 +299,9 @@ const FinancialSupport = () => {
                         <option value="Cleaning">Cleaning</option>
                         <option value="Cooking">Cooking</option>
                         <option value="Electrician">Electrician</option>
-                        <option value="Fashion Designing">Fashion Designing</option>
+                        <option value="Fashion Designing">
+                          Fashion Designing
+                        </option>
                         <option value="Farming">Farming</option>
                         <option value="Mechanic">Mechanic</option>
                         <option value="Minning">Minning</option>
