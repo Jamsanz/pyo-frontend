@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   IReadMore,
   pyoFellowship,
@@ -12,7 +12,7 @@ import Modal from "./signUpModal";
 
 const PyoFellow = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [showLink, setShowLink] = useState<boolean>(false)
+  const [showLink, setShowLink] = useState<boolean>(false);
   const handleShowModal = (e?: any): void => {
     e?.preventDefault();
     setOpen(!open);
@@ -42,7 +42,7 @@ const PyoFellow = () => {
     setMoreTextInitiative(readMoreTextInitiative?.pop());
     return readMoreTextInitiative;
   };
-  
+
   return (
     <>
       <div className="pb-8 py-16 bg-[#fff] " id="fellow">
@@ -273,32 +273,37 @@ const PyoFellow = () => {
           </div>
 
           <button
+            type="button"
             className="mt-[30px] w-[150px] text-[18px] px-[15px] py-[5px] monoFont
            text-white rounded-lg bg-[#000] mb-[10px] font-bold"
             onClick={() => setShowLink(true)}
           >
             Apply here
           </button>
-          {showLink && (
+          {showLink  ?
             <div className="text-black relative w-[250px] mx-auto text-center mt-1 boxShadow5 pb-4 ">
               <div className="absolute top-0 right-0 m-2 px-2 py-1  hover:bg-[#f2f2f2] hover:rounded-full font-bold">
                 <button type="button" onClick={() => setShowLink(false)}>
-                  {" "}
                   x{" "}
                 </button>
               </div>
               <div className="pt-8">
-                <Link to="/sponsorship" className="font-[18px] hover:font-bold">
-                  {" "}
+                <Link href="/sponsorship">
+                <a href="/sponsorship" className="font-[18px] hover:font-bold">
                   Register as a sponsor
+                </a>
+                </Link> <br/>
+                <Link href="/support">
+                  <a
+                    href="/support"
+                    className="font-[18px] hover:font-bold pb-1"
+                  >
+                    Apply for financial support
+                  </a>
                 </Link>
-                <br />
-                <Link to="/support" className="font-[18px] hover:font-bold pb-1">
-                  Apply for financial support{" "}
-                </Link>{" "}
               </div>
             </div>
-          )}
+          : ""}
         </div>
       </div>
       <Modal open={open} setOpen={handleShowModal} />
@@ -309,7 +314,6 @@ const PyoFellow = () => {
 export default PyoFellow;
 
 //old
-
 
 {
   /* <div className="pb-8 md:py-16 bg-[#fff]" id="fellow">
