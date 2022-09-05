@@ -280,7 +280,7 @@ const PyoFellow = () => {
           >
             Apply here
           </button>
-          {showLink  ?
+          {showLink ? (
             <div className="text-black relative w-[250px] mx-auto text-center mt-1 boxShadow5 pb-4 ">
               <div className="absolute top-0 right-0 m-2 px-2 py-1  hover:bg-[#f2f2f2] hover:rounded-full font-bold">
                 <button type="button" onClick={() => setShowLink(false)}>
@@ -288,22 +288,19 @@ const PyoFellow = () => {
                 </button>
               </div>
               <div className="pt-8">
-                <Link href="/sponsorship">
-                <a href="/sponsorship" className="font-[18px] hover:font-bold">
-                  Register as a sponsor
-                </a>
-                </Link> <br/>
-                <Link href="/support">
-                  <a
-                    href="/support"
-                    className="font-[18px] hover:font-bold pb-1"
-                  >
-                    Apply for financial support
-                  </a>
-                </Link>
+                <div className="font-[18px] hover:font-bold">
+                  <Link href="/sponsorship">Register as a sponsor</Link>{" "}
+                </div>
+
+                <br />
+                <div className="font-[18px] hover:font-bold pb-1">
+                  <Link href="/support">Apply for financial support</Link>
+                </div>
               </div>
             </div>
-          : ""}
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <Modal open={open} setOpen={handleShowModal} />
