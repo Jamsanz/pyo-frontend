@@ -3,10 +3,12 @@ import DashboardLayout from '../components/dashboardLayout';
 import ProfileCard from '../components/profileCard';
 import { getUser, http } from '../utils/utils';
 import toastr from '../utils/toastr';
+import axios from 'axios';
+import { GetStaticProps } from 'next';
 
-const Profile = () => {
+const Profile = ({countries}: any) => {
   const [user, setUser] = useState<any>({});
-  const [loading, setLoading] = useState<boolean>()
+  const [loading, setLoading] = useState<boolean>();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -24,6 +26,10 @@ const Profile = () => {
     let user = window.localStorage.getItem("appUser");
     let save = JSON.parse(user!);
     setUser(save);
+  }, []);
+
+  useEffect(() => { 
+
   }, []);
   return (
     <DashboardLayout pageName="profile">
@@ -67,7 +73,12 @@ const Profile = () => {
             <div>
               <label htmlFor="">Country: </label>
               <select name="country" onChange={handleChange} value={user?.country} id="" className='w-full border p-3 rounded-md'>
-                <option value=""></option>
+                <option value="">{user?.country}</option>
+                {
+                  countries?.map((country: any, index: number) => (
+                    <option key={index} value={country.name.common}>{ country.name.common}</option>
+                  ))
+                }
               </select>
             </div>
             <div>
@@ -90,3 +101,13 @@ const Profile = () => {
 }
 
 export default Profile;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { data } = await axios.get('https://restcountries.com/v3.1/all');
+
+  return {
+    props: {
+      countries: data
+    }
+  }
+}

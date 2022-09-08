@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import ISponsor from "../interfaces/sponsor.interface";
-import { http } from "../utils/utils";
+import { http, sponsor } from "../utils/utils";
 import toastr from "../utils/toastr";
 
 const Sponsor = () => {
@@ -27,19 +27,7 @@ const Sponsor = () => {
       .then((res) => {
         if (res.status == 201) {
           toastr.success(res.data.message);
-          setState({
-            firstName: "",
-            middleName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            gender: "",
-            nationality: "",
-            offer: "",
-            amount: "",
-            location: "",
-            sponsor_count: "",
-          });
+          setState(sponsor);
         } else {
           toastr.error(res.data.message);
         }
@@ -178,7 +166,7 @@ const Sponsor = () => {
                         <option value="100,000">&#8358;100,000</option>
                         <option value="200,000">&#8358;200,000</option>
                         <option value="500,000">&#8358;500,000</option>
-                        <option value="1,000,000">&#8358;1,000,000</option>
+                        <option value="1,000,000 or more">&#8358;1,000,000 or more</option>
                       </select>
                       <div className="select_arrow"></div>
                     </div>
@@ -213,7 +201,7 @@ const Sponsor = () => {
                         <option value="20">20</option>
                         <option value="50">50</option>
                         <option value="100">100</option>
-                        <option value="500">500</option>
+                        <option value="500 or more">500 or more</option>
                       </select>
                       <div className="select_arrow"></div>
                     </div>

@@ -50,6 +50,39 @@ export const handleScroll = () => {
   }
 };
 
+export const sponsor = {
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  gender: "",
+  nationality: "",
+  offer: "",
+  amount: "",
+  location: "",
+  sponsor_count: "",
+};
+export const financialSupport = {
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  gender: "",
+  stateOfResidence: "",
+  lgaOfResidence: "",
+  address: "",
+  dob: "",
+  maritalStatus: "",
+  email: "",
+  phone: "",
+  state: "",
+  lga: "",
+  qualification: "",
+  applicantCategory: "",
+  registerWithCooperative: "",
+  monthlyEarnings: "",
+};
+
 export interface IReadMore {
   id?: number;
   title?: string;

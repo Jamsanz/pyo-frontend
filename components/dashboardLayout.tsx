@@ -179,7 +179,7 @@ const DashboardLayout = (props: any) => {
                   >
                     <ul>
                       <li className="mr-3">
-                        <Link href="/">
+                        <Link href="/pyo-schedule">
                           <a className="hover:font-bold inline-block w-full text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
                             Meeting
                           </a>
