@@ -45,6 +45,20 @@ const Sponsor = () => {
 
   return (
     <Layout>
+       <div
+        className="bg-[url('/images/sponsorship.jpeg')]
+       lg:h-[115vh]
+       md:h-[130vh]
+       h-[150vh]
+       w-full
+       bg-cover
+       relative
+       mx-auto
+       bg-no-repeat
+       bg-fixed
+       pb-[50px]
+      "
+      >
       <div className="py-[50px]">
         <div className="form_wrapper">
           <div className="form_container">
@@ -209,6 +223,7 @@ const Sponsor = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Layout>
   );
