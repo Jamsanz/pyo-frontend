@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import ISponsor from "../interfaces/sponsor.interface";
-import { http } from "../utils/utils";
+import { http, sponsor } from "../utils/utils";
 import toastr from "../utils/toastr";
 
 const Sponsor = () => {
@@ -27,19 +27,7 @@ const Sponsor = () => {
       .then((res) => {
         if (res.status == 201) {
           toastr.success(res.data.message);
-          setState({
-            firstName: "",
-            middleName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            gender: "",
-            nationality: "",
-            offer: "",
-            amount: "",
-            location: "",
-            sponsor_count: "",
-          });
+          setState(sponsor);
         } else {
           toastr.error(res.data.message);
         }
@@ -57,6 +45,20 @@ const Sponsor = () => {
 
   return (
     <Layout>
+       <div
+        className="bg-[url('/images/sponsorship.jpeg')]
+       lg:h-[115vh]
+       md:h-[130vh]
+       h-[150vh]
+       w-full
+       bg-cover
+       relative
+       mx-auto
+       bg-no-repeat
+       bg-fixed
+       pb-[50px]
+      "
+      >
       <div className="py-[50px]">
         <div className="form_wrapper">
           <div className="form_container">
@@ -221,6 +223,7 @@ const Sponsor = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Layout>
   );
