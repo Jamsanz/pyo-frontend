@@ -30,7 +30,7 @@ const Dashboard = () => {
       <div className="bg-[#f4f4f4] min-h-screen py-3 flex flex-col">
         <div className="flex md:justify-around mt-5">
           <div className="flex-1 items-center md:items-start inline-flex flex-col md:flex-row space-y-5 md:space-y-0 justify-center md:justify-around">
-            <Link href="/schedule-meeting">
+            <Link href="/pyo-schedule">
               <a className="dashboard-card w-[250px] h-[250px] cursor-pointer hover:scale-110 flex flex-col justify-center items-center">
                 <i className="fa-solid fa-calendar text-3xl"></i>
                 <h1>Schedule Meeting</h1>
