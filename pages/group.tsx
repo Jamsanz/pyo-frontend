@@ -99,7 +99,6 @@ const Group = () => {
             className="flex-1 focus:outline-none px-2"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
-            autoFocus
           />
           <button type='submit'> <i className="fa fa-paper-plane text-black" /></button>
         </form>
