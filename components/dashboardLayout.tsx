@@ -87,9 +87,11 @@ const DashboardLayout = (props: any) => {
               </div>
 
               <div className="relative hidden lg:inline-block">
-                <button className="relative flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none">
+                <p className="relative flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md
+                 focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300
+                  dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none">
                   <span className="mx-1">{email && user?.username}</span>
-                </button>
+                </p>
 
                 <div className="absolute right-0 z-20 w-56 mt-2 overflow-hidden bg-white rounded-md"></div>
               </div>
