@@ -76,8 +76,8 @@ const Group = () => {
             </div>
           </div>
           {
-            msgs?.map((msg) => (
-              <div className="rounded-tl-lg z-40 max-w-[250px] mx-4 md:max-w-[450px] rounded-tr-lg rounded-br-lg bg-[#1F2937] opacity-90 text-white p-2 shadow-md">
+            msgs?.map((msg, index) => (
+              <div key={index} className="rounded-tl-lg z-40 max-w-[250px] mx-4 md:max-w-[450px] rounded-tr-lg rounded-br-lg bg-[#1F2937] opacity-90 text-white p-2 shadow-md">
                 <div className="flex justify-between">
                   <span className='font-bold'>{user?.fellowship}</span>
                   <span className='font-bold'>{`${user?.firstName} ${user?.lastName}`}</span>
