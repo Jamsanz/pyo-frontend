@@ -10,6 +10,8 @@ export const getUser = () => JSON.parse(localStorage.getItem("appUser")!);
 export const dateTimeFormatter = (date: string): string =>
   moment(date).format("Do MMMM, YYYY h:mm:ss A ");
 
+export const timeFormatter = (time?: string): string => moment().format("LT");
+
 export const handleScroll = () => {
   var header: any = document.getElementById("header");
   var navcontent: any = document.getElementById("nav-content");
