@@ -349,6 +349,24 @@ label[for="country"] {
   transform: scale(1.3);
 }
 
+.el-center{
+    position: fixed;
+    top: 50%;  
+    left: 60%; 
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+@media screen and (max-width: 650px){
+  .el-center{
+    display: none;
+  }
+}
+.inline-center{
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* --- Search box with transition end--- */
 
 /* Profile card start */

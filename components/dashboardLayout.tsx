@@ -42,7 +42,7 @@ const DashboardLayout = (props: any) => {
 
   return (
     <div>
-      <nav className="fixed z-30 w-full bg-white border-b-2">
+      <nav className="fixed w-full bg-white border-b-2 z-50">
         <div className="px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
