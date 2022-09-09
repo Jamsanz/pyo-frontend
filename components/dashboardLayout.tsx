@@ -164,7 +164,10 @@ const DashboardLayout = (props: any) => {
                     } rounded-md`}
                     onClick={navigateAbout}
                   >
-                   
+                    <span className="font-medium text-[15px] text-left flex space-x-3">
+                      <i className="fa-solid fa-calendar md:mt-2 mt-1" />
+                      <span className="">Schedule Engagement With PYO</span>
+                    </span>
                   </a>
                   <div
                     className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${
