@@ -34,7 +34,7 @@ const Group = () => {
           <div className='flex justify-end'>
             <p className='font-bold'>2:33pm</p>
           </div>
-        </div>
+        </div> 
         <div className="rounded-tl-lg z-40 mx-4 max-w-[450px] self-end rounded-tr-lg rounded-bl-lg bg-white p-2 shadow-md">
           <div className="flex justify-between">
             <span className='font-bold'>{user?.fellowship}</span>
