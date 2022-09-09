@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   IReadMore,
@@ -12,29 +12,19 @@ import Modal from "./signUpModal";
 
 const PyoFellow = () => {
   const [open, setOpen] = useState<boolean>(false);
+
   const [showLink, setShowLink] = useState<boolean>(false);
   const handleShowModal = (e?: any): void => {
     e?.preventDefault();
     setOpen(!open);
   };
-  const [show, setShow] = useState<boolean>(false);
   const [showInitiative, setShowInitiative] = useState<boolean>(false);
 
-  const [moreText, setMoreText] = useState<IReadMore>();
   const [moreTextInitiative, setMoreTextInitiative] = useState<IReadMore>();
 
-  let readMoreText: IReadMore[];
   let readMoreTextInitiative: IReadMore[];
 
-  const showMore = (id: number) => {
-    setShow(true);
-    readMoreText = readMore
-      ?.filter((item: any) => item.id === id)
-      ?.map((data: any) => data);
-    setMoreText(readMoreText?.pop());
-    return readMoreText;
-  };
-  const showMoreInitiative = (id: number) => {
+  const showMoreInitiative = (id: number, index: number) => {
     setShowInitiative(true);
     readMoreTextInitiative = readMoreInstitute
       ?.filter((item: any) => item.id === id)
@@ -42,7 +32,7 @@ const PyoFellow = () => {
     setMoreTextInitiative(readMoreTextInitiative?.pop());
     return readMoreTextInitiative;
   };
-
+  
   return (
     <>
       <div className="pb-8 py-16 bg-[#fff] " id="fellow">
@@ -66,13 +56,13 @@ const PyoFellow = () => {
 
         <div
           className="md:flex-nowrap  
-        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-stretch"
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start"
         >
-          <div className="text-center mx-auto flex justify-center">
+          <div className="text-center mx-auto flex justify-end">
             <img
               src="images/1 3.png"
               alt=""
-              className="rounded-lg md:text-center w-[80%] h-auto"
+              className="rounded-lg md:text-center  w-full h-auto"
             />
           </div>
           <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
@@ -134,15 +124,16 @@ const PyoFellow = () => {
               White Collar
             </p>
           </div>
-          <div className="md:flex-nowrap  flex-wrap w-[95%] md:w-[90%] lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
-            <div className="flex flex-col items-center mx-auto">
-              <div className="text-center mx-auto flex justify-center">
-                <img
-                  src="images/2 3.png"
-                  alt=""
-                  className="rounded-lg md:text-center w-[80%] h-auto"
-                />
-              </div>
+          <div
+            className="md:flex-nowrap  
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start"
+          >
+            <div className="text-center mx-auto flex justify-end">
+              <img
+                src="images/2 3.png"
+                alt=""
+                className="rounded-lg md:text-center  w-full h-auto"
+              />
             </div>
             <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
               <p className="">
@@ -175,7 +166,7 @@ const PyoFellow = () => {
             </p>
 
             <div className="flex flex-wrap lg:flex-nowrap">
-              {pyoInstitute?.map((item) => {
+              {pyoInstitute?.map((item, index) => {
                 return (
                   <div
                     className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-4 text-[#000] text-left"
@@ -213,23 +204,23 @@ const PyoFellow = () => {
 
                     {moreTextInitiative?.id === item?.id && showInitiative ? (
                       <span
-                        className="cursor-pointer text-lg text-[#000] font-[400] leading-[1.5rem] text-center"
+                        className="cursor-pointer text-lg text-[#b1803c] font-[400] leading-[1.5rem] text-center"
                         onClick={() => setShowInitiative(!showInitiative)}
                       >
                         <br />
-                        <p className="-mt-4 text-[17px] font-bold text-black text-left transform transition hover:text-[#14084e] duration-300 ease-in-out">
+                        <p className="-mt-4 text-[17px] font-bold text-[#b1803c] text-left transform transition hover:font-bold duration-300 ease-in-out">
                           Show less
                         </p>
                       </span>
                     ) : (
                       <span
-                        className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem] "
-                        onClick={() => showMoreInitiative(item?.id!)}
+                        className="cursor-pointer text-lg text-[#b1803c] font-[400] leading-[1.5rem] "
+                        onClick={() => showMoreInitiative(item?.id!, index)}
                       >
                         <p
                           className={`${
                             showInitiative && "-mt-2"
-                          } text-[17px] font-bold text-black transform transition hover:text-[#14084e] duration-300 ease-in-out`}
+                          } text-[17px] font-bold text-[#b1803c] transform transition hover:font-bold duration-300 ease-in-out`}
                         >
                           Learn more
                         </p>
@@ -249,15 +240,16 @@ const PyoFellow = () => {
               Blue Collar
             </p>
           </div>
-          <div className="md:flex-nowrap  flex-wrap w-[95%] md:w-[90%] lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start">
-            <div className="flex flex-col items-center mx-auto">
-              <div className="text-center mx-auto flex justify-center">
-                <img
-                  src="images/3 3.png"
-                  alt=""
-                  className="rounded-lg md:text-center w-[80%] h-auto"
-                />
-              </div>
+          <div
+            className="md:flex-nowrap  
+        flex-wrap  w-[95%] md:w-[90%]  lg:w-[75%] text-left mx-auto flex gap-8 justify-start content-center px-0 md:px-16  items-start"
+          >
+            <div className="text-center mx-auto flex justify-end">
+              <img
+                src="images/3 3.png"
+                alt=""
+                className="rounded-lg md:text-center  w-full h-auto"
+              />
             </div>
             <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
               <p className="">
