@@ -32,7 +32,7 @@ const PyoSchedule = () => {
     <DashboardLayout pageName="pyo-schedule">
       <div className='min-h-[100vh] px-3 pt-3 bg-[#F4F4F4]'>
         <div className='md:p-3'>
-          <h1 className='text-2xl font-bold'>Scheduling</h1>
+          <h1 className='text-2xl font-bold'>Meeting</h1>
           <p className='text-xs md:text-md'>Please fill out this form to invite Prof. Yemi Osibanjo to appear or speak at your event.</p>
         </div>
 

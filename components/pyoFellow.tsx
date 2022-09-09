@@ -12,6 +12,7 @@ import Modal from "./signUpModal";
 
 const PyoFellow = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [count, setCount] = useState<any>()
 
   const [showLink, setShowLink] = useState<boolean>(false);
   const handleShowModal = (e?: any): void => {
@@ -24,7 +25,8 @@ const PyoFellow = () => {
 
   let readMoreTextInitiative: IReadMore[];
 
-  const showMoreInitiative = (id: number, index: number) => {
+  const showMoreInitiative = (id: number) => {
+   
     setShowInitiative(true);
     readMoreTextInitiative = readMoreInstitute
       ?.filter((item: any) => item.id === id)
@@ -215,7 +217,7 @@ const PyoFellow = () => {
                     ) : (
                       <span
                         className="cursor-pointer text-lg text-[#b1803c] font-[400] leading-[1.5rem] "
-                        onClick={() => showMoreInitiative(item?.id!, index)}
+                        onClick={() => showMoreInitiative(item?.id!)}
                       >
                         <p
                           className={`${
