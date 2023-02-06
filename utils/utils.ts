@@ -2,7 +2,7 @@ import axios from "axios";
 import moment from "moment";
 
 export const http = axios.create({
-  baseURL: "https://pyo-institute-backend.herokuapp.com",
+  baseURL: "https://pyo-institute-backend.onrender.com",
 });
 
 export const getUser = () => JSON.parse(localStorage.getItem("appUser")!);

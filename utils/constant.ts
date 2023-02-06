@@ -1,4 +1,4 @@
-export const siteUrl = "https://pyo-ten.vercel.app";
+export const siteUrl = process.env.NODE_ENV === "development" ? "localhost:3000" : "https://pyo-institute.vercel.app";
 
 export const gallery = [
   {
