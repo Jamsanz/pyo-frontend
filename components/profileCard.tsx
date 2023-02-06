@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-// import {
-//   FacebookIcon,
-//   FacebookShareButton,
-//   LinkedinIcon,
-//   LinkedinShareButton,
-//   TwitterIcon,
-//   TwitterShareButton,
-// } from "react-share";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from "react-share";
 // import { Member } from "../interfaces/member.interface";
 import { siteUrl } from "../utils/constant";
 // import { getUser } from "../utils/utils";
@@ -67,7 +67,7 @@ const ProfileCard = () => {
       </ul>
       <hr className="w-[80%] h-[1px] mt-4 text-xl" />
       <ul className="inline-flex space-x-3 my-2">
-        {/* <FacebookShareButton
+        <FacebookShareButton
           url={`${siteUrl}/profile/${user?.subscriberId}`}
           quote="PYO Institute Message Gallery"
           hashtag="pyoinstitute"
@@ -79,7 +79,7 @@ const ProfileCard = () => {
         </TwitterShareButton>
         <LinkedinShareButton url={`${siteUrl}/profile/${user?.subscriberId}`}>
           <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton> */}
+        </LinkedinShareButton>
       </ul>
     </div>
   );
