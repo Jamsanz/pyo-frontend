@@ -32,24 +32,25 @@ const PyoFellow = () => {
     setMoreTextInitiative(readMoreTextInitiative?.pop());
     return readMoreTextInitiative;
   };
-  
+
   return (
     <>
       <div className="pb-8 py-16 bg-[#fff] " id="fellow">
         <div className="text-center w-[250px] m-auto">
           <h1
-            className="text-black py-2 text-[30px] md:text-4xl font-bold rounded-lg
-        text-center leading-tight bg-[#b1803c]"
+            className="text-[#b1803c] py-2 text-[30px] md:text-[42px] font-bold rounded-lg
+        text-center leading-tight"
           >
             Programmes
           </h1>
+          <div className="h-[1px] bg-[#646464] w-[80%] mx-auto mb-6"></div>
         </div>
 
         <div className="text-center mt-8">
           <div className=" pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-center">
-            <h3 className="monoFont border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
-              <span className="text-2xl">PYO Fellowship</span>
-              <small className="text-xs font-light block">Coming soon</small>
+            <h3 className="border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-8">
+              <span className="text-3xl mb-4">PYO Fellowship</span>
+              <span className="font-light block">Coming soon</span>
             </h3>
           </div>
         </div>
@@ -65,7 +66,7 @@ const PyoFellow = () => {
               className="rounded-lg md:text-center  w-full h-auto"
             />
           </div>
-          <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
+          <div className="md:w-[60%] mx-auto text-[18px] text-[#464646] w-[100%] font-[400] leading-[1.75rem] text-justify">
             <p className="">
               A proposed one-year fellowship which will be offered on a yearly
               basis is aimed at building a network of high-potential young
@@ -80,7 +81,7 @@ const PyoFellow = () => {
               top leadership positions in the public sector.
             </p>
 
-            <p className="mt-4 text-[20px] text-[#000] font-[300] leading-[1.5rem] text-left tribe italic monoFont">
+            <p className="mt-4 text-[20px] text-[#000] font-[700] leading-[1.75rem] text-left tribe italic">
               For Young Graduates and Professionals, Entrepreneurs, Artisans
               etc.
             </p>
@@ -88,16 +89,16 @@ const PyoFellow = () => {
         </div>
 
         <div className="text-center mt-14 ">
-          <div className=" pt-4 pb-2 align-middle  px-2 md:px-8 text-[#000] text-center">
-            <h3 className="monoFont border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
-              <span className="text-2xl">PYO New Tribe</span>
-              <small className="text-xs font-light block">Coming soon</small>
+          <div className=" pt-4 pb-2 align-middle  px-2 md:px-8 text-[#464646] text-center">
+            <h3 className="border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-8">
+              <span className="text-3xl">PYO New Tribe</span>
+              <span className="font-light block">Coming soon</span>
             </h3>
           </div>
         </div>
 
-        <div className="w-full md:w-[75%] mx-auto px-[3%] md:px-16 mb-8">
-          <p className="text-black text-[16px] text-justify">
+        <div className="w-full md:w-[75%] mx-auto px-[3%] md:px-16 mb-8 leading-[1.75rem]">
+          <p className="text-[#464646] text-[18px] text-justify">
             Our mission is to advance the social and economic welfare and
             education of Blue and White Collar workers through our continued
             work in organizing units of programmes and grants as a means to
@@ -105,7 +106,7 @@ const PyoFellow = () => {
           </p>
         </div>
 
-        <div className="px-[3%] bg-black md:px-[17%] py-[30px] text-[16px]">
+        <div className="px-[3%] bg-black md:px-[17%] py-[48px] text-[24px] leading-[2.5rem]">
           <p className=" text-[#fff] text-justify">
             "Where the First, Second, and Third Industrial Revolutions
             threatened the roles, responsibilities, and livelihoods of
@@ -119,10 +120,12 @@ const PyoFellow = () => {
         </div>
 
         <div className="mt-16">
-          <div className=" w-[170px] text-center mx-auto">
-            <p className="text-[22px] px-[15px] text-center monoFont text-white rounded-lg bg-[#b1803c] mb-[40px] font-bold">
-              White Collar
-            </p>
+          <div className="text-center mt-8">
+            <div className=" pt-4 pb-4 align-middle px-2 md:px-8 text-[#000] text-center">
+              <h3 className="border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
+                <span className="text-3xl mb-4">White Collar</span>
+              </h3>
+            </div>
           </div>
           <div
             className="md:flex-nowrap  
@@ -135,7 +138,7 @@ const PyoFellow = () => {
                 className="rounded-lg md:text-center  w-full h-auto"
               />
             </div>
-            <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
+            <div className="md:w-[60%] mx-auto text-[18px] text-[#464646] w-[100%] font-[400] leading-[1.75rem] text-justify">
               <p className="">
                 PYO New Tribe White Collar will bring together various age
                 groups and demographics, to create awareness and develop a
@@ -153,7 +156,7 @@ const PyoFellow = () => {
                 projects around sustainable development goals.
               </p>
 
-              <p className="mt-4 text-[20px] text-[#000] font-[300] leading-[1.5rem] text-left tribe italic monoFont">
+              <p className="mt-4 text-[18px] text-[#464646] font-bold leading-[1.75rem] text-left tribe italic">
                 For Young Graduates and Professionals (Entrepreneurs, private
                 and public sector professionals)
               </p>
@@ -161,9 +164,12 @@ const PyoFellow = () => {
           </div>
 
           <div className="my-16  w-[95%] lg:w-[75%] text-center mx-auto">
-            <p className="mx-auto text-center w-[150px] text-[18px] px-[15px] monoFont text-white rounded-lg bg-[#000] mb-[10px] font-bold">
-              Area of Focus
-            </p>
+            <div className="w-[250px] mx-auto">
+              <p className="mx-auto text-center text-[28px] px-[15px] text-[#b1803c] mb-[10px] font-bold">
+                Area of Focus
+              </p>
+              <div className="h-[1px] bg-[#646464] w-[80%] mx-auto mb-6"></div>
+            </div>
 
             <div className="flex flex-wrap lg:flex-nowrap">
               {pyoInstitute?.map((item, index) => {
@@ -172,28 +178,30 @@ const PyoFellow = () => {
                     className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-4 text-[#000] text-left"
                     key={item?.id}
                   >
-                    <h3 className="underline monoFont text-[22px] font-bold text-center mx-auto md:pb-0 h-auto  mb-1">
+                    <h3 className="text-[22px] font-bold text-center mx-auto md:pb-0 h-auto  mb-1">
                       {item?.title}
                     </h3>
-                    <p className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify">
+                    <div className="h-[1px] bg-[#cecece] w-[50%] mx-auto mb-6"></div>
+
+                    <p className="text-[18px] text-[#464646] font-[400] leading-[1.75rem] text-justify">
                       {item?.text1}
                     </p>
                     {showInitiative ? (
                       <>
-                        <p className="mt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify  ">
+                        <p className="mt-2 text-[18px] text-[#464646] font-[400] leading-[1.75rem] text-justify  ">
                           {moreTextInitiative?.id === item?.id &&
                             moreTextInitiative?.text2}
                         </p>
                         {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text4 !== "" ? (
-                          <p className="mt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify">
+                          <p className="mt-2 text-[18px] text-[#464646] font-[400] leading-[1.75rem] text-justify">
                             {moreTextInitiative?.id === item?.id &&
                               moreTextInitiative?.text4}
                           </p>
                         ) : (
                           ""
                         )}
-                        <p className="mt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-justify">
+                        <p className="mt-2 text-[18px] text-[#464646] font-[400] leading-[1.75rem] text-justify">
                           {moreTextInitiative?.id === item?.id &&
                             moreTextInitiative?.text3}
                         </p>
@@ -204,7 +212,7 @@ const PyoFellow = () => {
 
                     {moreTextInitiative?.id === item?.id && showInitiative ? (
                       <span
-                        className="cursor-pointer text-lg text-[#b1803c] font-[400] leading-[1.5rem] text-center"
+                        className="cursor-pointer text-lg text-[#b1803c] font-[400] leading-[1.75rem] text-center"
                         onClick={() => setShowInitiative(!showInitiative)}
                       >
                         <br />
@@ -235,10 +243,12 @@ const PyoFellow = () => {
           </div>
         </div>
         <div className="mx-auto text-center">
-          <div className=" w-[170px] text-center mx-auto">
-            <p className="text-[22px] px-[15px] text-center monoFont text-white rounded-lg bg-[#b1803c] mb-[40px] font-bold">
-              Blue Collar
-            </p>
+          <div className="text-center mt-8">
+            <div className=" pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-center">
+              <h3 className="border-below font-bold text-center md:pb-0 h-auto md:h-16 mb-8">
+                <span className="text-3xl mb-4">Blue Collar</span>
+              </h3>
+            </div>
           </div>
           <div
             className="md:flex-nowrap  
@@ -251,7 +261,7 @@ const PyoFellow = () => {
                 className="rounded-lg md:text-center  w-full h-auto"
               />
             </div>
-            <div className="md:w-[60%] mx-auto text-[16px] text-[#000] w-[100%] font-[400] leading-[1.5rem] text-justify">
+            <div className="md:w-[60%] mx-auto text-[18px] text-[#464646] w-[100%] font-[400] leading-[1.75rem] text-justify">
               <p className="">
                 The PYO New Tribe Blue-Collar will provide funding, skills
                 development programmes and capacity building across various blue
@@ -272,15 +282,15 @@ const PyoFellow = () => {
                 include selling the values and ideals of PYO Institute.
               </p>
 
-              <p className="mt-4 text-[20px] text-[#000] font-[300] leading-[1.5rem] text-left tribe italic monoFont">
+              <p className="mt-4 text-[18px] text-[#000] font-[300] leading-[1.5rem] text-left tribe italic ">
                 For Artisans, Market women and men, and workers in the service
                 industry (bikes, taxis etc)
               </p>
               <div className="text-center mx-auto lg:text-left">
                 <button
                   type="button"
-                  className="mt-[30px] text-[18px] px-[30px] py-[7px] monoFont
-                text-white rounded-lg bg-[#000] mb-[10px] font-bold text-center"
+                  className="mt-[30px] text-[18px] px-[30px] py-[7px] 
+                text-[#fff] rounded-lg bg-[#b1803c] hover:bg-[#946727] mb-[10px] font-bold text-center"
                   onClick={() => setShowLink(true)}
                 >
                   Apply here
@@ -337,7 +347,7 @@ export default PyoFellow;
                   className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                   key={data?.id}
                 >
-                  <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
+                  <h3 className=" border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
                     <span>{data?.title}</span>
                     <small className="text-xs font-light block">
                       Coming soon
@@ -349,22 +359,22 @@ export default PyoFellow;
                       backgroundImage: `url('${data?.images}')`,
                     }}
                   ></div>
-                  <span className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                  <span className="text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                     {data?.text1}
                   </span>
                   {show ? (
                     <>
-                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      <p className="pt-2 text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreText?.id === data?.id && moreText?.text2}
                       </p>
                       {moreText?.id === data?.id && moreText?.text4 !== "" ? (
-                        <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        <p className="pt-2 text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                           {moreText?.id === data?.id && moreText?.text4}
                         </p>
                       ) : (
                         ""
                       )}
-                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      <p className="pt-2 text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreText?.id === data?.id && moreText?.text3}
                       </p>
                     </>
@@ -426,7 +436,7 @@ export default PyoFellow;
                   className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
                   key={item?.id}
                 >
-                  <h3 className="monoFont border-below text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16 mb-4">
+                  <h3 className=" border-below text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16 mb-4">
                     {item?.title}
                     <br /> {item?.slug}
                   </h3>
@@ -436,25 +446,25 @@ export default PyoFellow;
                       backgroundImage: `url('${item?.images}')`,
                     }}
                   ></div>
-                  <p className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                  <p className="text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                     {item?.text1}
                   </p>
                   {showInitiative ? (
                     <>
-                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      <p className="pt-2 text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreTextInitiative?.id === item?.id &&
                           moreTextInitiative?.text2}
                       </p>
                       {moreTextInitiative?.id === item?.id &&
                       moreTextInitiative?.text4 !== "" ? (
-                        <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                        <p className="pt-2 text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                           {moreTextInitiative?.id === item?.id &&
                             moreTextInitiative?.text4}
                         </p>
                       ) : (
                         ""
                       )}
-                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      <p className="pt-2 text-[18px] text-[#000] font-[400] leading-[1.5rem] text-left">
                         {moreTextInitiative?.id === item?.id &&
                           moreTextInitiative?.text3}
                       </p>

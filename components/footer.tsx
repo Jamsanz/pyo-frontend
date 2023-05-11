@@ -1,6 +1,5 @@
-import React from 'react'
+import React from "react";
 
-  
 const Footer = () => {
   return (
     <footer
@@ -13,12 +12,15 @@ const Footer = () => {
             <img src="/images/logo.jpeg" width="200px" />
           </div>
           <div className="flex-1">
-            <p className="uppercase text-[#53575B] md:mb-6">Links</p>
+            <h4 className="uppercase text-[#464646] font-bold text-[18px] md:mb-2">
+              Links
+            </h4>
+            <div className="h-[1px] bg-[#cecece] w-[80%] mb-4"></div>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   FAQ
                 </a>
@@ -26,7 +28,7 @@ const Footer = () => {
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   Help
                 </a>
@@ -34,7 +36,7 @@ const Footer = () => {
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   Support
                 </a>
@@ -42,12 +44,15 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-1">
-            <p className="uppercase text-[#53575B] md:mb-6">Legal</p>
+            <h4 className="uppercase text-[#464646] font-bold text-[18px] md:mb-2">
+              Legal
+            </h4>
+            <div className="h-[1px] bg-[#cecece] w-[80%] mb-4"></div>
             <ul className="list-reset mb-6">
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   Terms
                 </a>
@@ -55,7 +60,7 @@ const Footer = () => {
               <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   Privacy
                 </a>
@@ -63,12 +68,15 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-1">
-            <p className="uppercase text-[#53575B] md:mb-6">Social</p>
+            <h4 className="uppercase text-[#464646] font-bold text-[18px] md:mb-2">
+              Social
+            </h4>
+            <div className="h-[1px] bg-[#cecece] w-[80%] mb-4"></div>
             <div className="list-reset mb-6 flex justify-start gap-3">
               <div className="mt-2divndivne-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   <img
                     src="images/facebook.svg"
@@ -80,7 +88,7 @@ const Footer = () => {
               <div className="inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   <img
                     src="images/instagram.svg"
@@ -92,7 +100,7 @@ const Footer = () => {
               <div className="inline-block mr-2 md:block md:mr-0">
                 <a
                   href=""
-                  className="no-underline hover:underline text-gray-800 hover:text-[#53575B]"
+                  className="no-underline text-gray-800 hover:text-[#b1803c]"
                 >
                   <img
                     src="images/twitter.png"
@@ -107,6 +115,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
