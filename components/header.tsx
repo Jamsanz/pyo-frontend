@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Link from "next/link";
 
 const Header = ({}) => {
@@ -47,7 +47,7 @@ const Header = ({}) => {
         <div
           className={`w-full flex-grow lg:flex lg:items-center lg:w-auto ${
             !open && "hidden"
-          } mt-2 lg:mt-0 bg-white md:bg-transparent lg:bg-transparent text-black p-4 lg:p-0 z-20`}
+          } mt-2 lg:mt-0 bg-white md:bg-transparent lg:bg-transparent text-[#464646] p-4 lg:p-0 z-20`}
           id="nav-content"
         >
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">

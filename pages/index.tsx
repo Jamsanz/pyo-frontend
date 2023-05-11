@@ -16,10 +16,6 @@ import {
 } from "../utils/utils";
 
 const Home: NextPage = () => {
- 
-
-
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -29,7 +25,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <div
-        className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat merriFont lg:bg-cover"
+        className="pt-36 pb-24 object-cover w-[100%] bg-contain bg-center bg-no-repeat lg:bg-cover"
         style={{
           background: "url('/images/pyolanding.jpeg')",
           backgroundRepeat: "no-repeat",
@@ -42,7 +38,7 @@ const Home: NextPage = () => {
             <h1 className=" mt-4 text-[40px] leading-tight lg:text-6xl m-auto font-bold text-left">
               Visionary leaders for Africa's economic future
             </h1>
-            <p className="tribe italic text-left text-[40px] lg:text-3xl monoFont">
+            <p className="tribe italic text-left text-[40px] lg:text-3xl my-6">
               It is time for a new tribe
             </p>
           </div>
@@ -58,7 +54,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
-            <p className="mb-4 text-lg text-[white] font-[400] leading-[1.5rem] text-justify">
+            <p className="mb-4 text-2xl text-[white] font-[400] leading-[2.2rem] text-justify">
               As a unifying platform for the exchange of knowledge and mutual
               learning, the PYO Institute for Global Governance brings together
               all the different people and partners involved in promoting
@@ -72,7 +68,6 @@ const Home: NextPage = () => {
       </div>
       <PyoFellow />
       <BottomForm />
-      
     </Layout>
   );
 };
