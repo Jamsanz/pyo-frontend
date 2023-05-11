@@ -7,7 +7,7 @@ import Schedule from "../interfaces/schedule.interface";
 import { dateTimeFormatter, getUser, http } from "../utils/utils";
 
 const Dashboard = () => {
-  const [user, setUser] = useState<Member>();
+  const [user, setUser] = useState<any>();
   const [schedules, setSchedules] = useState<Schedule[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -67,10 +67,12 @@ const Dashboard = () => {
           {!loading && schedules.length < 1 && (
             <div className="w-full h-[200px] flex flex-col space-y-2 justify-center items-center">
               <p>You have no scheduled event</p>
-              <button className="p-3 bg-[#1F2937] text-white rounded-md">
-                Schedule Event{" "}
-                <i className="fa-solid fa-calendar ml-1 text-white"></i>
-              </button>
+              <Link href="/schedule-meeting">
+                <a className="p-3 bg-[#1F2937] text-white rounded-md">
+                  Schedule Event{" "}
+                  <i className="fa-solid fa-calendar ml-1 text-white"></i>
+                </a>
+              </Link>
             </div>
           )}
           {!loading && schedules.length >= 1 && (

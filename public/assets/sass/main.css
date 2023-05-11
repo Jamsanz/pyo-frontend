@@ -1778,17 +1778,14 @@ button:active,
   body, input, textarea, select {
     font-size: 17pt;
   }
-
   /* Header */
   #header {
     width: 300px;
   }
-
   /* Footer */
   #footer {
     margin-left: 300px;
   }
-
   /* Main */
   #main {
     margin-left: 300px;
@@ -1810,31 +1807,25 @@ button:active,
   body, input, textarea, select {
     font-size: 16pt;
   }
-
   .container {
     padding: 0 2em 0 2em;
   }
-
   /* Icons */
   ul.icons li a {
     width: 1.75em;
   }
-
   /* Item */
   .item {
     margin-bottom: 20px;
   }
-
   /* Header */
   #header {
     width: 20%;
   }
-
   #logo .image {
     position: relative;
     margin: 0 0 0.5em 0;
   }
-
   #nav ul li a {
     font-size: 0.8em;
     padding-top: 0.5em;
@@ -1848,12 +1839,10 @@ button:active,
     margin-left: -1.25em;
     line-height: 2.25em;
   }
-
   /* Footer */
   #footer {
     margin-left: 20%;
   }
-
   /* Main */
   #main {
     margin-left: 20%;
@@ -1869,30 +1858,24 @@ button:active,
   html, body {
     overflow-x: hidden;
   }
-
   body, input, textarea, select {
     font-size: 16pt;
   }
-
   header br {
     display: none;
   }
-
   .container {
     padding: 0 2em 0 2em;
   }
-
   /* Item */
   .item {
     margin-bottom: 15px;
   }
-
   /* Icons */
   ul.icons a {
     width: 1.75em;
     font-size: 1.25em;
   }
-
   /* Header */
   #header {
     -webkit-backface-visibility: hidden;
@@ -1922,15 +1905,12 @@ button:active,
     margin-top: 2em;
     position: relative;
   }
-
   #logo {
     margin: 1.5em 1.25em 1.25em 1.25em;
   }
-
   #nav ul li a {
     padding: 0.5em 1.25em 0.5em 1.25em;
   }
-
   #headerToggle {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -1981,7 +1961,6 @@ button:active,
     height: 2.25em;
     line-height: 2.25em;
   }
-
   body.header-visible #main {
     transform: translateX(275px);
   }
@@ -1991,12 +1970,10 @@ button:active,
   body.header-visible #header {
     transform: translateX(0);
   }
-
   /* Footer */
   #footer {
     margin-left: 0;
   }
-
   /* Main */
   #main {
     -webkit-backface-visibility: hidden;
@@ -2018,23 +1995,19 @@ button:active,
   body, input, textarea, select {
     font-size: 14pt;
   }
-
   h2 {
     font-size: 1.5em;
     letter-spacing: 0;
     font-weight: 300;
   }
-
   .container {
     padding: 0 15px 0 15px;
   }
-
   /* List */
   ul.icons a {
     width: 2em;
     font-size: 1.25em;
   }
-
   /* Main */
   #main > section {
     padding: 2em 0;
@@ -2045,7 +2018,6 @@ button:active,
   #main section.cover header {
     padding: 0 1em;
   }
-
   /* Footer */
   #footer .copyright li {
     display: block;

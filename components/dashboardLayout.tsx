@@ -30,11 +30,15 @@ const DashboardLayout = (props: any) => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("appUser")!);
     setUser(user);
-    setEmail(user.username!);
-    if (!user.userId) {
+    setEmail(user?.username);
+    if (!user?.userId) {
       router.push("/login");
     }
   }, []);
+
+  if (!user?.userId) {
+    return <div className="flex justify-center items-center w-full min-h-screen">...</div>
+  }
 
   return (
     <div>
@@ -107,9 +111,8 @@ const DashboardLayout = (props: any) => {
       </nav>
       <div className="lg:flex bottom-0 pt-16">
         <div
-          className={`${
-            nav ? "flex" : "hidden"
-          } lg:flex flex-col bg-white w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[250px] fixed`}
+          className={`${nav ? "flex" : "hidden"
+            } lg:flex flex-col bg-white w-full px-4 py-8 overflow-y-auto border-b lg:border-r lg:h-screen lg:w-[250px] fixed`}
         >
           <div className="flex flex-col justify-between mt-12 lg:mt-10 bg-white">
             <aside>
@@ -117,12 +120,11 @@ const DashboardLayout = (props: any) => {
                 <li>
                   <Link href="/dashboard">
                     <a
-                      className={`flex items-center px-[4px] py-2 rounded-md hover:bg-gray-200 ${
-                        props.pageName === "dashboard" &&
+                      className={`flex items-center px-[4px] py-2 rounded-md hover:bg-gray-200 ${props.pageName === "dashboard" &&
                         "bg-[#1F2937] text-white"
-                      }`}
+                        }`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fas fa-tachometer-alt-fast mr-2" />{" "}
                         Dashboard
                       </span>
@@ -133,12 +135,11 @@ const DashboardLayout = (props: any) => {
                 <li>
                   <Link href="/profile">
                     <a
-                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${
-                        props.pageName === "profile" &&
+                      className={`flex items-center px-[4px] py-2   mt-2 lg:mt-5 rounded-md hover:bg-gray-200 ${props.pageName === "profile" &&
                         "bg-[#1F2937] text-white"
-                      }`}
+                        }`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fas fa-user mr-2" /> Profile
                       </span>
                     </a>
@@ -147,47 +148,44 @@ const DashboardLayout = (props: any) => {
                 <li>
                   <Link href="/group">
                     <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
-                        props.pageName === "group" && "bg-[#1F2937] text-white"
-                      } rounded-md hover:bg-gray-200`}
+                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "group" && "bg-[#1F2937] text-white"
+                        } rounded-md hover:bg-gray-200`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
-                        <i className="fa-solid fa-people-group mr-2" /> Fellows
-                        Chat Group
+                      <span className="font-medium text-[15px]">
+                        <i className="fa-solid fa-people-group mr-2" />
+                        Fellows Chat Group
                       </span>
                     </a>
                   </Link>
                 </li>
                 <li className="mr-3 relative scheduleNav">
                   <a
-                    className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
-                      props.pageName === "schedule-meeting" &&
+                    className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "pyo-schedule" &&
                       "bg-[#1F2937] text-white"
-                    } rounded-md hover:bg-gray-200`}
+                      } rounded-md hover:bg-gray-200`}
                     onClick={navigateAbout}
                   >
-                    <span className="mx-4 font-medium text-[15px]">
-                      <i className="fa-solid fa-calendar mr-2" /> Schedule
-                      Meeting
+                    <span className="font-medium text-[15px] text-left flex space-x-3">
+                      <i className="fa-solid fa-calendar md:mt-2 mt-1" />
+                      <span className="">Schedule Engagement With PYO</span>
                     </span>
                   </a>
                   <div
-                    className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${
-                      about ? "block relative " : "absolute hidden lg:block"
-                    }`}
+                    className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-full ${about ? "block relative " : "absolute hidden lg:block"
+                      }`}
                   >
                     <ul>
                       <li className="mr-3">
-                        <Link href="/schedule-meeting">
-                          <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
-                            Schedule General meeting
+                        <Link href="/pyo-schedule">
+                          <a className="hover:font-bold inline-block w-full text-[#000] font-[18px] no-underline  hover:text-gray-800 hover:text-underline py-2 px-4">
+                            Meeting
                           </a>
                         </Link>
                       </li>
                       <li className="mr-3">
                         <Link href="pyo-schedule">
-                          <a className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
-                            Schedule meeting with PYO
+                          <a className="hover:font-bold w-full inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                            Event Invitation
                           </a>
                         </Link>
                       </li>
@@ -195,14 +193,25 @@ const DashboardLayout = (props: any) => {
                   </div>
                 </li>
                 <li>
+                  <Link href="/schedule-meeting">
+                    <a
+                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "schedule-meeting" && "bg-[#1F2937] text-white"
+                        } rounded-md hover:bg-gray-200`}
+                    >
+                      <span className="font-medium text-[15px]">
+                        <i className="fa-solid fa-calendar mr-2" /> Schedule Event
+                      </span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
                   <Link href="/news-feed">
                     <a
-                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${
-                        props.pageName === "news-feed" &&
+                      className={`flex items-center px-[4px] py-2 mt-2 lg:mt-5 ${props.pageName === "news-feed" &&
                         "bg-[#1F2937] text-white"
-                      } rounded-md hover:bg-gray-200`}
+                        } rounded-md hover:bg-gray-200`}
                     >
-                      <span className="mx-4 font-medium text-[15px]">
+                      <span className="font-medium text-[15px]">
                         <i className="fa-solid fa-rss mr-2" /> News feed
                       </span>
                     </a>
@@ -210,12 +219,11 @@ const DashboardLayout = (props: any) => {
                 </li>
                 <li>
                   <button
-                    className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${
-                      props.pageName === "" && "bg-[#1F2937] text-white"
-                    } rounded-md hover:bg-gray-200`}
+                    className={`flex items-center px-[4px] w-full py-2 mt-2 lg:mt-5 text-gray-600 ${props.pageName === "" && "bg-[#1F2937] text-white"
+                      } rounded-md hover:bg-gray-200`}
                     onClick={logout}
                   >
-                    <span className="mx-4 font-medium text-[15px] hover:bg-gray-200">
+                    <span className="font-medium text-[15px] hover:bg-gray-200">
                       <i className="fa-solid fa-power-off mr-2"></i> Log out
                     </span>
                   </button>

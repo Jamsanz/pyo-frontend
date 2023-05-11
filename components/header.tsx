@@ -13,8 +13,8 @@ const Header = ({}) => {
   const navigateAbout = () => {
     if (window.innerWidth < 1024) {
       setAbout(!about);
-      console.log("clicked");
     }
+
     return;
   };
   return (
@@ -53,7 +53,7 @@ const Header = ({}) => {
           <ul className="list-reset lg:flex justify-end flex-1 items-center merrifont">
             <li className="mr-3">
               <Link href="/#about">
-                <a className="inline-block text-[#464646] font-[18px] no-underline hover:text-black hover:text-underline py-2 px-4">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                   About
                 </a>
               </Link>
@@ -61,51 +61,77 @@ const Header = ({}) => {
 
             <li className="mr-3">
               <Link href="/#members">
-                <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                   Members
                 </a>
               </Link>
             </li>
             <li className="mr-3">
               <Link href="/#fellow">
-                <a className="inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
                   Fellowship
                 </a>
               </Link>
             </li>
-            <li className="mr-3 relative nav">
+            <li className="mr-3">
+              <Link href="/gallery">
+                <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 py-2 px-4">
+                  Gallery
+                </a>
+              </Link>
+            </li>
+            <li className="mr-3">
+              <Link href="/contribution">
+                <a
+                  className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
+                  href=""
+                >
+                  Impact
+                </a>
+              </Link>
+            </li>
+            {/* <li className="mr-3 relative nav">
               <a
-                className="inline-block py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer"
+                className="py-2 px-4 text-[#000] font-[18px] no-underline cursor-pointer flex justify-start lg:justify-center"
                 onClick={navigateAbout}
               >
-                Others
+                Supports
+                <img
+                  src="images/dropdown.png"
+                  alt=""
+                  className="relative bg-white "
+                  width="15px"
+                />
               </a>
               <div
-                className={`absolute navItem bg-white text-black pl-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-[140px] ${
+                className={`absolute navItem bg-[#F3F4F6] text-black ml-2 lg:pl-0 lg:rounded-lg boxShadow5 lg:w-[170px] ${
                   about ? "block relative " : "absolute hidden lg:block"
                 }`}
               >
-                <ul>
+                <ul className="bg-[white]">
                   <li className="mr-3">
-                    <Link href="/gallery">
-                      <a className="hover:font-bold inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
-                        Gallery
+                    <Link href="/sponsorship">
+                      <a
+                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
+                        href=""
+                      >
+                        Sponsorship
                       </a>
                     </Link>
                   </li>
                   <li className="mr-3">
-                    <Link href="/contribution">
+                    <Link href="/support">
                       <a
-                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                        className="hover:font-bold  inline-block text-[#000] font-[18px] no-underline hover:text-gray-800  py-2 px-4"
                         href=""
                       >
-                        Contribution
+                        Financial Support
                       </a>
                     </Link>
                   </li>
                 </ul>
               </div>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

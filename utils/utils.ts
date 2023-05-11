@@ -2,10 +2,10 @@ import axios from "axios";
 import moment from "moment";
 
 export const http = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://pyo-institute-backend.herokuapp.com",
 });
 
-export const getUser = () => JSON.parse(localStorage.getItem("appUser") ?? "");
+export const getUser = () => JSON.parse(localStorage.getItem("appUser")!);
 
 export const dateTimeFormatter = (date: string): string =>
   moment(date).format("Do MMMM, YYYY h:mm:ss A ");
@@ -50,6 +50,39 @@ export const handleScroll = () => {
   }
 };
 
+export const sponsor = {
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  gender: "",
+  nationality: "",
+  offer: "",
+  amount: "",
+  location: "",
+  sponsor_count: "",
+};
+export const financialSupport = {
+  firstName: "",
+  middleName: "",
+  lastName: "",
+  gender: "",
+  stateOfResidence: "",
+  lgaOfResidence: "",
+  address: "",
+  dob: "",
+  maritalStatus: "",
+  email: "",
+  phone: "",
+  state: "",
+  lga: "",
+  qualification: "",
+  applicantCategory: "",
+  registerWithCooperative: "",
+  monthlyEarnings: "",
+};
+
 export interface IReadMore {
   id?: number;
   title?: string;
@@ -85,7 +118,7 @@ export const pyoFellowship: IReadMore[] = [
   },
 ];
 
-export const readMore: IReadMore[] = [
+export const  readMore: IReadMore[] = [
   {
     id: 1,
     text2:

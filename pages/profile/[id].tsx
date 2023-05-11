@@ -28,7 +28,7 @@ const ProfilePage = (props: any) => {
         <div className=" flex flex-col items-center bg-white shadow-md min-w-[300px] min-h-[350px] max-w-[350px] rounded-lg overflow-hidden mx-4">
           <div className="profile-card min-h-[96px] w-full"></div>
           <img
-            src="/images/woman-2.avif"
+            src={`https://dummyimage.com/200x200/efefef/333333.png&text=${member?.firstName![0]}${member?.lastName![0]}`}
             alt=""
             className="w-[100px] h-[100px] object-cover rounded-full -mt-12 bg-white p-1 shadow-md outline-white outline-2 outline-offset-2"
           />
@@ -61,8 +61,9 @@ const ProfilePage = (props: any) => {
 };
 
 export default ProfilePage;
+
 export const getStaticPaths: GetStaticPaths = async () => {
-  const getdata = await http.get("/register");
+  const getdata = await http.get("/signup");
   const post = getdata.data.data;
   const paths = (post as any).map((item: Member) => {
     return { params: { id: item._id } };
@@ -74,7 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const members = await http.get(`/register/${params?.id}`);
+  const members = await http.get(`/signup/${params?.id}`);
   return {
     props: {
       data: members.data.data,

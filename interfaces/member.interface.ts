@@ -7,4 +7,6 @@ export interface Member {
   country: string;
   fellowship: string;
   status?: boolean;
+  subscriberId?: string;
+  _id?: string;
 }

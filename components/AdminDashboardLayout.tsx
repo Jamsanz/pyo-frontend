@@ -1,13 +1,13 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
+import { Member } from '../interfaces/member.interface'
 
 const AdminDashboardLayout = (props: any) => {
   const router = useRouter()
 
   const [nav, setNav] = useState<boolean>(false)
-
-  const [email, setEmail] = useState<string>("");
+  const [user, setUser] = useState<Member>();
   const [open, setOpen] = useState<boolean>(false);
   const [about, setAbout] = useState<boolean>(false);
 
@@ -24,21 +24,19 @@ const AdminDashboardLayout = (props: any) => {
   }
 
   const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("username");
-    localStorage.removeItem("email");
+    localStorage.removeItem("appUser");
     window.location.reload();
-  }
+  };
   useEffect(() => {
-
-    const id = localStorage.getItem("token");
-    setEmail(localStorage.getItem("useremail")!);
-    if (!id) {
-      router.push("/login")
+    const user = JSON.parse(localStorage.getItem("appUser")!);
+    setUser(user);
+    if (!user?.userId) {
+      router.push("/login");
     }
   }, []);
 
   return (
+    <>
     <div>
       <nav className="fixed z-30 w-full bg-white border-b-2">
         <div className="px-6 py-3">
@@ -86,7 +84,7 @@ const AdminDashboardLayout = (props: any) => {
 
               <div className="relative hidden lg:inline-block">
                 <button className="relative flex items-center p-2 text-sm text-gray-600 bg-white border border-transparent rounded-md focus:border-blue-500 focus:ring-opacity-40 dark:focus:ring-opacity-40 focus:ring-blue-300 dark:focus:ring-blue-400 focus:ring dark:text-white dark:bg-gray-800 focus:outline-none">
-                  <span className="mx-1">{email && email}</span>
+                  <span className="mx-1">{user && user?.username}</span>
                   <svg
                     className="w-5 h-5 mx-1"
                     viewBox="0 0 24 24"
@@ -209,6 +207,7 @@ const AdminDashboardLayout = (props: any) => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

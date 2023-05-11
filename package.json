@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "git add . && git commit -m Latest && git push origin new-branch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -19,7 +20,9 @@
     "animate.css": "^4.1.1",
     "axios": "^0.27.2",
     "font-awesome": "^4.7.0",
+    "http-proxy-middleware": "^2.0.6",
     "moment": "^2.29.4",
+    "naija-state-local-government": "^1.1.2",
     "next": "12.1.6",
     "photoswipe": "^5.2.8",
     "react": "18.2.0",

@@ -36,7 +36,7 @@ const Index = () => {
    useEffect(() => {
     //  setLoading(true);
      http
-       .get(`/register`)
+       .get(`/signup`)
        .then((res) => setMembers(res.data.data))
        .catch((err) => console.log(err))
        .finally(() => setLoading(false));
