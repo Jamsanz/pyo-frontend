@@ -64,7 +64,7 @@ const Home: NextPage = () => {
             <h1 className=" mt-4 text-[40px] leading-tight lg:text-6xl m-auto font-bold text-left">
               Visionary leaders for Africa's economic future
             </h1>
-            <p className="tribe italic text-left text-[40px] lg:text-3xl monoFont">
+            <p className="tribe italic text-left text-[40px] lg:text-3xl">
               It is time for a new tribe
             </p>
           </div>
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="w-full md:w-4/6 pt-4 pb-8 align-middle  px-0 md:px-10">
-            <p className="mb-4 text-lg text-[white] font-[400] leading-[1.5rem] text-justify">
+            <p className="mb-4 text-lg text-[white] font-[400] leading-[1.75rem] text-justify">
               As a unifying platform for the exchange of knowledge and mutual
               learning, the PYO Institute for Global Governance brings together
               all the different people and partners involved in promoting
@@ -97,14 +97,14 @@ const Home: NextPage = () => {
         <h1 className=" px-5  pt-10 md:pt-0 md:px-20 md:my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-main">
           Fellowship Programmes
         </h1>
-        <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-black">
+        <div className="pb-8 border-b-[1px] border-b-solid border-b-[#000] container  mx-auto flex flex-wrap flex-col md:flex-row text-[#464646]">
           {pyoFellowship?.map((data) => {
             return (
               <div
-                className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
+                className=" w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#464646] text-left"
                 key={data?.id}
               >
-                <h3 className="monoFont border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
+                <h3 className="border-below text-[22px] font-bold text-center md:pb-0 h-auto md:h-16 mb-4">
                   {data?.title}
                 </h3>
                 <div
@@ -113,22 +113,22 @@ const Home: NextPage = () => {
                     backgroundImage: `url('${data?.images}')`,
                   }}
                 ></div>
-                <span className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                <span className="text-[16px] text-[#464646] font-[400] leading-[1.65rem] text-left">
                   {data?.text1}
                 </span>
                 {show ? (
                   <>
-                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                    <p className="pt-2 text-[16px] text-[#464646] font-[400] leading-[1.65rem] text-left">
                       {moreText?.id === data?.id && moreText?.text2}
                     </p>
                     {moreText?.id === data?.id && moreText?.text4 !== "" ? (
-                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      <p className="pt-2 text-[16px] text-[#464646] font-[400] leading-[1.65rem] text-left">
                         {moreText?.id === data?.id && moreText?.text4}
                       </p>
                     ) : (
                       ""
                     )}
-                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.65rem] text-left">
                       {moreText?.id === data?.id && moreText?.text3}
                     </p>
                   </>
@@ -138,7 +138,7 @@ const Home: NextPage = () => {
 
                 {moreText?.id === data?.id && show ? (
                   <span
-                    className="cursor-pointer text-lg text-[#000] font-[400] leading-[1.5rem] text-center"
+                    className="cursor-pointer text-lg text-[#000] font-[400] leading-[1.65rem] text-center"
                     onClick={() => setShow(!show)}
                   >
                     <p className="mt-2 text-[17px] font-bold text-black text-left transform transition hover:text-[#14084e] duration-300 ease-in-out">
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
                   </span>
                 ) : (
                   <span
-                    className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem] "
+                    className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.65rem] "
                     onClick={() => showMore(data?.id!)}
                   >
                     <p
@@ -182,11 +182,11 @@ const Home: NextPage = () => {
         <h1 className=" px-5 md:px-20 my-4 pb-10 text-[30px] md:text-4xl font-bold text-center leading-tight text-main">
           Latest Initiatives from the PYO Institute
         </h1>
-        <div className="pb-8 container mx-auto flex flex-wrap flex-col md:flex-row text-black border-b-[1px] border-b-solid border-b-[#000]">
+        <div className="pb-8 container mx-auto flex flex-wrap flex-col md:flex-row text-[#464646] border-b-[1px] border-b-solid border-b-[#000]">
           {pyoInstitute?.map((item) => {
             return (
               <div
-                className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#000] text-left"
+                className="w-100% md:w-2/6 pt-4 pb-8 align-middle  px-2 md:px-8 text-[#464646] text-left"
                 key={item?.id}
               >
                 <h3 className="monoFont border-below text-[22px] font-bold text-center mx-auto md:pb-0 h-auto md:h-16 mb-4">
@@ -199,25 +199,25 @@ const Home: NextPage = () => {
                     backgroundImage: `url('${item?.images}')`,
                   }}
                 ></div>
-                <p className="text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                <p className="text-[16px] text-[#000] font-[400] leading-[1.65rem] text-left">
                   {item?.text1}
                 </p>
                 {showInitiative ? (
                   <>
-                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                    <p className="pt-2 text-[16px] text-[#464646] font-[400] leading-[1.65rem] text-left">
                       {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text2}
                     </p>
                     {moreTextInitiative?.id === item?.id &&
                     moreTextInitiative?.text4 !== "" ? (
-                      <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                      <p className="pt-2 text-[16px] text-[#464646] font-[400] leading-[1.65rem] text-left">
                         {moreTextInitiative?.id === item?.id &&
                           moreTextInitiative?.text4}
                       </p>
                     ) : (
                       ""
                     )}
-                    <p className="pt-2 text-[16px] text-[#000] font-[400] leading-[1.5rem] text-left">
+                    <p className="pt-2 text-[16px] text-[#464646] font-[400] leading-[1.65rem] text-left">
                       {moreTextInitiative?.id === item?.id &&
                         moreTextInitiative?.text3}
                     </p>
@@ -228,7 +228,7 @@ const Home: NextPage = () => {
 
                 {moreTextInitiative?.id === item?.id && showInitiative ? (
                   <span
-                    className="cursor-pointer text-lg text-[#000] font-[400] leading-[1.5rem] text-center"
+                    className="cursor-pointer text-lg text-[#464646] font-[400] leading-[1.65rem] text-center"
                     onClick={() => setShowInitiative(!showInitiative)}
                   >
                     <br />
@@ -238,7 +238,7 @@ const Home: NextPage = () => {
                   </span>
                 ) : (
                   <span
-                    className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.5rem]"
+                    className="cursor-pointer text-lg text-[#14044E] font-[400] leading-[1.65rem]"
                     onClick={() => showMoreInitiative(item?.id!)}
                   >
                     <p
@@ -267,4 +267,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
